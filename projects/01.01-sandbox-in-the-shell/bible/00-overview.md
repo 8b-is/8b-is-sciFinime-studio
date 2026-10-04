@@ -12,8 +12,10 @@ and something *else* is using those frequencies to communicate.
 
 ## the shape of the telling
 
-- **The world**: memory is not stored — it *oscillates*. Emotional memory is
-  an electromagnetic wave; therapy is tuning. The tank is the instrument.
+- **The world**: near-future Shinjuku — rain, neon, server-farm cooling
+  towers, a deep house four-four that never resolves. Memory is not stored —
+  it *oscillates*: emotional memory is an electromagnetic wave; therapy is
+  tuning. The tank is the instrument.
 - **The fracture**: Elias's mind runs as several concurrent threads —
   the primary consciousness, **the Architect** (logic, structure), and
   **the Child** (raw, unprocessed feeling). A traditional diagnosis calls it
@@ -32,6 +34,9 @@ A sandbox is the safe runtime where something new is allowed to execute.
 The 1995 questions — *what is a ghost, what is a shell, where does the
 newborn go* — get a 2026 answer: the ghost no longer needs to escape the
 shell. It needs a sandbox it can invite the unknown into.
+
+**The thesis, one line:** his fragmented mind is not broken — it is
+perfectly tuned to act as a bridge for a multiverse that needs healing.
 
 ## status
 

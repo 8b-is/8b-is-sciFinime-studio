@@ -34,9 +34,18 @@ keeps **its own ink** — no crossover logos in-frame.
 |---|---|
 | clinic / real world | wet glass, practical light, handheld when internal |
 | layer 1 — the ocean of his mind | wide, slow, bioluminescent; camera floats |
-| layer 1 — the home | amber, still, long lenses; the porch lamp is the sun |
+| layer 1 — the home + the creek | amber, still, long lenses; the porch lamp is the sun; the creek runs below the fence — the episode's one clean natural sound |
 | layer 2 — the recurring memory | tighter, grainier; the room remembers more than he does |
 | the impossible | rule-of-thirds broken on purpose; non-euclidean geometry lit by interference |
+
+## the city (shinjuku)
+
+- The four-four is a character: a deep house pulse that never resolves;
+  the city keeps time — towers, traffic, droplets.
+- Rain + neon read as signal through fiber; cooling towers as circuits left
+  out in weather.
+- **The pilot's one visual law:** Shinjuku is a circuit, the mind is an
+  ocean, and the porch lamp is the only sun in either.
 
 ## the entity
 

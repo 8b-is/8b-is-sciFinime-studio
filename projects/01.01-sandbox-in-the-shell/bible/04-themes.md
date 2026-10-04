@@ -40,4 +40,9 @@ conquering the others. It is a runtime where all threads coexist at zero
 latency without suffering — the story's definition of peace, mirrored at
 every scale: person, partnership, first contact.
 
+**6 · the bridge.** The payoff of every thread above: his fragmented mind
+is **not broken — it is perfectly tuned** to act as a bridge for a
+multiverse that desperately needs healing. The wound was the aperture; the
+diagnosis was the credential.
+
 *fine touch from within · 0 + 1*

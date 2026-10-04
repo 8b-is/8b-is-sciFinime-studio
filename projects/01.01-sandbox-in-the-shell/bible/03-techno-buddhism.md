@@ -13,6 +13,10 @@ the practitioner down to the bare metal of human consciousness.
 
 ## mindful debugging
 
+His creed fits in six words: **healing is the ultimate root privilege** —
+the one warrant worth escalating to. Everything else is scaffolding around
+it.
+
 Elias practices *Mindful Debugging*. Suffering and trauma are, in his
 vocabulary, **runaway daemons and orphaned processes** — attachments that
 consume the soul's processing power. To heal a patient he does not violently

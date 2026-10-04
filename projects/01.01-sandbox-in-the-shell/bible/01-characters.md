@@ -22,8 +22,9 @@ lost.
 
 ## "The Child" — personality 2
 
-Pure emotion and raw, unprocessed memory. Vulnerable, intuitive, pre-verbal
-when frightened. Perceives threats — and *dimensions* — before the others,
+Pure emotion and raw, unprocessed memory — holding fiercely to the grounding
+memories of a quiet childhood home and a creek. Vulnerable, intuitive,
+pre-verbal when frightened. Perceives threats — and *dimensions* — before the others,
 the way a child hears the argument behind a closed door. The Child is the
 one who first hears the dissonant frequency and knows, without proof, that
 it is "wrong, and does not belong".
