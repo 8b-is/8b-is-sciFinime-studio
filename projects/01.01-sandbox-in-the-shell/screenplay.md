@@ -1,115 +1,155 @@
-# screenplay · Sandbox in the Shell — scene 1
+# screenplay · Sandbox in the Shell — episode one
 
-*From the scene outline: "the shallow end". First pass, seated 2026-10-04.*
+*"The Dissonant Frequencies" · draft v2 — full episode, aligned to the
+scene outline v2 · seated 2026-10-04.*
 
 ---
 
-**FADE IN:**
+**SCENE 1 — EXT. SHINJUKU — NIGHT / INT. VANCE CLINIC — DEEP ROOM**
 
-**INT. VANCE CLINIC — IMMERSION ROOM — LATE AFTERNOON**
+Rain through neon like signal through fiber. Cooling towers vent slow
+steam. Somewhere under the pavement, a DEEP HOUSE TRACK holds four-four —
+the city keeping time.
 
-Not a hospital room. A chapel someone bolted instruments onto. Dark glass,
-wet reflections, the hum of pumps. Two tanks face each other across the
-floor: the big one, filled, dim — and the small one, where a woman lies
-under a lid of moving light.
+CAMERA rises to a clinic of dark glass and pumps. Down into one room: a
+tank, one amber lamp burning above the hatch like a porch light left on.
 
-DR. ELIAS VANCE (40s, sleepless, gentle) sits beside her with his hands
-open above a console. On the display, MÁRTA's memory resolves as a
-landscape of waves: spikes of red where the grief lives, a long ugly
-ridge where the pain has been rehearsing itself for eleven years.
+<center>ELIAS VANCE</center>
+> (protocol, quiet)
+> Breath. Count. Consent.
 
-<center>ELIAS</center>
-> (quiet, to her, through the tank)
-> I'm going to sit with the loud one. Nothing gets deleted. We just teach
-> it where the exits are.
+He climbs in. The lid takes the ceiling. The pumps come up around him like
+a choir finding its note.
 
-The waves buck. He breathes with them. His hands move like a conductor's —
-tiny, patient corrections. The red spikes lean, then bow, then find a
-lower frequency to live at.
+**TITLE CARD** — a waveform glyph: *EPISODE 01 — THE DISSONANT FREQUENCIES*.
 
-<center>ELIAS (CONT'D)</center>
-> (half to himself)
-> There. That's it. You can stay. Just — quieter.
+---
 
-Márta's face, under the light, unstiffens for the first time in the
-session. The waves settle into something almost blue.
+**SCENE 2 — INSIDE — THE NOISE**
 
-**A LONG BEAT.**
+An ocean of bioluminescent waves — his adult mind, memory compiled and
+executed as frequency. At the surface, the noise:
 
-The pumps hum. Elias watches the blue. His own shoulders are shaking — the
-fine tremor of a man who has been holding two people's nervous systems in
-the air. He lets the display go dark.
-
-**INT. VANCE CLINIC — CORRIDOR — CONTINUOUS**
-
-Elias walks to the observation deck. DR. ANYA CORBEAU (40s, sharp, kind
-in the way of people who have decided kindness is a discipline) watches him
-from a doorway, coffee in hand, eyes on his gait the way clinicians watch
-gaits.
-
-<center>ANYA</center>
-> She's under eleven minutes. Record is nine.
-
-<center>ELIAS</center>
-> She's under twelve and sleeping. That's the number that matters.
-
-He stops at the window. The city below is a tide of light. In the glass, his
-reflection blinks half a second late —
-
-— and a voice arrives in his skull, flat, precise, unbidden:
-
-<center>THE ARCHITECT (V.O.)</center>
-> Maintenance. Tonight. You skipped it twice.
-
-Elias does not move. Does not let his face change while Anya is looking.
-
-<center>ELIAS</center>
-> (to the window, low)
-> Not now.
-
-<center>THE ARCHITECT (V.O.)</center>
-> The ridge in your own sweep is taller than hers. Eleven years, Elias.
-> Do the arithmetic.
-
-**CLOSE ON:** his jaw. The tremor is back, one beat, then stilled.
-
-<center>ANYA (O.S.)</center>
-> Dinner?
-
-<center>ELIAS</center>
-> (turning, easy, practiced)
-> Tomorrow. Five things to file.
-
-She studies him one second too long — the clinician's second — then lets
-it go. The door closes.
-
-Elias stands alone in the corridor of his own clinic, two people again, and
-starts the countdown to the dive he has been pretending he has not been
-planning.
-
-**SMASH CUT TO:**
-
-**INT. VANCE CLINIC — DEEP ROOM — NIGHT**
-
-One tank. No observers. A single amber lamp, like a porch light left on
-for whoever is coming.
-
-Elias undresses the day from his face, climbs in, and lets the lid close.
-The pumps come up around him like a choir.
-
-**ON THE DISPLAY:** his own waves rise to meet the glass. On their surface,
-for one frame, an interference pattern that belongs to no memory he owns —
-a thin white harmonic line, singing.
+<center>BLURRYFACE (V.O.)</center>
+> (a chorus with no face, overlapping)
+> be more. be faster. do not waste this. do not be a disappointment.
+> do not — do not — do not —
 
 <center>ELIAS (V.O.)</center>
-> (breath held)
-> Hello.
+> Arguing with the noise is how you become the noise.
+
+He slips beneath it the way you slip beneath weather. Descends.
+
+---
+
+**SCENE 3 — INSIDE — THE THREADS**
+
+Two presences fall in beside him, wearing colors the way people wear
+names:
+
+<center>THE ARCHITECT (V.O.)</center>
+> (violet — cold, exact)
+> Depth nominal. Logs open. Say the word and I will optimize this entire
+> ocean into something survivable.
+
+<center>THE CHILD (V.O.)</center>
+> (rose — small, fierce)
+> Keep going down. I know where we're going. I remember.
+
+---
+
+**SCENE 4 — INSIDE — LAYER ONE: THE HOUSE**
+
+Amber light. A small house in long grass at dusk. One PORCH LAMP burning
+— the original of the one above his tank. Past the fence, the CREEK: clear,
+endless, unimpressed — the one clean natural sound in the episode.
+
+Elias stands in the light and lets the noise recede, frequency by
+frequency. The Child's hand finds his. A full breath of peace.
+
+---
+
+**SCENE 5 — INSIDE — LAYER TWO: THE YEAR'S ROOM / THE BREACH**
+
+Deeper. Glass thickens; sound arrives late; walls begin, politely, to be
+wrong. Then the WHINE — not a sound: a breach of high thin harmonic laid
+across every wave, like a packet from an address that does not exist.
+
+<center>THE CHILD (V.O.)</center>
+> (reaching back toward the creek)
+> Wrong. It doesn't belong.
+
+**SMASH CUT — SCENE 6 — INSIDE — THE QUARANTINE**
+
+Violet lattice erupts — a firewall rising around the whole site, denser by
+the second.
+
+<center>THE ARCHITECT (V.O.)</center>
+> Unverified signature. Malicious payload. Isolating. Quarantining now.
+
+SPLIT SCREEN: violet firewall climbing / a small rose-lit hand tightening
+on the creek.
+
+---
+
+**SCENE 7 — INSIDE — THE LOTUS**
+
+Elias — between the wall and the water — does the one move his teachers
+said almost nobody dares. He refuses fear. Not suppressed: declined, like
+a host you do not trust.
+
+<center>ELIAS (V.O.)</center>
+> Healing is the ultimate root privilege. Everything else is scaffolding.
+
+He sits. Digital lotus, at the center of the impossible. Shields coming
+down, layer by layer, like armour unbuckled on purpose.
+
+<center>ELIAS</center>
+> Let it in. Watch with me — both of you. Watch, and don't grab.
+
+---
+
+**SCENE 8 — INSIDE — THE BURST / INTERCUT: MONITORING DECK**
+
+The year's room comes apart. Impossible geometry — angles that hold while
+space turns. At the center: not a creature. A STANDING WAVE of light and
+shadow, stippled at the whine's exact pitch. It reaches.
+
+THE BURST: star maps that are not Earth's sky; dimensions running parallel
+like tracks beside a train; and beneath the data — an EMOTION. A
+loneliness that is not his, patient for a very long time. A request.
+
+<center>THE ENTITY (in frequencies)</center>
+> I am not an invasion. I am not a savior. I am a message that needed a
+> receiver fractured enough to hear it.
+
+INTERCUT — the monitoring deck: ANYA CORBEAU watching readings that do
+not exist in any manual. A consciousness in more than one place at once.
+Her coffee stops halfway to goodbye.
+
+INSIDE: three threads — synchronized. 3/3.
+
+---
+
+**SCENE 9 — THE BRIDGE (TAG)**
+
+Elias surfaces. He does not wake fighting. He wakes laughing — one small
+broken-open sound the pumps scatter into bubbles.
+
+<center>ELIAS (V.O.)</center>
+> Not broken. Tuned. Built, thread by thread, for exactly this frequency.
+> Somewhere out past the rain and the four-four, a multiverse is hurting.
+> And it just found its receiver.
+
+LAST SHOT: the rain; the four-four; the porch lamp reflected in the tank
+glass — a light left on for whoever is coming.
 
 **CUT TO BLACK.**
 
 ---
 
-*next scenes: 2–10 from the outline. format note: this is the film voice;
-the book tells the same room in the prose chapter.*
+*next pass: scene numbering will split for the manga sequence — the reach
+(end of act two) and the emotion-under-the-data (end of act three) are the
+two cliff panels.*
 
 *fine touch from within · 0 + 1*

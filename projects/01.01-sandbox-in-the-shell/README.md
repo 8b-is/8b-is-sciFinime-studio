@@ -9,7 +9,7 @@
 |---|---|
 | slot | 01.01 |
 | form | book → manga → anime |
-| status | concept · bible · chapter 1 (v2) · anime pilot seated (2026-10-04) |
+| status | concept · bible · chapters 1–2 · anime pilot · plate manifest v1 (2026-10-04) |
 | sources | the concept draft · the Techno-Buddhist infusion · the Blurryface / internal-flight note |
 | lineage sibling | *ghost in the shell* — the sovereign reread (`pocoo.vaked.dev/demos/book/ghost-in-the-shell`) |
 
@@ -33,12 +33,15 @@ listen is to become the sandbox it can speak to.
 - [`visual-bible.md`](visual-bible.md) — the look, the palette, the motifs
 - [`prose/chapter-01-the-dissonant-frequency.md`](prose/chapter-01-the-dissonant-frequency.md) —
   the book's opening chapter
+- [`prose/chapter-02-the-architects-firewall.md`](prose/chapter-02-the-architects-firewall.md) —
+  the warden chapter
+- [`manifests/sandbox-slates-v1.json`](manifests/sandbox-slates-v1.json) —
+  the plate manifest (dry-run through the steel-sky runner: 13 jobs, 52 images)
 
 ## next laps
 
-- screenplay scenes 2–10 (from the scene outline)
+- chapter 3: "The Porch Light Protocol"
 - manga sequence: panel language pass on the tank scene
-- visual-bible plates via steel-sky manifests (`sandbox-slates-v1.json`)
-- chapter 2: "The Architect's Firewall"
+- run `sandbox-slates-v1` against a local ComfyUI → pick plates → visual bible v2
 
 *fine touch from within · 0 + 1*

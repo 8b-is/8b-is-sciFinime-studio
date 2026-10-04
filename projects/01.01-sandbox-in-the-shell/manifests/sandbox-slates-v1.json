@@ -1,0 +1,89 @@
+{
+  "name": "sandbox-slates-v1",
+  "shared_prompt": "anime film background art, 1990s cel animation meets modern digital painting, hand painted, cinematic composition, full bleed drawing that fills the entire image",
+  "defaults": {
+    "batch": 4,
+    "variations": 1,
+    "seed": 20261004,
+    "negative": "text, letters, words, watermark, logo, signature, caption, handwriting, photorealistic, photograph, 3d render, blurry, distorted, extra fingers, deformed hands, picture frame, frame, mat, border, cyborg bodysuit, thermoptic camouflage, spider tank, humanoid robot, mask, face"
+  },
+  "categories": {
+    "I.01": {
+      "prompt": "wet dark glass and instrument light, deep teal ground with cyan glow, practical lamps, rain-neon through windows, quiet engineering chapel",
+      "items": [
+        {
+          "name": "the-tank-room",
+          "prompt": "dark clinic room at night, one sensory immersion tank of dark glass and brass fittings, pumps along the wall, a single amber porch-style lamp burning above the hatch, rain on the high windows, neon bleeding through"
+        },
+        {
+          "name": "shinjuku-rain",
+          "prompt": "near future shinjuku at 2am, rain-slicked streets reflecting pink and cyan neon, server farm cooling towers venting steam, a deep city pulse of light, no people"
+        },
+        {
+          "name": "monitoring-deck",
+          "prompt": "small dark monitoring room, wall of soft display glow showing waveforms, a single desk with two coffee cups, rain outside, orange desk lamp, empty chair"
+        }
+      ]
+    },
+    "I.02": {
+      "prompt": "abstract bioluminescent ocean of light, memory as wave interference, deep teal with cyan and white harmonics, painterly, vast",
+      "items": [
+        {
+          "name": "adult-ocean",
+          "prompt": "an endless dark ocean of glowing blue waves seen from above, layers of light beneath the surface like data, calm and vast, no land, no boats"
+        },
+        {
+          "name": "wave-interference",
+          "prompt": "close view of two wave systems crossing, bright cyan and soft white interference bands and moire patterns over deep teal, abstract, beautiful, no objects"
+        },
+        {
+          "name": "the-descent",
+          "prompt": "view straight down into deep glowing water, threads of light descending into darkness, pressure and quiet, tiny distant glow at the bottom"
+        }
+      ]
+    },
+    "I.03": {
+      "prompt": "warm amber memory, soft film grain, quiet rural childhood at dusk, golden light, gentle nostalgic painting",
+      "items": [
+        {
+          "name": "the-house",
+          "prompt": "small family house at dusk seen from the long grass, one porch lamp burning warm amber, windows gold, deep blue evening sky, fireflies"
+        },
+        {
+          "name": "the-creek",
+          "prompt": "narrow clear creek running below a fence line, long grass on both banks, water catching last light, close and quiet, no people"
+        },
+        {
+          "name": "porch-lamp",
+          "prompt": "close up of an old porch lamp glowing warm amber against a dark evening, moths, a wooden porch rail, deep blue background"
+        }
+      ]
+    },
+    "I.04": {
+      "prompt": "impossible geometry, angles that hold their shape while space turns, lit by interference light, unsettling and beautiful, no creatures",
+      "items": [
+        {
+          "name": "the-turn",
+          "prompt": "a room whose walls fold at angles that cannot exist, floor becoming ceiling, lit by thin bands of white and cyan interference, deep shadows"
+        },
+        {
+          "name": "the-gate",
+          "prompt": "a vast dark space with one standing opening of light shaped by crossing wave patterns, edges wrong, geometry politely catastrophic, no figures"
+        }
+      ]
+    },
+    "I.05": {
+      "prompt": "a standing wave of light and shadow, stippled interference almost resolving into a shape, no face, no eyes, patient, sacred, negative space",
+      "items": [
+        {
+          "name": "first-reach",
+          "prompt": "a tall shape of pure light and shadow stipple leaning toward the viewer, one gesture of a limb that is mostly waveform, dark ground, thin white harmonics"
+        },
+        {
+          "name": "the-window",
+          "prompt": "a calm standing wave of glowing light holding a shape at the center of dark geometry, three soft pulses of light around it, lonely and kind"
+        }
+      ]
+    }
+  }
+}
