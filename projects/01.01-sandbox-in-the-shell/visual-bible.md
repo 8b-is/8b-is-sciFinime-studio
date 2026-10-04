@@ -70,4 +70,24 @@ keeps **its own ink** — no crossover logos in-frame.
   sky/space plates; `art.vaked.dev` for the dark-field finish; `osaurus`
   on `:1337` for prompt drafting and image-description passes.
 
+## plates — the first live run (2026-10-04)
+
+12 plates generated on the SD1.5 lane (`sandbox-slates-v1`, category
+`I.03`, seeds from the manifest), collected to
+[`assets/plates/sandbox-slates-v1/i-03/`](assets/plates/sandbox-slates-v1/i-03/)
+as repo-friendly JPGs (768px, q85; originals stay in ComfyUI's output).
+
+What the three reads gave (viewed, not guessed):
+
+- **the-house** — lavender dusk, one lit porch, a moon over the field; warm
+  storybook nostalgia.
+- **porch-lamp** — amber lantern close-up against deep blue; the bookmark
+  motif, on the first try.
+- **the-creek** — a winding creek through clay banks; quiet, painterly.
+
+Register note, honest: SD1.5's aesthetic is *storybook memory*, not 1990s
+cel. For the I.03 memory category that register is a gift; the anime
+register for the other categories wants the 2026 lane (quantized Z-Image)
+or prompt work. Both lanes are wired; this one is lit.
+
 *fine touch from within · 0 + 1*

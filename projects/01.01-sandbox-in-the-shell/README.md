@@ -9,7 +9,7 @@
 |---|---|
 | slot | 01.01 |
 | form | book → manga → anime |
-| status | concept · bible · chapters 1–4 · anime pilot · manga passes 01–02 · plate manifest v1 (runner-verified; SD1.5 lane downloading) |
+| status | concept · bible · chapters 1–4 · anime pilot · manga passes 01–02 · first live plates (i-03 ×12) · SD1.5 + Z-Image lanes wired |
 | sources | the concept draft · the Techno-Buddhist infusion · the Blurryface / internal-flight note |
 | lineage sibling | *ghost in the shell* — the sovereign reread (`pocoo.vaked.dev/demos/book/ghost-in-the-shell`) |
 
@@ -45,11 +45,12 @@ listen is to become the sandbox it can speak to.
   the breach and the lotus (5 pages, 11 panels)
 - [`manifests/sandbox-slates-v1.json`](manifests/sandbox-slates-v1.json) —
   the plate manifest (dry-run through the steel-sky runner: 13 jobs, 52 images)
+- [`assets/plates/`](assets/plates/) — the first live plates (i-03: house, creek, porch-lamp)
 
 ## next laps
 
 - chapter 5: "The Audit"
 - manga pass 03: the bridge and the tag (scene 9)
-- plates: first real run on the SD1.5 lane (in flight) → picks → visual bible v2
+- plates: run the remaining categories (I.01/I.02/I.04/I.05) → picks → visual bible v2
 
 *fine touch from within · 0 + 1*

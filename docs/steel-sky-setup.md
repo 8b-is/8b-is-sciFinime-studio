@@ -197,4 +197,12 @@ Until then: manifest dry-run verified (13 jobs / 52 images), the runner is
 tested, the graphs audited. The lane is wired; it is waiting on memory,
 not on code.
 
+**Resolved the same day (2026-10-04, evening):** the SD1.5 lane was lit —
+checkpoint downloaded from steel-sky's own `links.txt` and verified
+(`sha256 cc6cb271…`), a headless ComfyUI backend started on `:8188`
+(`ComfyUI/.venv/bin/python3 -s ComfyUI/main.py --extra-model-paths-config …`),
+and `sandbox-slates-v1` category `I.03` produced **12 plates** (`the-house`,
+`the-creek`, `porch-lamp` ×4) — collected into the project's `assets/plates/`
+with `tools/collect_plates.py`.
+
 *fine touch from within · 0 + 1*
