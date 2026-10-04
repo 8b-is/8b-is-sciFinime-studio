@@ -164,4 +164,37 @@ uv run python generate_collection.py manifests/my-run.json --url "$COMFY_URL"
   complains.
 - Committing `output/` bloats the repo — only `thumbs/`.
 
+## 10 · the first live plate run (2026-10-04) — halted for machine safety
+
+The studio's plate runner (`tools/zimage_plate.py`) drove the local Comfy
+Desktop (Z-Image Turbo, `res_multistep`, 8 steps, 1024²) end-to-end: the
+job queued, the graph validated, the sampler engaged. Mid-run it was
+interrupted — deliberately — because the numbers did not fit:
+
+| | |
+|---|---|
+| models | `z_image_turbo_bf16` 11 G + `qwen_3_4b` 7.5 G + `ae` 0.3 G ≈ **18.8 G** |
+| machine | M1 with **18 G unified memory**; ~2.3 G free under load |
+| swap | reached **24+ G used of 24.5 G** during the run |
+| disk | **6.9 G free** (so no counter-download of SD1.5 without cleanup) |
+
+The job was interrupted and models unloaded (`/interrupt` + `/free`), the
+queue returned to zero. No plates were produced; nothing was lost.
+
+**To light the plate lane (pick one):**
+
+1. **Quantized Z-Image** — an fp8 or GGUF Q4–Q8 build (~4–8 G) into
+   `~/ComfyUI-Shared/models/diffusion_models/`; point the runner at an
+   updated workflow with the new `unet_name`. Fits the M1 with room.
+2. **SD1.5 lane** (steel-sky's stock model) — ~4 G download + cpu profile;
+   free disk first (currently 6.9 G).
+3. **Free-memory first** — quit heavy apps and re-run; borderline for a
+   single 512² plate.
+4. **Remote render** — run the same manifest on a GPU host; outputs are
+   portable.
+
+Until then: manifest dry-run verified (13 jobs / 52 images), the runner is
+tested, the graphs audited. The lane is wired; it is waiting on memory,
+not on code.
+
 *fine touch from within · 0 + 1*

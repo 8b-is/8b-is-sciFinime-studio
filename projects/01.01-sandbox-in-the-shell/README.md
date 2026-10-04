@@ -9,7 +9,7 @@
 |---|---|
 | slot | 01.01 |
 | form | book → manga → anime |
-| status | concept · bible · chapters 1–2 · anime pilot · plate manifest v1 (2026-10-04) |
+| status | concept · bible · chapters 1–3 · anime pilot · manga pass 01 · plate manifest v1 (runner-verified; live run pending a lighter model) |
 | sources | the concept draft · the Techno-Buddhist infusion · the Blurryface / internal-flight note |
 | lineage sibling | *ghost in the shell* — the sovereign reread (`pocoo.vaked.dev/demos/book/ghost-in-the-shell`) |
 
@@ -35,13 +35,17 @@ listen is to become the sandbox it can speak to.
   the book's opening chapter
 - [`prose/chapter-02-the-architects-firewall.md`](prose/chapter-02-the-architects-firewall.md) —
   the warden chapter
+- [`prose/chapter-03-the-porch-light-protocol.md`](prose/chapter-03-the-porch-light-protocol.md) —
+  the creek ↔ creek chapter
+- [`manga/panel-pass-01-tank-scene.md`](manga/panel-pass-01-tank-scene.md) —
+  the panel-language pass (5 pages, 16 panels)
 - [`manifests/sandbox-slates-v1.json`](manifests/sandbox-slates-v1.json) —
   the plate manifest (dry-run through the steel-sky runner: 13 jobs, 52 images)
 
 ## next laps
 
-- chapter 3: "The Porch Light Protocol"
-- manga sequence: panel language pass on the tank scene
-- run `sandbox-slates-v1` against a local ComfyUI → pick plates → visual bible v2
+- chapter 4: "The Other Shore"
+- manga pass 02: the breach and the lotus (scenes 5–8 panels)
+- plates: run `sandbox-slates-v1` on a lighter model lane (fp8/GGUF Z-Image or SD1.5) — see [`docs/steel-sky-setup.md`](../../docs/steel-sky-setup.md) §10
 
 *fine touch from within · 0 + 1*
