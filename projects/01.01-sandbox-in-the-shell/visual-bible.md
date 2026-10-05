@@ -138,7 +138,7 @@ book), motif accuracy (the lamp, the wave, the wrongness).
 | monitoring-deck | variant 1 | the flat room with the round moon light; the accident the picks keep |
 | adult-ocean | variant 1 | deep teal under a heavy sky; the ocean's honest surface calm |
 | the-descent | variant 1 | serene blue-into-yellow sea; a surface read for the descent, registered as such |
-| wave-interference | *held* | pastel bands + a surviving signature artifact; regenerate in the next pass rather than seat it |
+| wave-interference | variant 3 (regen) | *held*, regenerated 2026-10-05 (`sandbox-slates-v1-b`): contour-line interference over deep teal, cyan harmonics — palette-true at last. Variant 2 kept as the pattern study |
 | the-house | variant 1 | lavender dusk, one lit porch, a moon over the field (lap-5 read) |
 | the-creek | variant 1 | winding water through clay banks; quiet, painterly (lap-5 read) |
 | porch-lamp | variant 1 | amber lantern against deep blue; the bookmark motif, first try (lap-5 read) |
@@ -147,7 +147,9 @@ book), motif accuracy (the lamp, the wave, the wrongness).
 | first-reach | variant 1 | stippled dusk and treeline; not the entity — a porch seen from outside, kept as a gift |
 | the-window | variant 1 | glowing arc-pulses over a dark horizon; the closest anything has come to the entity's light |
 
-The held item and any regenerate work are the next plate pass's first
-rows. The rake keeps its shape; the sand keeps changing.
+The held item was regenerated the same day (`sandbox-slates-v1-b`, tightened
+prompt) and picked — nothing stays held; the next rows are the Z-Image
+lane's, for the dark register. The rake keeps its shape; the sand keeps
+changing.
 
 *fine touch from within · 0 + 1*
