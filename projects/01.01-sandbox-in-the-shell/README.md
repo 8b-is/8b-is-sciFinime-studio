@@ -9,7 +9,7 @@
 |---|---|
 | slot | 01.01 |
 | form | book → manga → anime |
-| status | concept · bible · chapters 1–8 · anime pilot · manga passes 01–04 · full slate v1 live (i-01…i-05 ×52 plates) · ultra-zen garden (eight stones + the second law) · gifted to 8b-is · SD1.5 + Z-Image lanes wired |
+| status | concept · bible · chapters 1–8 · anime pilot · manga passes 01–05 · full slate v1 live (i-01…i-05 ×52 plates) · the picks grid (12) · ultra-zen garden (eight stones + the second law) · gifted to 8b-is · SD1.5 + Z-Image lanes wired |
 | sources | the concept draft · the Techno-Buddhist infusion · the Blurryface / internal-flight note |
 | lineage sibling | *ghost in the shell* — the sovereign reread (`pocoo.vaked.dev/demos/book/ghost-in-the-shell`) |
 
@@ -56,6 +56,8 @@ listen is to become the sandbox it can speak to.
   the bridge and the tag (2 pages, 4 panels; closes episode one)
 - [`manga/panel-pass-04-the-practice.md`](manga/panel-pass-04-the-practice.md) —
   the practice (4 pages, 12 panels; the document panel, the echo frame, the fourth beat)
+- [`manga/panel-pass-05-the-request.md`](manga/panel-pass-05-the-request.md) —
+  the request (4 pages, 12 panels; the practiced posture, the doorless house, the child's drawing)
 - [`manifests/sandbox-slates-v1.json`](manifests/sandbox-slates-v1.json) —
   the plate manifest (dry-run through the steel-sky runner: 13 jobs, 52 images)
 - [`assets/plates/`](assets/plates/) — the live plates, the full slate v1 (52): i-01 tank chapel · i-02 the ocean · i-03 the childhood home · i-04 impossible geometry · i-05 the entity
@@ -63,8 +65,8 @@ listen is to become the sandbox it can speak to.
 ## next laps
 
 - chapter 9: "the other knock" — someone at the entity's own door
-- manga pass 05: the request (chapter 8)
-- plates: the picks pass — one per item → the visual bible v2 grid
-- manuscript lane: sync chapter 7 into `pocoo book/sandbox-in-the-shell`
+- manga pass 06: the other knock (chapter 9)
+- plates: regenerate the held wave-interference; the Z-Image lane pass for the dark register
+- manuscript lane: sync chapters 9+ as they seat
 
 *fine touch from within · 0 + 1*
