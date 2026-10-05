@@ -121,3 +121,33 @@ bioluminescent register is still the joint work of prompting and the 2026
 lane. Picks will choose per item; the palette table stays the referee.
 
 *fine touch from within · 0 + 1*
+
+## the grid v2 — the picks (2026-10-05)
+
+Twelve of thirteen items picked (one held, honestly), seated in
+[`assets/plates/sandbox-slates-v1/picks/`](assets/plates/sandbox-slates-v1/picks/)
+— one plate per item, the v2 visual bible's working grid. Criteria, in
+order: palette lock (the table at the top of this file is the referee),
+register (does it read like the book, or like a nice picture next to the
+book), motif accuracy (the lamp, the wave, the wrongness).
+
+| item | pick | why |
+|---|---|---|
+| the-tank-room | variant 1 | bright teal-and-orange planes; *the tank remembered* — warmth over trench, kept for its flat charm |
+| shinjuku-rain | variant 2 | hard neon blocks, pink over black — the closest the lane has come to the episode's cel |
+| monitoring-deck | variant 1 | the flat room with the round moon light; the accident the picks keep |
+| adult-ocean | variant 1 | deep teal under a heavy sky; the ocean's honest surface calm |
+| the-descent | variant 1 | serene blue-into-yellow sea; a surface read for the descent, registered as such |
+| wave-interference | *held* | pastel bands + a surviving signature artifact; regenerate in the next pass rather than seat it |
+| the-house | variant 1 | lavender dusk, one lit porch, a moon over the field (lap-5 read) |
+| the-creek | variant 1 | winding water through clay banks; quiet, painterly (lap-5 read) |
+| porch-lamp | variant 1 | amber lantern against deep blue; the bookmark motif, first try (lap-5 read) |
+| the-turn | variant 1 | folding walls in hatched linework, wrong angles that hold — impossible geometry, finally delivered |
+| the-gate | variant 1 | monochrome hatchwork arch; reads like an etching of the book's own gate — the strongest single plate of the slate |
+| first-reach | variant 1 | stippled dusk and treeline; not the entity — a porch seen from outside, kept as a gift |
+| the-window | variant 1 | glowing arc-pulses over a dark horizon; the closest anything has come to the entity's light |
+
+The held item and any regenerate work are the next plate pass's first
+rows. The rake keeps its shape; the sand keeps changing.
+
+*fine touch from within · 0 + 1*
