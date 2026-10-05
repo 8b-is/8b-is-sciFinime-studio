@@ -9,7 +9,7 @@
 |---|---|
 | slot | 01.01 |
 | form | book → manga → anime |
-| status | concept · bible · chapters 1–4 · anime pilot · manga passes 01–02 · first live plates (i-03 ×12) · ultra-zen garden (8 stones) · SD1.5 + Z-Image lanes wired |
+| status | concept · bible · chapters 1–4 · anime pilot · manga passes 01–02 · first live plates (i-03 ×12) · ultra-zen garden (8 stones) · gifted to 8b-is · SD1.5 + Z-Image lanes wired |
 | sources | the concept draft · the Techno-Buddhist infusion · the Blurryface / internal-flight note |
 | lineage sibling | *ghost in the shell* — the sovereign reread (`pocoo.vaked.dev/demos/book/ghost-in-the-shell`) |
 
