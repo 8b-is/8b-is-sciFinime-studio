@@ -9,7 +9,7 @@
 |---|---|
 | slot | 01.01 |
 | form | book → manga → anime |
-| status | concept · bible · chapters 1–7 · anime pilot · manga passes 01–04 · live plates (i-01/i-02/i-03 ×36) · ultra-zen garden (eight stones + the second law) · gifted to 8b-is · SD1.5 + Z-Image lanes wired |
+| status | concept · bible · chapters 1–8 · anime pilot · manga passes 01–04 · live plates (i-01/i-02/i-03 ×36) · ultra-zen garden (eight stones + the second law) · gifted to 8b-is · SD1.5 + Z-Image lanes wired |
 | sources | the concept draft · the Techno-Buddhist infusion · the Blurryface / internal-flight note |
 | lineage sibling | *ghost in the shell* — the sovereign reread (`pocoo.vaked.dev/demos/book/ghost-in-the-shell`) |
 
@@ -46,6 +46,8 @@ listen is to become the sandbox it can speak to.
   the study chapter (the listening, the fourth chair, the practice opens)
 - [`prose/chapter-07-the-patients.md`](prose/chapter-07-the-patients.md) —
   the practice meets its people (the creek intake, the fourth beat)
+- [`prose/chapter-08-the-first-request.md`](prose/chapter-08-the-first-request.md) —
+  the first request (the guest as student, the door for one universe)
 - [`manga/panel-pass-01-tank-scene.md`](manga/panel-pass-01-tank-scene.md) —
   the panel-language pass (5 pages, 16 panels)
 - [`manga/panel-pass-02-breach-and-lotus.md`](manga/panel-pass-02-breach-and-lotus.md) —
@@ -60,7 +62,7 @@ listen is to become the sandbox it can speak to.
 
 ## next laps
 
-- chapter 8: "the first request" — the entity asks its own question
+- chapter 9: "the other knock" — someone at the entity's own door
 - manga pass 05: the request (chapter 8)
 - plates: the I.04/I.05 pass (impossible geometry + the entity) → picks → visual bible v2
 - manuscript lane: sync chapter 7 into `pocoo book/sandbox-in-the-shell`
