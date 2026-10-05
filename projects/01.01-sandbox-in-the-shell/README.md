@@ -9,7 +9,7 @@
 |---|---|
 | slot | 01.01 |
 | form | book → manga → anime |
-| status | concept · bible · chapters 1–4 · anime pilot · manga passes 01–02 · first live plates (i-03 ×12) · SD1.5 + Z-Image lanes wired |
+| status | concept · bible · chapters 1–4 · anime pilot · manga passes 01–02 · first live plates (i-03 ×12) · ultra-zen garden (8 stones) · SD1.5 + Z-Image lanes wired |
 | sources | the concept draft · the Techno-Buddhist infusion · the Blurryface / internal-flight note |
 | lineage sibling | *ghost in the shell* — the sovereign reread (`pocoo.vaked.dev/demos/book/ghost-in-the-shell`) |
 
@@ -31,6 +31,7 @@ listen is to become the sandbox it can speak to.
 - [`screenplay.md`](screenplay.md) — the written film (scene 1 seated)
 - [`pilot-01-the-dissonant-frequencies.md`](pilot-01-the-dissonant-frequencies.md) — the anime pilot direction (24-min shape)
 - [`visual-bible.md`](visual-bible.md) — the look, the palette, the motifs
+- [`zen-garden.md`](zen-garden.md) — the ultra-zen garden (eight stones, the kompressed form, the dedications)
 - [`prose/chapter-01-the-dissonant-frequency.md`](prose/chapter-01-the-dissonant-frequency.md) —
   the book's opening chapter
 - [`prose/chapter-02-the-architects-firewall.md`](prose/chapter-02-the-architects-firewall.md) —
@@ -49,6 +50,7 @@ listen is to become the sandbox it can speak to.
 
 ## next laps
 
+- garden: keep raking — lap 7 of 8–88: the I.01/I.02 plate pass
 - chapter 5: "The Audit"
 - manga pass 03: the bridge and the tag (scene 9)
 - plates: run the remaining categories (I.01/I.02/I.04/I.05) → picks → visual bible v2
