@@ -9,7 +9,7 @@
 |---|---|
 | slot | 01.01 |
 | form | book → manga → anime |
-| status | concept · bible · chapters 1–10 · anime pilot · manga passes 01–07 · full slate v1 live (i-01…i-05 ×52 plates + the regen) · the picks grid (13, none held) · ultra-zen garden (eight stones + the second law) · gifted to 8b-is · SD1.5 + Z-Image lanes wired |
+| status | concept · bible · **book one drafted complete (chapters 1–11)** · anime pilot · manga passes 01–07 · full slate v1 live (i-01…i-05 ×52 plates + the regen) · the picks grid (13, none held) · ultra-zen garden (eight stones + the second law) · gifted to 8b-is · SD1.5 + Z-Image lanes wired |
 | sources | the concept draft · the Techno-Buddhist infusion · the Blurryface / internal-flight note |
 | lineage sibling | *ghost in the shell* — the sovereign reread (`pocoo.vaked.dev/demos/book/ghost-in-the-shell`) |
 
@@ -52,6 +52,8 @@ listen is to become the sandbox it can speak to.
   the other knock (stay as architecture, the smallest knock)
 - [`prose/chapter-10-the-school-of-doors.md`](prose/chapter-10-the-school-of-doors.md) —
   the school of doors (the syllabus, the second student, the open evening)
+- [`prose/chapter-11-the-plus-one.md`](prose/chapter-11-the-plus-one.md) —
+  the +1 (the open evening convenes; the fifteenth blank line; the lamp left on) — **book one, end**
 - [`manga/panel-pass-01-tank-scene.md`](manga/panel-pass-01-tank-scene.md) —
   the panel-language pass (5 pages, 16 panels)
 - [`manga/panel-pass-02-breach-and-lotus.md`](manga/panel-pass-02-breach-and-lotus.md) —
@@ -72,8 +74,9 @@ listen is to become the sandbox it can speak to.
 
 ## next laps
 
-- chapter 11: "the +1" — the book's last door
-- manga pass 08: the +1 (chapter 11)
+- book one: the first-read polish pass (chapters 1–11, cover to cover)
+- manga pass 08: the +1 (chapter 11) — book one's passes close
+- manuscript: sync chapters 10–11 into `pocoo book/sandbox-in-the-shell`
 - plates: the Z-Image lane pass for the dark register (the joint next row)
 - plates: regenerate the held wave-interference; the Z-Image lane pass for the dark register
 - manuscript lane: sync chapters 9+ as they seat
