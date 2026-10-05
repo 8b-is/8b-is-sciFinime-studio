@@ -63,7 +63,6 @@ listen is to become the sandbox it can speak to.
 - chapter 8: "the first request" — the entity asks its own question
 - manga pass 05: the request (chapter 8)
 - plates: the I.04/I.05 pass (impossible geometry + the entity) → picks → visual bible v2
-- garden: keep raking — the rake ledger + the plate-pass note (lap 7 seated)
 - manuscript lane: sync chapter 7 into `pocoo book/sandbox-in-the-shell`
 
 *fine touch from within · 0 + 1*

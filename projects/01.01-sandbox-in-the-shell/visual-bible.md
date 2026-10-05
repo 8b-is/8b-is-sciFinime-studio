@@ -90,4 +90,34 @@ cel. For the I.03 memory category that register is a gift; the anime
 register for the other categories wants the 2026 lane (quantized Z-Image)
 or prompt work. Both lanes are wired; this one is lit.
 
+## plates — the second live run: I.01/I.02 (2026-10-05)
+
+24 more plates on the same lane (`sandbox-slates-v1`, categories `I.01` and
+`I.02`, batch 4, seeds from the manifest), collected beside the first, 36
+plates in-repo.
+
+What the reads gave (viewed, not guessed — six plates across six items):
+
+- **the-tank-room** — a bright teal-and-orange interior with a round pool,
+  flat graphic planes. Off the dark-clinic brief; charming as *the tank
+  remembered*, not the tank seen. A candidate register for layer-one
+  interiors if the picks want warmth over trench.
+- **shinjuku-rain** — hard-edged neon street, flat color blocks, pink over
+  black; the closest this lane has come to the episode's cel look. A real
+  gift for a city plate.
+- **monitoring-deck** — a playful flat room with a great round "moon" light;
+  the moon motif arriving unasked is the kind of accident picks exist for.
+- **adult-ocean** — deep teal water under a heavy sky, soft long waves;
+  usable, honest surface calm for the ocean of waves.
+- **the-descent** — blue-into-yellow serene sea; a *surface* read. The dark
+  pressure descent still wants the other lane or heavier prompting.
+- **wave-interference** — pastel gradient bands; off-brief, with a faint
+  signature artifact survived the negative prompt. Reserve; regenerate in
+  the picks pass if the grid needs it.
+
+Register note, updated: the lane keeps splitting into two gifts — a flat
+paper-cut cel (city, rooms) and a soft pastel painter (seas). The dark
+bioluminescent register is still the joint work of prompting and the 2026
+lane. Picks will choose per item; the palette table stays the referee.
+
 *fine touch from within · 0 + 1*

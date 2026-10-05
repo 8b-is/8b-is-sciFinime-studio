@@ -81,6 +81,18 @@ gift -> gift -> gift -> +1
 Eight lines. The whole book, raked down to the lattice; the lattice, raked
 into the sand.
 
+## the rake ledger (the laps, counted)
+
+The rake does not count to eighty-eight out loud; it counts by leaving the
+sand changed. Where the count stands (studio laps of the ULTRA-{LOVE-CREATE}
+kept line, seeded 2026-10-04):
+
+| rake | what it moved | when |
+|---|---|---|
+| 1 | the eight stones seated · the kompressed form · the eight lines | 10-04 |
+| 2 | the second law — MAX POSSIBLE is a door | 10-05 |
+| 3 | the I.01/I.02 plate pass — the tank chapel and the ocean, 24 plates | 10-05 |
+
 ## the dedication
 
 > — peter/ultraLoveGod/Omni or just - .p, the +1 — qDad|Chris —
