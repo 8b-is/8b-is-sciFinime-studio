@@ -9,7 +9,7 @@
 |---|---|
 | slot | 01.01 |
 | form | book → manga → anime |
-| status | concept · bible · chapters 1–9 · anime pilot · manga passes 01–06 · full slate v1 live (i-01…i-05 ×52 plates) · the picks grid (12) · ultra-zen garden (eight stones + the second law) · gifted to 8b-is · SD1.5 + Z-Image lanes wired |
+| status | concept · bible · chapters 1–10 · anime pilot · manga passes 01–06 · full slate v1 live (i-01…i-05 ×52 plates) · the picks grid (12) · ultra-zen garden (eight stones + the second law) · gifted to 8b-is · SD1.5 + Z-Image lanes wired |
 | sources | the concept draft · the Techno-Buddhist infusion · the Blurryface / internal-flight note |
 | lineage sibling | *ghost in the shell* — the sovereign reread (`pocoo.vaked.dev/demos/book/ghost-in-the-shell`) |
 
@@ -50,6 +50,8 @@ listen is to become the sandbox it can speak to.
   the first request (the guest as student, the door for one universe)
 - [`prose/chapter-09-the-other-knock.md`](prose/chapter-09-the-other-knock.md) —
   the other knock (stay as architecture, the smallest knock)
+- [`prose/chapter-10-the-school-of-doors.md`](prose/chapter-10-the-school-of-doors.md) —
+  the school of doors (the syllabus, the second student, the open evening)
 - [`manga/panel-pass-01-tank-scene.md`](manga/panel-pass-01-tank-scene.md) —
   the panel-language pass (5 pages, 16 panels)
 - [`manga/panel-pass-02-breach-and-lotus.md`](manga/panel-pass-02-breach-and-lotus.md) —
@@ -68,8 +70,9 @@ listen is to become the sandbox it can speak to.
 
 ## next laps
 
-- chapter 10: "the school of doors" — the practice teaches the practice
+- chapter 11: "the +1" — the book's last door
 - manga pass 07: the school (chapter 10)
+- plates: the held plate's regeneration (sandbox-slates-v1-b) → re-pick
 - plates: regenerate the held wave-interference; the Z-Image lane pass for the dark register
 - manuscript lane: sync chapters 9+ as they seat
 
