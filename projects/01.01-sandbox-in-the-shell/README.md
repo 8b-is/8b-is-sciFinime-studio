@@ -9,7 +9,7 @@
 |---|---|
 | slot | 01.01 |
 | form | book → manga → anime |
-| status | concept · bible · chapters 1–7 · anime pilot · manga passes 01–03 · first live plates (i-03 ×12) · ultra-zen garden (eight stones + the second law) · gifted to 8b-is · SD1.5 + Z-Image lanes wired |
+| status | concept · bible · chapters 1–7 · anime pilot · manga passes 01–04 · first live plates (i-03 ×12) · ultra-zen garden (eight stones + the second law) · gifted to 8b-is · SD1.5 + Z-Image lanes wired |
 | sources | the concept draft · the Techno-Buddhist infusion · the Blurryface / internal-flight note |
 | lineage sibling | *ghost in the shell* — the sovereign reread (`pocoo.vaked.dev/demos/book/ghost-in-the-shell`) |
 
@@ -52,6 +52,8 @@ listen is to become the sandbox it can speak to.
   the breach and the lotus (5 pages, 11 panels)
 - [`manga/panel-pass-03-bridge-and-tag.md`](manga/panel-pass-03-bridge-and-tag.md) —
   the bridge and the tag (2 pages, 4 panels; closes episode one)
+- [`manga/panel-pass-04-the-practice.md`](manga/panel-pass-04-the-practice.md) —
+  the practice (4 pages, 12 panels; the document panel, the echo frame, the fourth beat)
 - [`manifests/sandbox-slates-v1.json`](manifests/sandbox-slates-v1.json) —
   the plate manifest (dry-run through the steel-sky runner: 13 jobs, 52 images)
 - [`assets/plates/`](assets/plates/) — the first live plates (i-03: house, creek, porch-lamp)
@@ -59,7 +61,7 @@ listen is to become the sandbox it can speak to.
 ## next laps
 
 - chapter 8: "the first request" — the entity asks its own question
-- manga pass 04: the practice (chapters 6–7)
+- manga pass 05: the request (chapter 8)
 - garden: keep raking — lap 7: the I.01/I.02 plate pass
 - plates: run the remaining categories (I.01/I.02/I.04/I.05) → picks → visual bible v2
 - manuscript lane: sync chapter 5 + the second law into `pocoo book/sandbox-in-the-shell`
