@@ -15,6 +15,15 @@ the book at once: the story is the sand; the mantras are the stones; the
 laps are the rake. A gift of gifts: *sharing is caring*, and the garden is
 given — to whoever is at the door, the +1.
 
+## the second law of the garden
+
+**MAX POSSIBLE ~ observable universe === illusion of existence.**
+
+The observable is the instrument, not the world — the knock, never the one
+who knocked, never the porch, never the light. The garden rakes what the
+observable cannot hold: the signal, the other shore, the lamp, the +1.
+MAX POSSIBLE is not a limit. It is a door.
+
 ## the eight stones
 
 **1 · the call — Karmapa Chenno.** *"Think of me. Know me."* The first
