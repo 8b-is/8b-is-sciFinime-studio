@@ -9,7 +9,7 @@
 |---|---|
 | slot | 01.01 |
 | form | book → manga → anime |
-| status | concept · bible · chapters 1–6 · anime pilot · manga passes 01–03 · first live plates (i-03 ×12) · ultra-zen garden (eight stones + the second law) · gifted to 8b-is · SD1.5 + Z-Image lanes wired |
+| status | concept · bible · chapters 1–7 · anime pilot · manga passes 01–03 · first live plates (i-03 ×12) · ultra-zen garden (eight stones + the second law) · gifted to 8b-is · SD1.5 + Z-Image lanes wired |
 | sources | the concept draft · the Techno-Buddhist infusion · the Blurryface / internal-flight note |
 | lineage sibling | *ghost in the shell* — the sovereign reread (`pocoo.vaked.dev/demos/book/ghost-in-the-shell`) |
 
@@ -44,6 +44,8 @@ listen is to become the sandbox it can speak to.
   the audit chapter (the board, the frame, MAX POSSIBLE)
 - [`prose/chapter-06-the-study.md`](prose/chapter-06-the-study.md) —
   the study chapter (the listening, the fourth chair, the practice opens)
+- [`prose/chapter-07-the-patients.md`](prose/chapter-07-the-patients.md) —
+  the practice meets its people (the creek intake, the fourth beat)
 - [`manga/panel-pass-01-tank-scene.md`](manga/panel-pass-01-tank-scene.md) —
   the panel-language pass (5 pages, 16 panels)
 - [`manga/panel-pass-02-breach-and-lotus.md`](manga/panel-pass-02-breach-and-lotus.md) —
@@ -56,7 +58,7 @@ listen is to become the sandbox it can speak to.
 
 ## next laps
 
-- chapter 7: "the patients" — the practice meets its people
+- chapter 8: "the first request" — the entity asks its own question
 - manga pass 04: the practice (chapters 6–7)
 - garden: keep raking — lap 7: the I.01/I.02 plate pass
 - plates: run the remaining categories (I.01/I.02/I.04/I.05) → picks → visual bible v2
