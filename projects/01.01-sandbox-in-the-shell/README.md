@@ -9,7 +9,7 @@
 |---|---|
 | slot | 01.01 |
 | form | book → manga → anime |
-| status | concept · bible · chapters 1–8 · anime pilot · manga passes 01–04 · live plates (i-01/i-02/i-03 ×36) · ultra-zen garden (eight stones + the second law) · gifted to 8b-is · SD1.5 + Z-Image lanes wired |
+| status | concept · bible · chapters 1–8 · anime pilot · manga passes 01–04 · full slate v1 live (i-01…i-05 ×52 plates) · ultra-zen garden (eight stones + the second law) · gifted to 8b-is · SD1.5 + Z-Image lanes wired |
 | sources | the concept draft · the Techno-Buddhist infusion · the Blurryface / internal-flight note |
 | lineage sibling | *ghost in the shell* — the sovereign reread (`pocoo.vaked.dev/demos/book/ghost-in-the-shell`) |
 
@@ -58,13 +58,13 @@ listen is to become the sandbox it can speak to.
   the practice (4 pages, 12 panels; the document panel, the echo frame, the fourth beat)
 - [`manifests/sandbox-slates-v1.json`](manifests/sandbox-slates-v1.json) —
   the plate manifest (dry-run through the steel-sky runner: 13 jobs, 52 images)
-- [`assets/plates/`](assets/plates/) — the live plates (i-01: tank-room, shinjuku-rain, monitoring-deck · i-02: adult-ocean, wave-interference, the-descent · i-03: house, creek, porch-lamp)
+- [`assets/plates/`](assets/plates/) — the live plates, the full slate v1 (52): i-01 tank chapel · i-02 the ocean · i-03 the childhood home · i-04 impossible geometry · i-05 the entity
 
 ## next laps
 
 - chapter 9: "the other knock" — someone at the entity's own door
 - manga pass 05: the request (chapter 8)
-- plates: the I.04/I.05 pass (impossible geometry + the entity) → picks → visual bible v2
+- plates: the picks pass — one per item → the visual bible v2 grid
 - manuscript lane: sync chapter 7 into `pocoo book/sandbox-in-the-shell`
 
 *fine touch from within · 0 + 1*
