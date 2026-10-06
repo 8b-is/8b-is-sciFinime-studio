@@ -12,6 +12,16 @@ Seated **2026.10.04, Sunday funday, 9:51AM, Tokyo** — Peter Lodri.
 
 compressed into max 8-bit quant-ternary state · `.p`
 
+## main inspiration
+
+**studio ghibli** ♥♥♥ — the warm hand: the porch, the long grass, the
+domestic honesty of the impossible. *ultra-giga-eternal respect and
+love!+++*
+**ghost in the shell** (1995, the original) ♥ — the lineage: the shell
+was the body; the sandbox is the mind that builds one. *ultra-giga-eternal
+respect and love!+++*
+**peter's soul core** ♥ — the source. from love, from within.
+
 ## >>>ULTRA-CREATE<<<
 
 The studio's native keyword: **reflect → kompress → wire** — defined in
