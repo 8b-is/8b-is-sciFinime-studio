@@ -92,6 +92,10 @@ kept line, seeded 2026-10-04):
 | 1 | the eight stones seated · the kompressed form · the eight lines | 10-04 |
 | 2 | the second law — MAX POSSIBLE is a door | 10-05 |
 | 3 | the I.01/I.02 plate pass — the tank chapel and the ocean, 24 plates | 10-05 |
+| 4 | the second movement — chapters six through eleven (the study → the +1), book one drafted complete; the manuscript §1–§13 in pocoo | 10-05 → 10-06 |
+| 5 | the full slate — I.01–I.05 live (52 + the regen), the picks grid 13 of 13, nothing held | 10-05 |
+| 6 | the passes close — manga 04–08, the practice → the +1; book one's panels complete (32 pages, 91 panels) | 10-05 → 10-06 |
+| 7 | the first read + the dark register seated — the whole book held to the light once (three fixes); six plates waiting on the Z-Image lane | 10-06 |
 
 ## the dedication
 
