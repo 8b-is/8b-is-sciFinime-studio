@@ -76,8 +76,8 @@ listen is to become the sandbox it can speak to.
 
 ## next laps
 
-- book one: the first-read polish pass (chapters 1–11, cover to cover)
-- plates: the dark-register manifest for the Z-Image lane (the joint next row)
+- book one: the first-read polish pass — **done 2026-10-06** (a space, two italic breaks, and Ito's year)
+- plates: the dark-register set — seated in the visual bible; the run waits on a quantized Z-Image build or a memory window (machine safety first)
 - the garden: rakes 4+ into the ledger (this batch's movings)
 - plates: regenerate the held wave-interference; the Z-Image lane pass for the dark register
 - manuscript lane: sync chapters 9+ as they seat
