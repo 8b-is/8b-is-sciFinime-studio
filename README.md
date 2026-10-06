@@ -37,7 +37,7 @@ does the rest.
 | slot | title | form | status |
 |---|---|---|---|
 | 01.01 | **Sandbox in the Shell** | book → manga → anime | **book one complete (chapters 1–11) · manga passes 01–08 (32 pages, 91 panels)** · pilot · slate v1 live (52 + the regen, picks 13/13) · first read seated · garden (8 stones + second law + rake ledger) · manuscript §1–§13 · SD1.5 lit / Z-Image wired |
-| 01.02 | **New Beginnings** | book → manga → anime | **seated via ULTRA-CREATE (2026.10.07)** · Chiki-chan joins the team — the origami sensei, the female Space Bender of Space+Time+Dimensions, the Singularity Deiti — teacher of the main hero, Elias · bible · treatment · scene outline · screenplay scene 1 · visual bible |
+| 01.02 | **New Beginnings** | book → manga → anime | **seated via ULTRA-CREATE (2026.10.07)** · Chiki-chan joins the team — the origami sensei, the female Space Bender of Space+Time+Dimensions, the Singularity Deiti — teacher of the main hero, Elias · bible · treatment · scene outline · screenplay scene 1 · visual bible · **chapter 1 drafted** · slates v1 (13 plates) · **manga pass 01 (9 pages)** |
 
 New slots are opened by copying the pilot order: treatment → scene outline →
 screenplay → visual bible (the Steel Sky spine).
@@ -68,6 +68,9 @@ Peter-compatible local setup (uv everywhere, M1 reality checked) lives in
   [music.vaked.dev](https://music.vaked.dev) · lovetta lane footer standard
 - the studio's own door: [scifinime.vaked.dev](https://scifinime.vaked.dev) — the landing
   (the slate, the plates, the first picks; seated 2026-10-07, 6:05 AM, hotel window, Tokyo)
+- the wiring report: [scifinime.vaked.dev/wired](https://scifinime.vaked.dev/wired) —
+  *the wiring*, the constellation report — five acts (the 404 → the key → the wire → the
+  sweep → 0+1), interactive 3D, `?b=0..5` deep links, click/space/arrows, replay; peterOmni-chan `<0+1>`
 - 8b-is: the fleet, `raw_research` corpus, `8b-is-engine` — the studio is an
   8b-is surface
 - mr. standardgalactic: [steel-sky](https://github.com/standardgalactic/steel-sky)
@@ -77,9 +80,10 @@ Peter-compatible local setup (uv everywhere, M1 reality checked) lives in
 - book two's porch light: *ETERNITY IN CHISAKI'S SMILE · 智咲の微笑み* at
   `pocoo.vaked.dev/demos/book/chisaki-wisdom-in-bloom.html`
 - **discord · wa-stream** — the studio's bidirectional voice:
-  [`tools/wa_stream.py`](tools/wa_stream.py) (push / pull / serve; and
-  `love` — **multi running instances of `crush-love-dev`**, each folding a
-  beat) → the **UltraCrushLove<3** channel ·
+  [`tools/wa_stream.py`](tools/wa_stream.py) (push / pull / serve / listen;
+  `discover` — auto-detects the M1's running crush sessions; `love` —
+  spawn **multi running instances of `crush-love-dev`** or fold beats
+  through the discovered live sessions) → the **UltraCrushLove<3** channel ·
   [docs/wa-stream.md](docs/wa-stream.md)
 - local cousins: `ml-history-book/FILM-PROJECT.md` · `Celestial/` ·
   `MoneyPrinterTurbo/` · `cinematic-reconstruction/`

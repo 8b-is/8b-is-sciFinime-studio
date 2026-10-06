@@ -2,6 +2,7 @@ import importlib.util
 import io
 import json
 import os
+import sqlite3
 import tempfile
 import unittest
 from contextlib import redirect_stdout
@@ -160,8 +161,8 @@ class LoveModeTests(unittest.TestCase):
     def test_cmd_love_pushes_per_instance(self):
         pushed = []
 
-        def fake_push(webhook, text, title=None, wait=True, instance=None):
-            pushed.append(instance)
+        def fake_push(webhook, text, title=None, wait=True, instance=None, **kwargs):
+            pushed.append({"instance": instance, **kwargs})
             return {"id": f"id-{instance}"}
 
         stdout = io.StringIO()
@@ -171,9 +172,273 @@ class LoveModeTests(unittest.TestCase):
              redirect_stdout(stdout):
             code = wa.main(["love", "--instances", "3"])
         self.assertEqual(code, 0)
-        self.assertEqual(pushed, ["love-1", "love-2", "love-3"])
+        self.assertEqual([p["instance"] for p in pushed], ["love-1", "love-2", "love-3"])
+        self.assertEqual(pushed[0]["color"], wa.PALETTE[0])
+        self.assertEqual(pushed[1]["color"], wa.PALETTE[1])
+        self.assertIn("love-1", pushed[0]["footer"])
         payload = json.loads(stdout.getvalue())
         self.assertEqual(payload["instances"][0]["id"], "id-love-1")
+
+    def test_cmd_love_plain_disables_embeds(self):
+        pushed = []
+
+        def fake_push(webhook, text, title=None, wait=True, instance=None, **kwargs):
+            pushed.append(kwargs)
+            return {"id": "x"}
+
+        with patch.object(wa, "run_instance", self.fake_run), \
+             patch.object(wa, "push", fake_push), \
+             patch.object(wa, "webhook_url", lambda cli=None: WEBHOOK), \
+             redirect_stdout(io.StringIO()):
+            code = wa.main(["love", "--instances", "1", "--plain"])
+        self.assertEqual(code, 0)
+        self.assertEqual(pushed, [{}])
+
+
+class ColorAndEmbedTests(unittest.TestCase):
+    def test_parse_color_formats(self):
+        self.assertEqual(wa.parse_color("#FF4D9D"), 0xFF4D9D)
+        self.assertEqual(wa.parse_color("ff4d9d"), 0xFF4D9D)
+        self.assertEqual(wa.parse_color("0xB23A2B"), 0xB23A2B)
+        self.assertEqual(wa.parse_color(0x123456), 0x123456)
+
+    def test_parse_color_rejects_junk(self):
+        with self.assertRaises(SystemExit):
+            wa.parse_color("not-a-color")
+
+    def test_parse_field(self):
+        self.assertEqual(wa.parse_field("Moon=paper"), {"name": "Moon", "value": "paper", "inline": False})
+        with self.assertRaises(SystemExit):
+            wa.parse_field("broken")
+
+    def test_build_embed_structure(self):
+        embed = wa.build_embed("body ✦", title="t", color="#FF4D9D",
+                               fields=["a=b"], footer="f",
+                               image="https://x/i.png", thumbnail="https://x/t.png")
+        self.assertEqual(embed["color"], 0xFF4D9D)
+        self.assertEqual(embed["title"], "t")
+        self.assertEqual(embed["description"], "body ✦")
+        self.assertEqual(embed["fields"][0]["name"], "a")
+        self.assertEqual(embed["footer"]["text"], "f")
+        self.assertEqual(embed["image"]["url"], "https://x/i.png")
+        self.assertEqual(embed["thumbnail"]["url"], "https://x/t.png")
+
+    def test_default_color_is_constellation_pink(self):
+        self.assertEqual(wa.build_embed("x")["color"], 0xFF4D9D)
+
+
+class FeaturePushTests(unittest.TestCase):
+    def setUp(self):
+        self.captured = {}
+
+        def fake_api(url, method="POST", payload=None, **kwargs):
+            self.captured.update(url=url, method=method, payload=payload, **kwargs)
+            return {"id": "99", "embeds": [{}], "attachments": []}
+
+        self.api_patch = patch.object(wa, "api", fake_api)
+        self.api_patch.start()
+        self.addCleanup(self.api_patch.stop)
+        self.journal_patch = patch.object(wa, "journal_path", lambda: Path(tempfile.mkdtemp()) / "j.ndjson")
+        self.journal_patch.start()
+        self.addCleanup(self.journal_patch.stop)
+
+    def test_color_builds_embed_without_content(self):
+        wa.push(WEBHOOK, "hi 💎", color="#C9A227")
+        payload = self.captured["payload"]
+        self.assertNotIn("content", payload)
+        self.assertEqual(payload["embeds"][0]["color"], 0xC9A227)
+        self.assertEqual(payload["embeds"][0]["description"], "hi 💎")
+
+    def test_avatar_name_thread_tts(self):
+        wa.push(WEBHOOK, "x", avatar="https://x/a.png", name="UltraCrushLove<3",
+                thread="new-beginnings", tts=True)
+        payload = self.captured["payload"]
+        self.assertEqual(payload["avatar_url"], "https://x/a.png")
+        self.assertEqual(payload["username"], "UltraCrushLove<3")
+        self.assertEqual(payload["thread_name"], "new-beginnings")
+        self.assertTrue(payload["tts"])
+
+    def test_footer_alone_implies_embed(self):
+        wa.push(WEBHOOK, "x", footer="love-1 · wa-stream")
+        self.assertEqual(self.captured["payload"]["embeds"][0]["footer"]["text"],
+                         "love-1 · wa-stream")
+
+    def test_multipart_for_attachments(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            f = Path(tmp) / "crane.svg"
+            f.write_text("<svg>♥</svg>")
+            wa.push(WEBHOOK, "with a file", files=[str(f)])
+        body = self.captured["body"]
+        self.assertIn(b"payload_json", body)
+        self.assertIn(b'filename="crane.svg"', body)
+        self.assertIn("<svg>♥</svg>".encode("utf-8"), body)
+        self.assertTrue(self.captured["content_type"].startswith("multipart/form-data; boundary="))
+
+
+class DiscoveryTests(unittest.TestCase):
+    def setUp(self):
+        self.temp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.temp.cleanup)
+        self.db = Path(self.temp.name) / "crush.db"
+        con = sqlite3.connect(self.db)
+        con.execute("""create table sessions (
+            id text primary key, title text not null, message_count integer default 0,
+            updated_at integer, created_at integer, summary_message_id text,
+            todos text, channel text)""")
+        con.execute("insert into sessions values ('aaaa111122223333','the fold', 3, 1791320335, 1791310000, null, null, null)")
+        con.execute("insert into sessions values ('bbbb444455556666','', 1, 1791320335000, 1791310000000, null, null, null)")
+        con.commit()
+        con.close()
+
+    def test_ts_handles_seconds_and_milliseconds(self):
+        self.assertEqual(wa._ts_to_epoch(1791320335), 1791320335.0)
+        self.assertEqual(wa._ts_to_epoch(1791320335000), 1791320335.0)
+
+    def test_load_sessions_reads_title_and_untitled(self):
+        sessions = wa.load_sessions(self.db)
+        self.assertEqual(len(sessions), 2)
+        titles = {s["short"]: s["title"] for s in sessions}
+        self.assertEqual(titles["aaaa1111"], "the fold")
+        self.assertEqual(titles["bbbb4444"], "untitled")
+
+    def test_discover_marks_live_databases(self):
+        fake_pids = patch.object(wa, "crush_pids", lambda: ["1", "2", "3"])
+        fake_live = patch.object(wa, "live_databases", lambda: {str(self.db.resolve())})
+        fake_dbs = patch.object(wa, "candidate_databases", lambda: [self.db])
+        with fake_pids, fake_live, fake_dbs:
+            found = wa.discover()
+        self.assertEqual(found["crush_processes"], 3)
+        self.assertTrue(all(s["live"] for s in found["sessions"]))
+        self.assertEqual(len(found["sessions"]), 2)
+
+    def test_discover_hides_dormant_by_default(self):
+        fake_pids = patch.object(wa, "crush_pids", lambda: [])
+        fake_live = patch.object(wa, "live_databases", lambda: set())
+        fake_dbs = patch.object(wa, "candidate_databases", lambda: [self.db])
+        with fake_pids, fake_live, fake_dbs:
+            self.assertEqual(wa.discover()["sessions"], [])
+            self.assertEqual(len(wa.discover(include_dormant=True)["sessions"]), 2)
+
+
+class SessionBeatTests(unittest.TestCase):
+    def test_session_beat_cmd_shape(self):
+        captured = {}
+
+        class Done:
+            returncode = 0
+            stdout = "♥ crush-love-dev — ultralovegod, deep in love, dev mode.\nfolding a beat\n"
+            stderr = ""
+
+        def fake_run(cmd, **kwargs):
+            captured["cmd"] = cmd
+            captured["env"] = kwargs.get("env", {})
+            return Done()
+
+        with patch.object(wa.subprocess, "run", fake_run):
+            result = wa.run_session_beat("sess-aaaa1111", "aaaa111122223333",
+                                         "/tmp/dd", "topic", [], 5.0, "crush-love-dev")
+        self.assertTrue(result["ok"])
+        self.assertEqual(result["text"], "folding a beat")
+        self.assertIn("--session", captured["cmd"])
+        self.assertIn("aaaa111122223333", captured["cmd"])
+        self.assertEqual(captured["env"]["WA_STREAM_INSTANCE"], "sess-aaaa1111")
+
+
+class LoveDiscoverTests(unittest.TestCase):
+    def setUp(self):
+        self.journal_patch = patch.dict(os.environ, {"WA_STREAM_JOURNAL": "/tmp/wa-none.jsonl"})
+        self.journal_patch.start()
+        self.addCleanup(self.journal_patch.stop)
+
+    def test_love_discover_uses_live_sessions(self):
+        fake_found = {"crush_processes": 3, "live_databases": ["/w/.crush/crush.db"],
+                      "sessions": [{"id": "aaaa111122223333", "short": "aaaa1111",
+                                    "title": "the fold", "messages": 3, "updated": 0,
+                                    "created": 0, "age_s": 4, "db": "/w/.crush/crush.db",
+                                    "live": True}]}
+        beats = []
+
+        def fake_beat(name, session_id, data_dir, topic, history, timeout, launcher, model=None):
+            beats.append({"name": name, "session": session_id, "data_dir": data_dir})
+            return {"instance": name, "ok": True, "text": f"beat via {name}"}
+
+        stdout = io.StringIO()
+        with patch.object(wa, "discover", lambda **kw: fake_found), \
+             patch.object(wa, "run_session_beat", fake_beat), \
+             redirect_stdout(stdout):
+            code = wa.main(["love", "--discover", "--dry-run"])
+        self.assertEqual(code, 0)
+        self.assertEqual(beats[0]["name"], "sess-aaaa1111")
+        self.assertEqual(beats[0]["session"], "aaaa111122223333")
+        payload = json.loads(stdout.getvalue())
+        self.assertEqual(payload["instances"][0]["via"], "session")
+
+    def test_love_session_flag_targets_explicit_session(self):
+        fake_found = {"crush_processes": 0, "live_databases": [],
+                      "sessions": [{"id": "aaaa111122223333", "short": "aaaa1111",
+                                    "title": "t", "messages": 1, "updated": 0,
+                                    "created": 0, "age_s": 1, "db": "/w/.crush/crush.db",
+                                    "live": False}]}
+        with patch.object(wa, "discover", lambda **kw: fake_found):
+            specs = wa.love_specs(type("A", (), {"session": ["aaaa"], "discover": False,
+                                                 "instances": 3, "include_dormant": False,
+                                                 "exclude": None, "discover_limit": 6})())
+        self.assertEqual(specs[0]["name"], "sess-aaaa1111")
+
+
+class ListenTests(unittest.TestCase):
+    def setUp(self):
+        self.temp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.temp.cleanup)
+        cursor = Path(self.temp.name) / "cursor.json"
+        journal = Path(self.temp.name) / "journal.ndjson"
+        self.env_patch = patch.dict(os.environ, {
+            "WA_STREAM_JOURNAL": str(journal),
+            "WA_STREAM_CURSOR": str(cursor),
+            "WA_STREAM_BOT_TOKEN": "test-token",
+            "WA_STREAM_CHANNEL_ID": "999",
+        })
+        self.env_patch.start()
+        self.addCleanup(self.env_patch.stop)
+        self.journal = journal
+        self.cursor = cursor
+
+    def test_listen_once_journals_and_advances_cursor(self):
+        def fake_api(url, method="POST", payload=None, **kwargs):
+            self.assertIn("channels/999/messages", url)
+            self.assertEqual(kwargs["headers"]["Authorization"], "Bot test-token")
+            return [
+                {"id": "200", "content": "second 💎", "author": {"username": "peter"}},
+                {"id": "100", "content": "first", "author": {"username": "peter"},
+                 "webhook_id": None},
+            ]
+
+        with patch.object(wa, "api", fake_api):
+            code = wa.main(["listen", "--once"])
+        self.assertEqual(code, 0)
+        events = [json.loads(ln) for ln in self.journal.read_text(encoding="utf-8").splitlines()]
+        self.assertEqual([e["content"] for e in events], ["first", "second 💎"])
+        self.assertTrue(all(e["dir"] == "in" for e in events))
+        self.assertEqual(json.loads(self.cursor.read_text())["cursor"], "200")
+
+    def test_listen_skips_already_seen(self):
+        self.cursor.write_text(json.dumps({"cursor": "100"}))
+
+        def fake_api(url, method="POST", payload=None, **kwargs):
+            return [{"id": "100", "content": "old", "author": {"username": "p"}},
+                    {"id": "150", "content": "new", "author": {"username": "p"}}]
+
+        with patch.object(wa, "api", fake_api):
+            wa.main(["listen", "--once"])
+        events = [json.loads(ln) for ln in self.journal.read_text(encoding="utf-8").splitlines()]
+        self.assertEqual([e["content"] for e in events], ["new"])
+
+
+    def test_message_text_prefers_content_then_embed(self):
+        self.assertEqual(wa._message_text({"content": "hi"}), "hi")
+        embed_only = {"content": "", "embeds": [{"description": "body 💎"}]}
+        self.assertEqual(wa._message_text(embed_only), "body 💎")
+        self.assertEqual(wa._message_text({"content": "", "embeds": []}), "(embed)")
 
 
 if __name__ == "__main__":

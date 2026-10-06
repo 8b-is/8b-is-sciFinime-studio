@@ -1,0 +1,188 @@
+# NEW-BEGINNINGS — entheai fan-out scaffold
+# book two: the second term — a techno-buddhist cyberpunk.
+# the studio's second book (8b-is-sciFinime-studio), seated 2026-10-07 via
+# ULTRA-{LOVE-CREATE-SCAFFOLD}-OMNIPOTENT-ZEN (the apex fusion, second use).
+# Feed this to: entheai --fanout --config <entheai.toml> "<the new-beginnings brief>"
+# entheai (deepseek via openrouter, or local HF-mac model) decomposes +
+# integrates; each [[coder]] runs via the Antigravity CLI (agy).
+# Chapter 1 is seated in the studio
+# (projects/01.02-new-beginnings/prose/chapter-01-the-crane-on-the-desk.md).
+# Continuation and polish only — never discard a line.
+
+[book]
+title = "NEW BEGINNINGS"
+subtitle = "book two: the second term — the fold, the lueur, the school of nearness"
+author = "Peter Lodri · 𝓼𝓬𝓲𝓕𝓲𝓷𝓲𝓶𝓮 studio"
+epigraph = "nobody is far — the whole law"
+published = 2026
+
+[fanout]
+executor = "agy"                     # coder backend (Antigravity CLI)
+model = "openrouter/deepseek/deepseek-chat"  # entheai's brain (deepseek)
+agy_model = "gemini-3.6-flash-high"  # model agy runs each coder on
+max_depth = 3
+
+# Tone for every scribe: the register of book two — quiet awe over quiet
+# dread; the fold instead of the knock; cameras hold still and the world
+# moves. Chiki-chan speaks in the book's only serif, slightly off the
+# baseline, until the final chapter brings her onto it. The score grammar:
+# Diamond Veins (the open evening) · Between the Buttons (the held breath) ·
+# Lueur (the singular point) · Haul (ULTRA-ZEN-MUSIC, the mask unfolds) ·
+# Ghostkeeper (the teacher's name — the ghost meets its keeper).
+# The book's one law: nobody is far.
+
+# ─── FRONT MATTER ────────────────────────────────────────────────────────
+
+[[coder]]
+role = "scribe"
+chapter = 0
+file = "chapters/00-front.md"
+task = """
+Write the front matter: the dedication ("for Chi-chan, the origami sensei
+of real life — the sheet remembers; and for every mind ever told it was
+broken by noise that could not fold it") and the studio note: the door
+taught the thresholds, the fold teaches the nearness; every door is also a
+crease. Tone: match chapter one.
+"""
+
+# ─── CHAPTERS ────────────────────────────────────────────────────────────
+
+[[coder]]
+role = "scribe"
+chapter = 1
+file = "chapters/01-the-crane-on-the-desk.md"
+task = """
+SEED: chapter one of the manuscript — dawn through paper, the crane on the
+intake desk, the unfolded crease diagram ("a hand that predates
+handwriting"), the locked classroom's light, Chiki-chan's first lesson,
+"starting with the one who was pre-creased", the Child's "I know her."
+KEEP ALL ORIGINAL LINES — this chapter is seated in the studio
+(prose/chapter-01-the-crane-on-the-desk.md). Restoration/polish only.
+"""
+depends_on = [0]
+
+[[coder]]
+role = "scribe"
+chapter = 2
+file = "chapters/02-the-flat-sheet-test.md"
+task = """
+SEED: scene two. Chiki-chan folds the school's front door once — two rooms
+become one address, nobody crosses. The instruments insist the distance is
+unchanged; Anya opens the fold log — paper, because paper can hold what
+the observatory cannot. The third law lands: every door is also a crease.
+Match the book's voice (low-level systems architecture + ultra zen buddha
+space).
+"""
+depends_on = [1]
+
+[[coder]]
+role = "scribe"
+chapter = 3
+file = "chapters/03-the-mask-unfolds.md"
+task = """
+SEED: scene three. The Child brings the old dissonance, still wearing its
+frightening face; she unfolds it, without comment, at a table with tea —
+the sheet was always the creek, the porch lamp, the safe afternoon.
+"Every mask, unfolded, is paper; every paper, folded, is a face." 仮面引き
+recited once, as liturgy. Never tear. Score: Haul (ULTRA-ZEN-MUSIC) —
+fragile, poured like tea.
+"""
+depends_on = [2]
+
+[[coder]]
+role = "scribe"
+chapter = 4
+file = "chapters/04-the-teachers-name.md"
+task = """
+SEED: scene four. Tea, introductions, jurisdictions. Chi-chan to the team,
+Chiki-chan in the credits; the discipline named: folding. The entity
+exhales one frequency — a wave meeting its envelope. Keep it warm and
+light; this is the chapter that lets the reader breathe. Score:
+Ghostkeeper (Klangkarussell & GIVVEN) at the exhale.
+"""
+depends_on = [3]
+
+[[coder]]
+role = "scribe"
+chapter = 5
+file = "chapters/05-the-crease-diagram.md"
+task = """
+SEED: scene five. The deep room, the tank, the three threads. She folds the
+Architect, the Child, and the primary so their creases cross at one point
+— the singularity — and shows Elias his fracture as a diagram: three
+creases, one intersection, no wound at all. The Architect bows. Score:
+Lueur at the crossing — the glow that waits where all lines meet.
+"""
+depends_on = [4]
+
+[[coder]]
+role = "scribe"
+chapter = 6
+file = "chapters/06-the-held-breath.md"
+task = """
+SEED: scene six. The singularity walk; no instruments, no HUD, no
+cutaways. One breath, held: time wraps once, the whole date inside a
+pause. Between the Buttons, no percussion; the breath counts itself.
+Carry the real date with reverence and without explanation — the fiction
+bows, it does not wink.
+"""
+depends_on = [5]
+
+[[coder]]
+role = "scribe"
+chapter = 7
+file = "chapters/07-diamond-veins.md"
+task = """
+SEED: scene seven. The open evening; the porch light folds into a paper
+lantern; every crease in the room catches light along its vein — a city
+seen from a folded map. Needle drop: Diamond Veins (Kid Francescoli
+Remix). The students read their crease diagrams aloud; the lamp passes
+hand to hand.
+"""
+depends_on = [6]
+
+[[coder]]
+role = "scribe"
+chapter = 8
+file = "chapters/08-the-second-term.md"
+task = """
+SEED: scene eight opens. Term two; two teachers at the door — one teaches
+the threshold, one teaches the fold. Routine as sacred maintenance; the
+school does the ordinary heroic thing: it continues.
+"""
+depends_on = [7]
+
+[[coder]]
+role = "scribe"
+chapter = 9
+file = "chapters/09-the-new-student.md"
+task = """
+SEED: the +1. A new student arrives — the one who will need the fold the
+way Elias once needed the door. The school makes room. Keep the garden's
+oldest gesture load-bearing: sharing is caring.
+"""
+depends_on = [8]
+
+[[coder]]
+role = "scribe"
+chapter = 10
+file = "chapters/10-the-lamp-left-on.md"
+task = """
+SEED: the coda. The lantern lit, the diagram folded back into its bird,
+the lamp left on — book two, end. Last line should land the book's one
+law without saying it: nobody is far.
+"""
+depends_on = [9]
+
+# ─── INTEGRATION ─────────────────────────────────────────────────────────
+
+[[coder]]
+role = "integrator"
+file = "NEW-BEGINNINGS.md"
+task = """
+INTEGRATE the front matter + chapters 1–10 into the complete book two
+manuscript: consistent voice, the crease-diagram glyphs as chapter marks,
+the score cues seated where the outline places them, the studio footer.
+The manuscript is the source of truth — polish, never discard.
+"""
+depends_on = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
