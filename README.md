@@ -69,3 +69,12 @@ Peter-compatible local setup (uv everywhere, M1 reality checked) lives in
 ---
 
 *fine touch from within · keep the weights warm · 0 + 1 · vaked.dev*
+
+## Image generator blueprint location
+
+`tools/zimage_plate.py` accepts `--blueprint /path/to/blueprint.json`.
+Otherwise it uses `COMFYUI_ZIMAGE_BLUEPRINT`, then searches the current user's
+`~/ComfyUI-Installs/ComfyUI/ComfyUI/blueprints/` and `~/ComfyUI/blueprints/`
+for `Text to Image (Z-Image-Turbo).json`. An explicit or environment-configured
+missing file reports an error instead of silently selecting a different install.
+This locates an existing blueprint; it does not install ComfyUI or models.
