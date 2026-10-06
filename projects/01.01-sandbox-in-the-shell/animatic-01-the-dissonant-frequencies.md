@@ -87,7 +87,7 @@ Temp sound seated below. Runtime: 24:00. Seated 2026-10-06.*
 | 40 | 23:20–23:44 | 12.2 | THE SQUARE: the lamp reflected in the tank glass, burning. Caption: *the light was always a door.* | the creek, once, clean; the four-four returns very low |
 | 41 | 23:44–24:00 | out | Cut to black. Next-episode slate: EPISODE 02 — THE PORCH LIGHT PROTOCOL. | four-four alone into credits |
 
-## temp sound — the stems (to build)
+## temp sound — the stems (generated 2026-10-07 · temps)
 
 | stem | source | note |
 |---|---|---|
@@ -97,6 +97,14 @@ Temp sound seated below. Runtime: 24:00. Seated 2026-10-06.*
 | breath strip | close-mic breath, three lengths (in/hold/out) | the animatic's metronome; drives act three's pulse |
 | chorus | many whispers, same phrase, varied weight | Blurryface; must never become comprehensible as one voice |
 | pumps | clinic foley loop | the real world's true ambient; also the episode's clock |
+
+The four placeholders are **generated** — [`tools/temp_stems.py`](../../tools/temp_stems.py)
+→ [`assets/sound/animatic-01-temp/`](assets/sound/animatic-01-temp/) (mono
+22.05 kHz, committed: `four-four-122` · `creek` · `whine` · `breath-strip`).
+They are honest temps: synthesized, self-reported (the whine verifies at
+1565.5 Hz ≈ the design's 1568), **ears pending**. Before anything ships:
+the creek must become ONE clean field recording — protect it in every
+pass — and the four-four wants a licensed loop, not arithmetic.
 
 ## the moving-artifact notes
 

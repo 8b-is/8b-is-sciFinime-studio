@@ -77,7 +77,7 @@ listen is to become the sandbox it can speak to.
 
 ## next laps
 
-- the animatic: the temp-sound stems (the first audio assets, per animatic 01)
+- the animatic: listen to the temp stems (ears verify last — `assets/sound/animatic-01-temp/`) → the recorded creek · the real four-four
 - plates: the dark-register set — seated; the run waits on a quantized Z-Image build or a memory window (machine safety first)
 - book two: the slate's next breath — unnamed yet; it will be named
 - the garden: keep raking
