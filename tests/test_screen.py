@@ -90,7 +90,7 @@ class ConcatTests(unittest.TestCase):
         self.addCleanup(self.temp.cleanup)
         self.root = Path(self.temp.name)
 
-    def test_concat_has_durations_and_trailing_repeat(self):
+    def test_concat_has_durations(self):
         a = self.root / "a.jpg"
         b = self.root / "b.jpg"
         boards = [{"plate": a, "hold": 1.5}, {"plate": b, "hold": 2.25}]
@@ -100,8 +100,8 @@ class ConcatTests(unittest.TestCase):
         self.assertIn(f"file '{a}'", text)
         self.assertIn("duration 1.500", text)
         self.assertIn("duration 2.250", text)
-        # trailing entry flushes the final hold; no duration on it
-        self.assertEqual(text.strip().splitlines()[-1], f"file '{b}'")
+        # no trailing repeat: the final duration is the last line
+        self.assertEqual(text.strip().splitlines()[-1], "duration 2.250")
 
     def test_quote_escapes_single_quote(self):
         self.assertEqual(screen._ffconcat_quote(Path("/a'b.jpg")), "'/a'\\''b.jpg'")
@@ -135,6 +135,62 @@ class CommandTests(unittest.TestCase):
     def test_no_audio_flag_when_silent(self):
         cmd = screen.build_command("/bin/mpv", self.concat, [])
         self.assertIn("--no-audio", cmd)
+
+
+class ExportTests(unittest.TestCase):
+    def setUp(self):
+        self.temp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.temp.cleanup)
+        self.root = Path(self.temp.name)
+        self.audio = self.root / "bed.wav"
+        self.audio.write_bytes(b"RIFF")
+        self.out = self.root / "out.mp4"
+        self.boards = [
+            {"plate": self.root / "a.jpg", "hold": 3.0},
+            {"plate": self.root / "b.jpg", "hold": 5.0},
+        ]
+
+    def test_export_holds_are_loop_inputs(self):
+        cmd = screen.build_export_command(
+            "/bin/ffmpeg", self.boards, [], self.out, fps=30, size="1280x720"
+        )
+        # each board is a still held with -loop 1 -t <hold>
+        self.assertIn("-loop", cmd)
+        self.assertIn("3.000", cmd)
+        self.assertIn("5.000", cmd)
+        self.assertIn("concat=n=2:v=1:a=0", " ".join(cmd))
+        self.assertEqual(cmd[-1], str(self.out))
+
+    def test_export_loops_bed_and_maps_streams(self):
+        cmd = screen.build_export_command(
+            "/bin/ffmpeg", self.boards, [self.audio], self.out, fps=30, size="1280x720"
+        )
+        i = cmd.index(str(self.audio))
+        self.assertEqual(cmd[i - 3 : i - 1], ["-stream_loop", "-1"])
+        # video from input 0..N-1, audio from input N (N=2 boards)
+        self.assertIn("-map", cmd)
+        self.assertIn("2:a", cmd)
+        self.assertIn("-shortest", cmd)
+
+    def test_export_without_audio_has_no_shortest(self):
+        cmd = screen.build_export_command(
+            "/bin/ffmpeg", self.boards, [], self.out, fps=24, size="640x360"
+        )
+        self.assertNotIn("-shortest", cmd)
+        self.assertIn("fps=24", " ".join(cmd))
+
+    def test_export_duration_cap(self):
+        cmd = screen.build_export_command(
+            "/bin/ffmpeg", self.boards, [], self.out, fps=30, size="640x360", duration=12.5
+        )
+        i = cmd.index("12.500")
+        self.assertEqual(cmd[i - 1], "-t")
+
+    def test_find_ffmpeg_env(self):
+        fake = self.root / "ffmpeg"
+        fake.write_text("#!/bin/sh\n")
+        with patch.dict(os.environ, {"FFMPEG": str(fake)}, clear=True):
+            self.assertEqual(screen.find_ffmpeg(), str(fake))
 
 
 class DirTests(unittest.TestCase):

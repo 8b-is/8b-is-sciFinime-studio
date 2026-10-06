@@ -126,7 +126,8 @@ uv run tools/screen.py projects/01.01-sandbox-in-the-shell/screen/animatic-01-fu
 ```
 
 The full-episode holds sum to exactly 1440.0s — the board's `in–out` column
-is the boss. See [`../../docs/screening.md`](../../docs/screening.md).
+is the boss. `--export animatic-01.mp4` encodes it to a watchable file (exact
+holds, the temp bed looped under). See [`../../docs/screening.md`](../../docs/screening.md).
 
 ## the moving-artifact notes
 

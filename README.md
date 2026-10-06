@@ -61,8 +61,9 @@ The animatic breathes through two organs, both driven from the CLI:
 - **the screen** — [`tools/screen.py`](tools/screen.py) seats the timed boards
   through **[mpv](https://github.com/mpv-player/mpv)** — one plate held for one
   timecode, over the sound bed. `uv run tools/screen.py` (or `--dry-run`,
-  `--render DIR` headless). The screen is a separate process: mpv is GPL, the
-  studio is MIT, so we call it, never link it —
+  `--render DIR` headless). `--export animatic.mp4` encodes the screening via
+  ffmpeg (exact holds) — the animatic as a file. The screen is a separate
+  process: mpv is GPL, the studio is MIT, so we call it, never link it —
   [docs/screening.md](docs/screening.md).
 
 The screenings are live: `screen/animatic-01-cold-open.json` (the cold open,

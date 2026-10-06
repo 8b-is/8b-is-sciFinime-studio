@@ -22,6 +22,9 @@ Run from the studio root:
   # headless proof: render the boards to PNGs (works with no display)
   uv run tools/screen.py --render /tmp/screen-out --frames 8
 
+  # encode the screening to a watchable file (ffmpeg; exact holds)
+  uv run tools/screen.py --export animatic-01.mp4
+
   # any directory of plates, fixed hold
   uv run tools/screen.py --dir path/to/plates --hold 4
 
@@ -156,9 +159,6 @@ def write_concat(boards: list[dict], path: Path) -> Path:
     for b in boards:
         lines.append(f"file {_ffconcat_quote(b['plate'])}")
         lines.append(f"duration {b['hold']:.3f}")
-    # the concat demuxer needs the last file repeated with no duration to
-    # flush the final frame's hold.
-    lines.append(f"file {_ffconcat_quote(boards[-1]['plate'])}")
     path.write_text("\n".join(lines) + "\n")
     return path
 
@@ -202,6 +202,56 @@ def build_command(
     return cmd
 
 
+def find_ffmpeg(explicit: str | None = None) -> str | None:
+    for cand in (explicit, os.environ.get("FFMPEG")):
+        if cand and Path(cand).exists():
+            return cand
+    found = shutil.which("ffmpeg")
+    if found:
+        return found
+    for cand in ("/opt/homebrew/bin/ffmpeg", "/usr/local/bin/ffmpeg", "/usr/bin/ffmpeg"):
+        if Path(cand).exists():
+            return cand
+    return None
+
+
+def build_export_command(
+    ffmpeg: str,
+    boards: list[dict],
+    audio: list[Path],
+    out: Path,
+    *,
+    fps: int,
+    size: str,
+    duration: float | None = None,
+) -> list[str]:
+    # each board is a still held for its timecode: -loop 1 -t <hold>. Concats
+    # the stills in the filter graph (the concat *demuxer* mis-handles still
+    # durations in ffmpeg 9), so the holds are exact.
+    w, h = size.lower().split("x")
+    cmd = [ffmpeg, "-y", "-hide_banner", "-loglevel", "error"]
+    for b in boards:
+        cmd += ["-loop", "1", "-t", f"{b['hold']:.3f}", "-i", str(b["plate"])]
+    n = len(boards)
+    for a in audio:
+        cmd += ["-stream_loop", "-1", "-i", str(a)]
+    norm = []
+    for i in range(n):
+        norm.append(
+            f"[{i}:v]scale={w}:{h}:force_original_aspect_ratio=decrease,"
+            f"pad={w}:{h}:(ow-iw)/2:(oh-ih)/2:color=black,setsar=1,fps={fps}[v{i}]"
+        )
+    graph = ";".join(norm) + ";" + "".join(f"[v{i}]" for i in range(n)) + f"concat=n={n}:v=1:a=0[v]"
+    cmd += ["-filter_complex", graph, "-map", "[v]"]
+    if audio:
+        cmd += ["-map", f"{n}:a", "-c:a", "aac", "-b:a", "192k", "-shortest"]
+    if duration is not None:
+        cmd += ["-t", f"{duration:.3f}"]
+    cmd += ["-c:v", "libx264", "-preset", "medium", "-crf", "20", "-movflags", "+faststart"]
+    cmd += [str(out)]
+    return cmd
+
+
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description="the screen — play the boards via mpv")
     ap.add_argument("manifest", nargs="?", type=Path, default=None,
@@ -216,6 +266,11 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--render", type=Path, default=None, help="headless: render boards to PNGs in this dir")
     ap.add_argument("--frames", type=int, default=None, help="cap frames (useful with --render)")
     ap.add_argument("--fullscreen", action="store_true", help="fullscreen playback")
+    ap.add_argument("--export", type=Path, default=None,
+                    help="encode the screening to a video file via ffmpeg")
+    ap.add_argument("--fps", type=int, default=30, help="export frame rate (default 30)")
+    ap.add_argument("--size", default="1280x720", help="export canvas WxH, letterboxed (default 1280x720)")
+    ap.add_argument("--duration", type=float, default=None, help="export cap in seconds (preview a long board list)")
     args = ap.parse_args(argv)
 
     # 1. the source of boards
@@ -237,14 +292,24 @@ def main(argv: list[str] | None = None) -> int:
 
     total = sum(b["hold"] for b in boards)
 
-    # 2. the player
-    mpv = find_mpv(args.mpv)
-    if not mpv:
-        print("mpv not found. Install one of:\n"
-              "  macOS: brew install mpv   (or drop mpv.app in /Applications)\n"
-              "  Linux: apt/dnf/pacman install mpv", file=sys.stderr)
-        return 127
-    version = probe_mpv(mpv)
+    # 2. the engine — mpv to play/render, ffmpeg to export
+    mpv = None
+    version = None
+    ffmpeg = None
+    if args.export:
+        ffmpeg = find_ffmpeg()
+        if not ffmpeg:
+            print("ffmpeg not found (needed for --export). "
+                  "macOS: brew install ffmpeg · Linux: apt/dnf/pacman install ffmpeg", file=sys.stderr)
+            return 127
+    else:
+        mpv = find_mpv(args.mpv)
+        if not mpv:
+            print("mpv not found. Install one of:\n"
+                  "  macOS: brew install mpv   (or drop mpv.app in /Applications)\n"
+                  "  Linux: apt/dnf/pacman install mpv", file=sys.stderr)
+            return 127
+        version = probe_mpv(mpv)
 
     # 3. the board list (ffmpeg concat = per-plate timecodes)
     if args.edl:
@@ -258,8 +323,12 @@ def main(argv: list[str] | None = None) -> int:
 
     # 4. the plan
     print(f"screen: {title}")
-    print(f"player: {version}")
-    print(f"        {mpv}")
+    if args.export:
+        print(f"export: {ffmpeg}")
+        print(f"        {args.size} @ {args.fps}fps → {args.export}")
+    else:
+        print(f"player: {version}")
+        print(f"        {mpv}")
     print(f"boards: {len(boards)} · runtime {total:.1f}s ({total / 60:.2f} min)")
     if audio:
         for a in audio:
@@ -277,6 +346,28 @@ def main(argv: list[str] | None = None) -> int:
         return 0
 
     # 5. seat it
+    if args.export:
+        args.export.parent.mkdir(parents=True, exist_ok=True)
+        cmd = build_export_command(
+            ffmpeg, boards, audio, args.export,
+            fps=args.fps, size=args.size, duration=args.duration,
+        )
+        print()
+        try:
+            subprocess.run(cmd, check=True)
+        except FileNotFoundError:
+            print(f"failed to launch {ffmpeg}", file=sys.stderr)
+            return 127
+        except subprocess.CalledProcessError as exc:
+            print(f"ffmpeg exited {exc.returncode}", file=sys.stderr)
+            return exc.returncode
+        finally:
+            if tmp:
+                tmp.unlink(missing_ok=True)
+        size_bytes = args.export.stat().st_size
+        print(f"\nexported {args.export} ({size_bytes / 1e6:.2f} MB)")
+        return 0
+
     if args.render:
         args.render.mkdir(parents=True, exist_ok=True)
         cmd = build_command(mpv, concat, audio, render_dir=args.render, frames=args.frames)

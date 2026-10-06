@@ -56,6 +56,25 @@ standard macOS bundle `/Applications/mpv.app/Contents/MacOS/mpv`, Homebrew
 This machine (verified 2026-10-07): `/Applications/mpv.app/Contents/MacOS/mpv`
 · `mpv v0.41.0-dev-geb0ee1031` · FFmpeg `9.0.2`.
 
+## the export — the animatic as a file
+
+Playing is for the eye in the room; **exporting** is for everyone else.
+`--export PATH` encodes the screening to an H.264 MP4 with ffmpeg — the
+animatic becomes a distributable file, the artifact the short-animation stage
+(and any screening) stands on.
+
+- **exact holds** — each board is a still held with `-loop 1 -t <hold>`,
+  concat'd in the filter graph. The concat *demuxer* mis-handles still
+  durations in ffmpeg 9 (a lone image with `duration 5` encodes to a single
+  frame), so the filter-graph path is used instead: exact to the frame.
+- **the bed loops** — the temp stems are shorter than the episode, so the
+  audio input is `-stream_loop -1`'d and `-shortest` cuts to the picture.
+- **`--fps`** (default 30), **`--size`** (default `1280x720`, letterboxed so
+  any plate aspect fits), **`--duration`** (seconds cap, to preview a long
+  board list).
+- needs **ffmpeg** (`brew install ffmpeg`), not mpv — found via `$FFMPEG`,
+  `PATH`, then Homebrew/`/usr/bin`.
+
 ## the grammar
 
 A screening is a JSON manifest under the project's `screen/` directory. Paths
@@ -95,6 +114,12 @@ uv run tools/screen.py
 
 # headless proof — render the boards to PNGs, no display needed
 uv run tools/screen.py --render /tmp/screen-out --frames 8
+
+# encode the screening to a watchable file (ffmpeg)
+uv run tools/screen.py --export animatic-01.mp4
+
+# a preview cap on a long board list
+uv run tools/screen.py --export preview.mp4 --duration 30
 
 # any directory of plates, a fixed hold, no manifest
 uv run tools/screen.py --dir path/to/plates --hold 4
@@ -142,6 +167,11 @@ boards: 41 · runtime 1440.0s (24.00 min)
 wrote 42 frames in ~4.4s, headless. Two screenings are seated: the cold open
 (`animatic-01-cold-open.json`, 8 boards, 3:00) and the whole episode
 (`animatic-01-full.json`, 41 boards, 24:00).
+
+`--export` encodes to MP4 with exact holds: the cold open came out at
+**180.000s** (matching its `--dry-run` runtime), and the 41-board episode
+export wrote correctly at 1280×720. `tests/test_screen.py` now covers the
+export command graph too.
 
 The ears still verify last: **a branch may be ranked; only a verified branch
 may be bound.**

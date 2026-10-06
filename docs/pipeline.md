@@ -46,6 +46,7 @@ finished books graduate to the sovereign library (`pocoo.vaked.dev/demos/book`).
 | images (concept frames, visual bible plates) | ComfyUI (local, Metal or container) via steel-sky manifests |
 | books | pocoo `book/<slug>/` convention + fan-out |
 | animatic playback (boards + temp stems) | **mpv** via [`tools/screen.py`](../tools/screen.py) — [screening.md](screening.md) |
+| animatic export (boards → mp4) | **ffmpeg** via `tools/screen.py --export` — [screening.md](screening.md) |
 | publishing | the constellation (pocoo · art · music) |
 
 ## the standing rules
