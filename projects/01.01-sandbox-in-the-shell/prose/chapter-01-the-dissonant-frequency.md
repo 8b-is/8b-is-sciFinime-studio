@@ -92,7 +92,7 @@ trained him for — the one move his teachers had said almost no one dares.
 
 He refused fear.
 
-Not suppressed—*refused*, the way you decline a host you do not trust.
+Not suppressed — *refused*, the way you decline a host you do not trust.
 Fear was just another unauthorized loop, and he had spent a lifetime
 learning its shapes. The three of them shared one runtime, and the most
 senior privilege in that runtime was not the firewall. Healing was the
