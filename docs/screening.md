@@ -169,9 +169,9 @@ wrote 42 frames in ~4.4s, headless. Two screenings are seated: the cold open
 (`animatic-01-full.json`, 41 boards, 24:00).
 
 `--export` encodes to MP4 with exact holds: the cold open came out at
-**180.000s** (matching its `--dry-run` runtime), and the 41-board episode
-export wrote correctly at 1280×720. `tests/test_screen.py` now covers the
-export command graph too.
+**180.000s** and the full 41-board episode at **1440.000s** — both matching
+their `--dry-run` runtimes to the millisecond. `tests/test_screen.py` covers
+the export command graph too.
 
 The ears still verify last: **a branch may be ranked; only a verified branch
 may be bound.**

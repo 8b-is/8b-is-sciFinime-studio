@@ -54,7 +54,8 @@ Peter-compatible local setup (uv everywhere, M1 reality checked) lives in
 
 ## the ears and the screen
 
-The animatic breathes through two organs, both driven from the CLI:
+The animatic breathes through two organs, both driven from the CLI
+([all instruments →](tools/README.md)):
 
 - **the ears** — [`tools/listen_stems.py`](tools/listen_stems.py) measures the
   temp stems (levels · silence · onsets · tone). `uv run --with numpy tools/listen_stems.py`
