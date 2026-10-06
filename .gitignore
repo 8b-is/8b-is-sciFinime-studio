@@ -7,3 +7,5 @@ output/
 data/
 *.progress.json
 node_modules/
+
+tools/.wa-stream/

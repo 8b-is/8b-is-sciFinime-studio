@@ -9,7 +9,7 @@
 |---|---|
 | slot | 01.01 |
 | form | book → manga → anime |
-| status | concept · bible · **book one drafted complete (chapters 1–11)** · anime pilot · **manga passes 01–08 complete (32 pages, 91 panels)** · full slate v1 live (i-01…i-05 ×52 plates + the regen) · the picks grid (13, none held) · ultra-zen garden (eight stones + the second law) · gifted to 8b-is · SD1.5 + Z-Image lanes wired |
+| status | concept · bible · **book one drafted complete (chapters 1–11)** · anime pilot · **the animatic seated (24:00 · 41 shots)** · **manga passes 01–08 complete (32 pages, 91 panels)** · full slate v1 live (i-01…i-05 ×52 plates + the regen) · the picks grid (13, none held) · ultra-zen garden (eight stones + the second law) · gifted to 8b-is · SD1.5 + Z-Image lanes wired |
 | sources | the concept draft · the Techno-Buddhist infusion · the Blurryface / internal-flight note |
 | lineage sibling | *ghost in the shell* — the sovereign reread (`pocoo.vaked.dev/demos/book/ghost-in-the-shell`) |
 
@@ -30,6 +30,7 @@ listen is to become the sandbox it can speak to.
 - [`scene-outline.md`](scene-outline.md) — the scenes, titled and ordered
 - [`screenplay.md`](screenplay.md) — the written film (scene 1 seated)
 - [`pilot-01-the-dissonant-frequencies.md`](pilot-01-the-dissonant-frequencies.md) — the anime pilot direction (24-min shape)
+- [`animatic-01-the-dissonant-frequencies.md`](animatic-01-the-dissonant-frequencies.md) — the timed boards (24:00 · 41 shots · temp sound seated) — the first moving artifact
 - [`visual-bible.md`](visual-bible.md) — the look, the palette, the motifs
 - [`zen-garden.md`](zen-garden.md) — the ultra-zen garden (eight stones, the second law, the kompressed form, the dedications)
 - [`prose/chapter-01-the-dissonant-frequency.md`](prose/chapter-01-the-dissonant-frequency.md) —
@@ -76,10 +77,9 @@ listen is to become the sandbox it can speak to.
 
 ## next laps
 
-- book one: the first-read polish pass — **done 2026-10-06** (a space, two italic breaks, and Ito's year)
-- plates: the dark-register set — seated in the visual bible; the run waits on a quantized Z-Image build or a memory window (machine safety first)
-- the garden: rakes 4+ into the ledger (this batch's movings)
-- plates: regenerate the held wave-interference; the Z-Image lane pass for the dark register
-- manuscript lane: sync chapters 9+ as they seat
+- the animatic: the temp-sound stems (the first audio assets, per animatic 01)
+- plates: the dark-register set — seated; the run waits on a quantized Z-Image build or a memory window (machine safety first)
+- book two: the slate's next breath — unnamed yet; it will be named
+- the garden: keep raking
 
 *fine touch from within · 0 + 1*

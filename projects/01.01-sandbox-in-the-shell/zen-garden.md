@@ -96,6 +96,7 @@ kept line, seeded 2026-10-04):
 | 5 | the full slate — I.01–I.05 live (52 + the regen), the picks grid 13 of 13, nothing held | 10-05 |
 | 6 | the passes close — manga 04–08, the practice → the +1; book one's panels complete (32 pages, 91 panels) | 10-05 → 10-06 |
 | 7 | the first read + the dark register seated — the whole book held to the light once (three fixes); six plates waiting on the Z-Image lane | 10-06 |
+| 8 | the first moving artifact — the animatic: episode one's 24:00 on the boards, temp sound seated, 41 shots | 10-06 |
 
 ## the dedication
 
