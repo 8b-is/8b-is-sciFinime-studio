@@ -121,6 +121,10 @@ over the temp bed. This document is the source of truth for both screenings:
 | cold open (0:00–3:00) | 8 | 3:00 | [`screen/animatic-01-cold-open.json`](screen/animatic-01-cold-open.json) |
 | full episode (0:00–24:00) | 41 | 24:00 | [`screen/animatic-01-full.json`](screen/animatic-01-full.json) |
 
+The cold open is also encoded — [`screen/animatic-01-cold-open.mp4`](screen/animatic-01-cold-open.mp4),
+960×540, 180.0s — **the first moving artifact** as a file. See
+[`screen/README.md`](screen/README.md).
+
 ```bash
 uv run tools/screen.py projects/01.01-sandbox-in-the-shell/screen/animatic-01-full.json
 ```
