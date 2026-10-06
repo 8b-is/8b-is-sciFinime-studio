@@ -24,16 +24,41 @@ Notes:
 
 import argparse
 import json
+import os
 import secrets
 import sys
 import time
 from pathlib import Path
 from urllib import error, request
 
-BLUEPRINT_DEFAULT = (
-    "/Users/lodripeter/ComfyUI-Installs/ComfyUI/ComfyUI/blueprints/"
-    "Text to Image (Z-Image-Turbo).json"
-)
+BLUEPRINT_NAME = "Text to Image (Z-Image-Turbo).json"
+
+
+def resolve_blueprint(explicit=None):
+    """Prefer an explicit path, then configuration, then common local installs."""
+    configured = explicit or os.environ.get("COMFYUI_ZIMAGE_BLUEPRINT")
+    if configured:
+        candidate = Path(configured).expanduser()
+        if candidate.is_file():
+            return candidate
+        raise FileNotFoundError(
+            f"Blueprint not found: {candidate}. Set --blueprint to an existing "
+            "Z-Image Turbo blueprint JSON file."
+        )
+    home = Path.home()
+    candidates = [
+        home / "ComfyUI-Installs/ComfyUI/ComfyUI/blueprints" / BLUEPRINT_NAME,
+        home / "ComfyUI/blueprints" / BLUEPRINT_NAME,
+    ]
+    for candidate in candidates:
+        if candidate.is_file():
+            return candidate
+    raise FileNotFoundError(
+        "Z-Image Turbo blueprint not found. Pass --blueprint /path/to/"
+        f"'{BLUEPRINT_NAME}' or set COMFYUI_ZIMAGE_BLUEPRINT. "
+        "Checked: " + ", ".join(str(path) for path in candidates)
+    )
+
 
 WIDGETS = {
     "CLIPLoader": ["clip_name", "type", "device"],
@@ -97,7 +122,7 @@ def to_api_graph(sg):
 
 def main():
     p = argparse.ArgumentParser(description="Z-Image Turbo plate generator")
-    p.add_argument("--blueprint", default=BLUEPRINT_DEFAULT)
+    p.add_argument("--blueprint", help="Blueprint JSON path (overrides COMFYUI_ZIMAGE_BLUEPRINT and local discovery)")
     p.add_argument("--prompt", required=True)
     p.add_argument("--prefix", default="sandbox-plate")
     p.add_argument("--width", type=int)
@@ -108,7 +133,7 @@ def main():
     p.add_argument("--timeout", type=float, default=900)
     a = p.parse_args()
 
-    blue = json.loads(Path(a.blueprint).read_text())
+    blue = json.loads(resolve_blueprint(a.blueprint).read_text())
     sg = blue["definitions"]["subgraphs"][0]
     graph = to_api_graph(sg)
 
