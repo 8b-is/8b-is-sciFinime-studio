@@ -31,6 +31,7 @@ listen is to become the sandbox it can speak to.
 - [`screenplay.md`](screenplay.md) — the written film (scene 1 seated)
 - [`pilot-01-the-dissonant-frequencies.md`](pilot-01-the-dissonant-frequencies.md) — the anime pilot direction (24-min shape)
 - [`animatic-01-the-dissonant-frequencies.md`](animatic-01-the-dissonant-frequencies.md) — the timed boards (24:00 · 41 shots · temp sound seated) — the first moving artifact
+- [`listening-pass-01.md`](listening-pass-01.md) — the ears: the temp stems measured and heard (122.4/min · kick 55.3 Hz · whine flat · waveforms drawn) — lap 33
 - [`visual-bible.md`](visual-bible.md) — the look, the palette, the motifs
 - [`zen-garden.md`](zen-garden.md) — the ultra-zen garden (eight stones, the second law, the kompressed form, the dedications)
 - [`prose/chapter-01-the-dissonant-frequency.md`](prose/chapter-01-the-dissonant-frequency.md) —
@@ -77,7 +78,7 @@ listen is to become the sandbox it can speak to.
 
 ## next laps
 
-- the animatic: listen to the temp stems (ears verify last — `assets/sound/animatic-01-temp/`) → the recorded creek · the real four-four
+- the animatic: the ears are in — [listening pass 01](listening-pass-01.md) heard the temp stems → next: the recorded creek · the real four-four
 - plates: the dark-register set — seated; the run waits on a quantized Z-Image build or a memory window (machine safety first)
 - book two: the slate's next breath — unnamed yet; it will be named
 - the garden: keep raking

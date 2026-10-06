@@ -101,8 +101,11 @@ Temp sound seated below. Runtime: 24:00. Seated 2026-10-06.*
 The four placeholders are **generated** — [`tools/temp_stems.py`](../../tools/temp_stems.py)
 → [`assets/sound/animatic-01-temp/`](assets/sound/animatic-01-temp/) (mono
 22.05 kHz, committed: `four-four-122` · `creek` · `whine` · `breath-strip`).
-They are honest temps: synthesized, self-reported (the whine verifies at
-1565.5 Hz ≈ the design's 1568), **ears pending**. Before anything ships:
+They are honest temps: synthesized, self-reported, and now **heard** —
+[lap 33's listening pass](listening-pass-01.md) measured all four
+(122.4/min · kick 55.3 Hz · whine LRA 0.0 LU · waveforms drawn; the
+self-reported 1565.5 Hz whine sits behind the analyzer's 1575 Hz lag
+rounding). Before anything ships:
 the creek must become ONE clean field recording — protect it in every
 pass — and the four-four wants a licensed loop, not arithmetic.
 

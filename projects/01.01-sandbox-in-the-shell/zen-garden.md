@@ -98,6 +98,7 @@ kept line, seeded 2026-10-04):
 | 7 | the first read + the dark register seated — the whole book held to the light once (three fixes); six plates waiting on the Z-Image lane | 10-06 |
 | 8 | the first moving artifact — the animatic: episode one's 24:00 on the boards, temp sound seated, 41 shots | 10-06 |
 | 9 | the temp stems — the animatic's first audio (four-four · creek · whine · breath-strip), synthesized placeholders, ears pending | 10-07 |
+| 10 | the ears — listening pass 01: the temp stems measured (122.4/min · kick 55.3 Hz · whine LRA 0.0 LU · creek is weather, not a note), waveforms drawn, the before-ship list seated | 10-07 |
 
 ## the dedication
 
