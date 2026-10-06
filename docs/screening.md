@@ -99,6 +99,9 @@ uv run tools/screen.py --render /tmp/screen-out --frames 8
 # any directory of plates, a fixed hold, no manifest
 uv run tools/screen.py --dir path/to/plates --hold 4
 
+# the whole episode (41 boards, 24:00)
+uv run tools/screen.py projects/01.01-sandbox-in-the-shell/screen/animatic-01-full.json
+
 # keep the board list next to the work (reproducible artifact)
 uv run tools/screen.py --edl screen/animatic-01-cold-open.ffconcat
 ```
@@ -126,6 +129,19 @@ boards: 8 · runtime 180.0s (3.00 min)
 `--render` wrote 8 frames (one per board, 512×512 PNG) — the screen works
 with no display. `tests/test_screen.py` (15 cases) pins the player
 resolution, manifest parsing, the concat grammar, and the headless command.
+
+The **full episode** screens too: `screen/animatic-01-full.json` carries all
+41 boards straight off the animatic's in–out column, and the holds reconcile
+exactly —
+
+```
+boards: 41 · runtime 1440.0s (24.00 min)
+```
+
+— matching the animatic's stated 24:00 runtime to the second. `--render`
+wrote 42 frames in ~4.4s, headless. Two screenings are seated: the cold open
+(`animatic-01-cold-open.json`, 8 boards, 3:00) and the whole episode
+(`animatic-01-full.json`, 41 boards, 24:00).
 
 The ears still verify last: **a branch may be ranked; only a verified branch
 may be bound.**

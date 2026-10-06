@@ -65,8 +65,9 @@ The animatic breathes through two organs, both driven from the CLI:
   studio is MIT, so we call it, never link it —
   [docs/screening.md](docs/screening.md).
 
-The first screening is live: `screen/animatic-01-cold-open.json` — the cold
-open, 8 boards, 3:00, over `four-four-122.wav`.
+The screenings are live: `screen/animatic-01-cold-open.json` (the cold open,
+8 boards, 3:00) and `screen/animatic-01-full.json` (the whole episode, 41
+boards, 24:00 — the holds reconcile to the second), over `four-four-122.wav`.
 
 ## the local stack (verified on this machine, 2026-10-04)
 

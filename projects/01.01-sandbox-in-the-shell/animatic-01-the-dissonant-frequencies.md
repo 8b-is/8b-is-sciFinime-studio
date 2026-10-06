@@ -109,6 +109,25 @@ rounding). Before anything ships:
 the creek must become ONE clean field recording — protect it in every
 pass — and the four-four wants a licensed loop, not arithmetic.
 
+## screen it — the timed boards, played
+
+The boards above are not just read, they are **screened**. The animatic's
+two organs: [the ears](listening-pass-01.md) measure the stems, and the
+screen plays the boards through **mpv** — one plate held for one timecode,
+over the temp bed. This document is the source of truth for both screenings:
+
+| screening | boards | runtime | manifest |
+|---|---|---|---|
+| cold open (0:00–3:00) | 8 | 3:00 | [`screen/animatic-01-cold-open.json`](screen/animatic-01-cold-open.json) |
+| full episode (0:00–24:00) | 41 | 24:00 | [`screen/animatic-01-full.json`](screen/animatic-01-full.json) |
+
+```bash
+uv run tools/screen.py projects/01.01-sandbox-in-the-shell/screen/animatic-01-full.json
+```
+
+The full-episode holds sum to exactly 1440.0s — the board's `in–out` column
+is the boss. See [`../../docs/screening.md`](../../docs/screening.md).
+
 ## the moving-artifact notes
 
 - **What moves first (animation budget, in order):** the wave-field
