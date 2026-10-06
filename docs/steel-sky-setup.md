@@ -197,4 +197,36 @@ Until then: manifest dry-run verified (13 jobs / 52 images), the runner is
 tested, the graphs audited. The lane is wired; it is waiting on memory,
 not on code.
 
+**Resolved the same day (2026-10-04, evening):** the SD1.5 lane was lit —
+checkpoint downloaded from steel-sky's own `links.txt` and verified
+(`sha256 cc6cb271…`), a headless ComfyUI backend started on `:8188`
+(`ComfyUI/.venv/bin/python3 -s ComfyUI/main.py --extra-model-paths-config …`),
+and `sandbox-slates-v1` category `I.03` produced **12 plates** (`the-house`,
+`the-creek`, `porch-lamp` ×4) — collected into the project's `assets/plates/`
+with `tools/collect_plates.py`.
+
+**The second lighting (2026-10-05) — the slate finished.** The recipe, seated
+so any lap can repeat it:
+
+```bash
+# 1. paths (once, seated at ~/ComfyUI-Shared/extra_model_paths.yaml)
+#    base_path: /Users/lodripeter/ComfyUI-Shared/models  (+ the type map)
+# 2. the server (background; Comfy Desktop may idle without serving — go headless)
+cd /Users/lodripeter/ComfyUI-Installs/ComfyUI/ComfyUI && \
+  .venv/bin/python main.py --enable-manager --port 8188 \
+  --input-directory  /Users/lodripeter/ComfyUI-Shared/input \
+  --output-directory /Users/lodripeter/ComfyUI-Shared/output \
+  --extra-model-paths-config /Users/lodripeter/ComfyUI-Shared/extra_model_paths.yaml
+# 3. the pass (steel-sky dir; same workflow.json + url keep finished jobs skipped)
+uv run python generate_collection.py manifests/sandbox-slates-v1.json \
+  --url http://127.0.0.1:8188 --category I.01 --category I.02   # then I.04, I.05
+# 4. collect + stop the server when done (the lane rests)
+```
+
+That lit `I.01`, `I.02`, `I.04`, `I.05` (40 more plates) across two laps and
+closed the manifest's promise: **13 jobs / 52 images, all seated** in-repo,
+twelve picked into the v2 grid (`assets/plates/sandbox-slates-v1/picks/`).
+One item held for regeneration (`wave-interference`). The lane is wired; it
+now rests.
+
 *fine touch from within · 0 + 1*

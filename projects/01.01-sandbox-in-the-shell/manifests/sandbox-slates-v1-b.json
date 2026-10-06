@@ -1,0 +1,21 @@
+{
+  "name": "sandbox-slates-v1-b",
+  "shared_prompt": "anime film background art, 1990s cel animation meets modern digital painting, hand painted, cinematic composition, full bleed drawing that fills the entire image",
+  "defaults": {
+    "batch": 4,
+    "variations": 1,
+    "seed": 20261005,
+    "negative": "text, letters, words, watermark, logo, signature, initials, caption, handwriting, photorealistic, photograph, 3d render, blurry, distorted, photorealistic, picture frame, frame, mat, border, cyborg bodysuit, thermoptic camouflage, spider tank, humanoid robot, mask, face, sunset, sunrise, gradient sky, clouds, landscape, horizon"
+  },
+  "categories": {
+    "I.02": {
+      "prompt": "abstract interference pattern of thin cyan and white wave harmonics over a deep teal-black ground, moire rings and standing waves of light, fine linework, no sky, no horizon, no objects",
+      "items": [
+        {
+          "name": "wave-interference",
+          "prompt": "close view of two wave systems crossing, bright cyan and soft white interference bands and moire rings over deep teal-black, abstract, beautiful, dark ground, no sky, no objects"
+        }
+      ]
+    }
+  }
+}

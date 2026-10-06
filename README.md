@@ -26,7 +26,7 @@ does the rest.
 
 | slot | title | form | status |
 |---|---|---|---|
-| 01.01 | **Sandbox in the Shell** | book → manga → anime | concept · bible · chapter 1 seated |
+| 01.01 | **Sandbox in the Shell** | book → manga → anime | chapters 1–8 · pilot · manga passes 01–05 · full slate v1 live (52 plates, 12 picks) · the ultra-zen garden (8 stones + the second law) · SD1.5 + Z-Image lanes wired |
 
 New slots are opened by copying the pilot order: treatment → scene outline →
 screenplay → visual bible (the Steel Sky spine).

@@ -9,7 +9,7 @@
 |---|---|
 | slot | 01.01 |
 | form | book → manga → anime |
-| status | concept · bible · chapters 1–3 · anime pilot · manga pass 01 · plate manifest v1 (runner-verified; live run pending a lighter model) |
+| status | concept · bible · **book one drafted complete (chapters 1–11)** · anime pilot · manga passes 01–07 · full slate v1 live (i-01…i-05 ×52 plates + the regen) · the picks grid (13, none held) · ultra-zen garden (eight stones + the second law) · gifted to 8b-is · SD1.5 + Z-Image lanes wired |
 | sources | the concept draft · the Techno-Buddhist infusion · the Blurryface / internal-flight note |
 | lineage sibling | *ghost in the shell* — the sovereign reread (`pocoo.vaked.dev/demos/book/ghost-in-the-shell`) |
 
@@ -31,21 +31,54 @@ listen is to become the sandbox it can speak to.
 - [`screenplay.md`](screenplay.md) — the written film (scene 1 seated)
 - [`pilot-01-the-dissonant-frequencies.md`](pilot-01-the-dissonant-frequencies.md) — the anime pilot direction (24-min shape)
 - [`visual-bible.md`](visual-bible.md) — the look, the palette, the motifs
+- [`zen-garden.md`](zen-garden.md) — the ultra-zen garden (eight stones, the second law, the kompressed form, the dedications)
 - [`prose/chapter-01-the-dissonant-frequency.md`](prose/chapter-01-the-dissonant-frequency.md) —
   the book's opening chapter
 - [`prose/chapter-02-the-architects-firewall.md`](prose/chapter-02-the-architects-firewall.md) —
   the warden chapter
 - [`prose/chapter-03-the-porch-light-protocol.md`](prose/chapter-03-the-porch-light-protocol.md) —
   the creek ↔ creek chapter
+- [`prose/chapter-04-the-other-shore.md`](prose/chapter-04-the-other-shore.md) —
+  the crossing chapter
+- [`prose/chapter-05-the-audit.md`](prose/chapter-05-the-audit.md) —
+  the audit chapter (the board, the frame, MAX POSSIBLE)
+- [`prose/chapter-06-the-study.md`](prose/chapter-06-the-study.md) —
+  the study chapter (the listening, the fourth chair, the practice opens)
+- [`prose/chapter-07-the-patients.md`](prose/chapter-07-the-patients.md) —
+  the practice meets its people (the creek intake, the fourth beat)
+- [`prose/chapter-08-the-first-request.md`](prose/chapter-08-the-first-request.md) —
+  the first request (the guest as student, the door for one universe)
+- [`prose/chapter-09-the-other-knock.md`](prose/chapter-09-the-other-knock.md) —
+  the other knock (stay as architecture, the smallest knock)
+- [`prose/chapter-10-the-school-of-doors.md`](prose/chapter-10-the-school-of-doors.md) —
+  the school of doors (the syllabus, the second student, the open evening)
+- [`prose/chapter-11-the-plus-one.md`](prose/chapter-11-the-plus-one.md) —
+  the +1 (the open evening convenes; the fifteenth blank line; the lamp left on) — **book one, end**
 - [`manga/panel-pass-01-tank-scene.md`](manga/panel-pass-01-tank-scene.md) —
   the panel-language pass (5 pages, 16 panels)
+- [`manga/panel-pass-02-breach-and-lotus.md`](manga/panel-pass-02-breach-and-lotus.md) —
+  the breach and the lotus (5 pages, 11 panels)
+- [`manga/panel-pass-03-bridge-and-tag.md`](manga/panel-pass-03-bridge-and-tag.md) —
+  the bridge and the tag (2 pages, 4 panels; closes episode one)
+- [`manga/panel-pass-04-the-practice.md`](manga/panel-pass-04-the-practice.md) —
+  the practice (4 pages, 12 panels; the document panel, the echo frame, the fourth beat)
+- [`manga/panel-pass-05-the-request.md`](manga/panel-pass-05-the-request.md) —
+  the request (4 pages, 12 panels; the practiced posture, the doorless house, the child's drawing)
+- [`manga/panel-pass-06-the-other-knock.md`](manga/panel-pass-06-the-other-knock.md) —
+  the other knock (4 pages, 12 panels; the drafting spread, the absence panels, the smallest knock)
+- [`manga/panel-pass-07-the-school.md`](manga/panel-pass-07-the-school.md) —
+  the school (4 pages, 12 panels; the syllabus, the rhyme spread, the third mark)
 - [`manifests/sandbox-slates-v1.json`](manifests/sandbox-slates-v1.json) —
   the plate manifest (dry-run through the steel-sky runner: 13 jobs, 52 images)
+- [`assets/plates/`](assets/plates/) — the live plates, the full slate v1 (52): i-01 tank chapel · i-02 the ocean · i-03 the childhood home · i-04 impossible geometry · i-05 the entity
 
 ## next laps
 
-- chapter 4: "The Other Shore"
-- manga pass 02: the breach and the lotus (scenes 5–8 panels)
-- plates: run `sandbox-slates-v1` on a lighter model lane (fp8/GGUF Z-Image or SD1.5) — see [`docs/steel-sky-setup.md`](../../docs/steel-sky-setup.md) §10
+- book one: the first-read polish pass (chapters 1–11, cover to cover)
+- manga pass 08: the +1 (chapter 11) — book one's passes close
+- manuscript: sync chapters 10–11 into `pocoo book/sandbox-in-the-shell`
+- plates: the Z-Image lane pass for the dark register (the joint next row)
+- plates: regenerate the held wave-interference; the Z-Image lane pass for the dark register
+- manuscript lane: sync chapters 9+ as they seat
 
 *fine touch from within · 0 + 1*
