@@ -13,6 +13,12 @@ idea
                  └─ short animation/   final motion (steel-sky visual bible → shots)
 ```
 
+The animatic stage is played, not just written: **the ears**
+([`tools/listen_stems.py`](../tools/listen_stems.py)) measure the temp stems
+and **the screen** ([`tools/screen.py`](../tools/screen.py)) seats the timed
+boards through **mpv** — one plate held for one timecode. See
+[`screening.md`](screening.md).
+
 ## the Steel Sky spine (per project)
 
 Adopted from [standardgalactic/steel-sky](https://github.com/standardgalactic/steel-sky),
@@ -39,6 +45,7 @@ finished books graduate to the sovereign library (`pocoo.vaked.dev/demos/book`).
 | text near-field (prompts, treatments, passes) | osaurus M1 · `http://127.0.0.1:1337` |
 | images (concept frames, visual bible plates) | ComfyUI (local, Metal or container) via steel-sky manifests |
 | books | pocoo `book/<slug>/` convention + fan-out |
+| animatic playback (boards + temp stems) | **mpv** via [`tools/screen.py`](../tools/screen.py) — [screening.md](screening.md) |
 | publishing | the constellation (pocoo · art · music) |
 
 ## the standing rules

@@ -52,6 +52,22 @@ visual bible, images via its local ComfyUI manifest runner. The
 Peter-compatible local setup (uv everywhere, M1 reality checked) lives in
 [`docs/steel-sky-setup.md`](docs/steel-sky-setup.md).
 
+## the ears and the screen
+
+The animatic breathes through two organs, both driven from the CLI:
+
+- **the ears** — [`tools/listen_stems.py`](tools/listen_stems.py) measures the
+  temp stems (levels · silence · onsets · tone). `uv run --with numpy tools/listen_stems.py`
+- **the screen** — [`tools/screen.py`](tools/screen.py) seats the timed boards
+  through **[mpv](https://github.com/mpv-player/mpv)** — one plate held for one
+  timecode, over the sound bed. `uv run tools/screen.py` (or `--dry-run`,
+  `--render DIR` headless). The screen is a separate process: mpv is GPL, the
+  studio is MIT, so we call it, never link it —
+  [docs/screening.md](docs/screening.md).
+
+The first screening is live: `screen/animatic-01-cold-open.json` — the cold
+open, 8 boards, 3:00, over `four-four-122.wav`.
+
 ## the local stack (verified on this machine, 2026-10-04)
 
 - **osaurus** — M1 server on `http://127.0.0.1:1337`, OpenAI-compatible.
