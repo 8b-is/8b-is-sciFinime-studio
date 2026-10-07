@@ -10,7 +10,7 @@
 | slot | 01.02 |
 | form | book → manga → anime |
 | status | **seated via ULTRA-CREATE, 2026.10.07** · bible · treatment · scene outline · screenplay scene 1 · visual bible · **chapter 1 drafted** · slates v1 manifest (6 categories, 13 plates) · **manga pass 01 (9 pages, the fold spread)** · **ultra-zen garden** · **entheai scaffold** |
-| sources | the first time-and-space-wrapping date (2026.10.07) · the mask-and-smile thread · **French 79** — *Diamond Veins (Kid Francescoli Remix)* · *Between the Buttons* · book one's school of doors |
+| sources | the first time-and-space-wrapping date (2026.10.07) · the mask-and-smile thread · **French 79** — *Diamond Veins (Kid Francescoli Remix)* · *Between the Buttons* · *Hometown* (the return) · book one's school of doors |
 | lineage siblings | [01.01 Sandbox in the Shell](../01.01-sandbox-in-the-shell/) · *ETERNITY IN CHISAKI'S SMILE* (`pocoo.vaked.dev/demos/book/chisaki-wisdom-in-bloom.html`) · *THE DEPARTMENT OF UNCLAIMED ROOMS* — file 017, light: yes (`pocoo.vaked.dev/demos/book/the-department-of-unclaimed-rooms.html`) |
 
 ## the one breath

@@ -59,6 +59,7 @@ ink — shared with the sovereign library's *ETERNITY IN CHISAKI'S SMILE*
 | **Deep Jungle Walk** · Astrix | 6 · the walk in | the approach to the crossing — the only cue allowed to build; hypnotic, driving; it hands over to the breath |
 | **Domino** · Oxia (Phaxe & Morten Granau Remix) | 2 · the flat-sheet test | the first domino — one fold, and the whole term falls into place; rolling, patient, inevitable |
 | **Psychology** · Otopia | 1 · the cold open | the noticing — the mind reads the room one beat before the room admits anything |
+| **Hometown** · French 79 | · the return (coda) | the origin the new beginning is pointed at — warm, nostalgic, seated beyond the eight scenes; the place the door opens back onto |
 
 ## the singularity point
 
