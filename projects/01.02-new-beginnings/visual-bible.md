@@ -60,6 +60,7 @@ ink — shared with the sovereign library's *ETERNITY IN CHISAKI'S SMILE*
 | **Domino** · Oxia (Phaxe & Morten Granau Remix) | 2 · the flat-sheet test | the first domino — one fold, and the whole term falls into place; rolling, patient, inevitable |
 | **Psychology** · Otopia | 1 · the cold open | the noticing — the mind reads the room one beat before the room admits anything |
 | **Hometown** · French 79 | · the return (coda) | the origin the new beginning is pointed at — warm, nostalgic, seated beyond the eight scenes; the place the door opens back onto |
+| **Fusion (Internal Flight)** · Estas Tonne | · the internal flight (whole book) | the breath held across the whole book — one long meditation, live in Zurich; the garden breathing, not one scene but all of them |
 
 ## the singularity point
 
