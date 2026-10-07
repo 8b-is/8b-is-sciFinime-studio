@@ -79,5 +79,9 @@
 - The paper-crane tradition — senba-zuru, one wish per fold; the thousandth
   crane is never counted on-screen in this book; it is implied the way the
   +1 is implied.
+- **Estas Tonne — *Fusion (Internal Flight variation)*, Live in Zurich 2022** —
+  inspiration, not a cue: one guitar, no repeats, the internal flight as the
+  form. A lesson in structure for a book about the fold — every pass a new
+  room, the theme returning changed. Marked by Peter, 2026-10-07.
 
 *fine touch from within · 0 + 1*
