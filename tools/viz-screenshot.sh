@@ -8,6 +8,10 @@
 #   - kokoro   : a spoken line, locally (am_echo, the announcement voice)
 # Scheduled by launchd every 4 hours (see ~/Library/LaunchAgents/).
 #
+# Guardrails — pings Discord instead of silently dropping when:
+#   - the screen is locked (the lock screen is not viz.vaked.dev)
+#   - Screen Recording permission is missing (screencapture can't see the display)
+#
 # NOTE: `screencapture` needs Screen Recording permission. The launchd agent
 # runs in a context that must be granted it once (System Settings → Privacy &
 # Security → Screen Recording). Until then `launchctl start` reports
@@ -22,21 +26,43 @@ STUDIO="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 WA_REPLAY="/Users/lodripeter/workspace/peterlodri-sec/wa-stream/replay.txt"
 KOKORO="/Users/lodripeter/workspace/peterlodri-sec/kokoro-tiny/target/release/kokoro-speak"
 SHOT="/tmp/viz-screen-$(date +%Y%m%d-%H%M%S).png"
+ERR="/tmp/viz-screen-err.txt"
 TS="$(date '+%Y-%m-%d %H:%M %Z')"
+POST=1
+[[ "${1:-}" == "--no-post" ]] && POST=0
 
-cleanup() { rm -f "$SHOT"; }
+cleanup() { rm -f "$SHOT" "$ERR"; }
 trap cleanup EXIT
 
-# Full-screen capture (silent). The Safari · viz.vaked.dev window is the
-# thing we are watching; full screen catches it wherever it sits.
-screencapture -x "$SHOT"
+cd "$STUDIO"
 
-if [[ "${1:-}" == "--no-post" ]]; then
-  echo "captured: $SHOT (not posted)"
+if [[ $POST -eq 1 ]]; then
+  # Screen locked? Ping and stop — the lock screen is not viz.vaked.dev.
+  LOCKED="$(uv run --script tools/screen-locked.py 2>/dev/null || echo 0)"
+  if [[ "$LOCKED" == "1" ]]; then
+    uv run tools/wa_stream.py push "" \
+      --title "viz.vaked.dev — screen locked" \
+      --footer "M1 MacBook · $TS · UltraCrushLove<3" \
+      --color "#ff6432"
+    exit 0
+  fi
+fi
+
+# Capture (silent). Permission failure lands a ping, not a silent drop.
+if ! screencapture -x "$SHOT" 2>"$ERR"; then
+  if [[ $POST -eq 1 ]]; then
+    uv run tools/wa_stream.py push "" \
+      --title "viz.vaked.dev — screen recording permission missing" \
+      --footer "$(head -c 120 "$ERR") · M1 MacBook · $TS" \
+      --color "#ff2a85"
+  fi
   exit 0
 fi
 
-cd "$STUDIO"
+if [[ $POST -eq 0 ]]; then
+  echo "captured: $SHOT (not posted)"
+  exit 0
+fi
 
 # Discord — the image.
 uv run tools/wa_stream.py push "" \
