@@ -81,12 +81,15 @@ boards, 24:00 — the holds reconcile to the second), over `four-four-122.wav`.
 - **pocoo book pipeline** — the publishing lane for finished books
   (`book/<slug>/` manuscript + scaffold, entheai `--fanout` when wanted).
 
-## the periodic screen (every 1 minute)
+## the live board (a single screen, every 1 minute)
 
-`tools/wa-screen.sh` posts a **screen** to UltraCrushLove<3 on every run — the
-time, a fresh **quant/ternary signature** (`tools/ternary_signature.py`: a
-`{−1,0,+1}` glyph run plus its absmean `γ = mean|W|`), and the law. Installed
-as the launchd agent **`dev.vaked.wa-screen`** (`scripts/dev.vaked.wa-screen.plist`,
+`tools/wa-screen.sh` keeps **one message** in UltraCrushLove<3 — a live board,
+**edited in place** every run, never re-posted: the time, a fresh
+**quant/ternary signature** (`tools/ternary_signature.py`: a `{−1,0,+1}` glyph
+run plus its absmean `γ = mean|W|`), and the law. The first run posts it and
+remembers the message id (`tools/.wa-stream/screen.json`); every later run
+`edit`s that same message. Run every 60 s by the launchd agent
+**`dev.vaked.wa-screen`** (`scripts/dev.vaked.wa-screen.plist`,
 `StartInterval 60`).
 
 ```bash
