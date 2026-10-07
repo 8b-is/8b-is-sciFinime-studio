@@ -81,16 +81,25 @@ boards, 24:00 — the holds reconcile to the second), over `four-four-122.wav`.
 - **pocoo book pipeline** — the publishing lane for finished books
   (`book/<slug>/` manuscript + scaffold, entheai `--fanout` when wanted).
 
-## the live board (a single screen, every 1 minute)
+## the live board (one message; beats thread into it)
 
-`tools/wa-screen.sh` keeps **one message** in UltraCrushLove<3 — a live board,
+`tools/wa_screen.py` keeps **one message** in UltraCrushLove<3 — a live board,
 **edited in place** every run, never re-posted: the time, a fresh
 **quant/ternary signature** (`tools/ternary_signature.py`: a `{−1,0,+1}` glyph
-run plus its absmean `γ = mean|W|`), and the law. The first run posts it and
-remembers the message id (`tools/.wa-stream/screen.json`); every later run
-`edit`s that same message. Run every 60 s by the launchd agent
-**`dev.vaked.wa-screen`** (`scripts/dev.vaked.wa-screen.plist`,
-`StartInterval 60`).
+run plus its absmean `γ = mean|W|`), a rolling **recent** log of beats, and the
+law. The first run posts it and remembers the message id
+(`tools/.wa-stream/screen.json`); every later run `edit`s that same message.
+
+```bash
+./tools/wa-screen.sh                 # tick the board (launchd does this every 60s)
+./tools/wa-screen.sh add "a beat"    # thread a beat into the board (no new post)
+```
+
+Beats thread into the board instead of spamming the channel. (A webhook cannot
+*create* a Discord thread in a text channel — only forum channels — so the
+rolling log is the thread until a bot token is available.) Run every 60 s by the
+launchd agent **`dev.vaked.wa-screen`**
+(`scripts/dev.vaked.wa-screen.plist`, `StartInterval 60`).
 
 ```bash
 launchctl load   ~/Library/LaunchAgents/dev.vaked.wa-screen.plist   # every 60s

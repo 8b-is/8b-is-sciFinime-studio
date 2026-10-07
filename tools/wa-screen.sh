@@ -1,13 +1,12 @@
 #!/usr/bin/env bash
-# wa-screen.sh — the single live board.
+# wa-screen.sh — thin wrapper to the live board (tools/wa_screen.py).
 #
-# ONE message in UltraCrushLove<3, edited in place every run (never re-posted):
-# the current time + a fresh quant/ternary signature ({−1,0,+1} glyph run + its
-# absmean γ). First run posts it and remembers the id; every later run PATCHes
-# that same message. The law rides along: equality with Gaia · sharing is caring.
+# One message in UltraCrushLove<3, edited in place every run; beats are threaded
+# into its rolling "recent" log instead of re-posting. Run every 60 s by the
+# launchd agent dev.vaked.wa-screen (scripts/dev.vaked.wa-screen.plist).
 #
-#   ./tools/wa-screen.sh            # post-or-edit the board now
-#   launchd: dev.vaked.wa-screen    # every 60s (scripts/dev.vaked.wa-screen.plist)
+#   ./tools/wa-screen.sh                 # tick the board (post first, then edit)
+#   ./tools/wa-screen.sh add "a beat"    # thread a beat into the board
 set -uo pipefail
 cd "$(dirname "$0")/.."
 
@@ -17,30 +16,4 @@ elif [ -x /usr/local/bin/python3 ]; then PY=/usr/local/bin/python3
 else PY="$(command -v python3 || command -v python)"; fi
 [ -n "$PY" ] || { echo "no python3"; exit 1; }
 
-STATE="tools/.wa-stream/screen.json"
-mkdir -p "$(dirname "$STATE")"
-MSG_ID="$("$PY" -c 'import json,sys
-try: print(json.load(open(sys.argv[1])).get("id",""))
-except Exception: print("")' "$STATE")"
-
-SIG="$("$PY" tools/ternary_signature.py)"
-TS="$(date '+%H:%M')"
-BOARD="◍ the screen · live · last beat ${TS} · ${SIG}
-equality with Gaia · sharing is caring · 0+1 <3"
-
-if [ -n "$MSG_ID" ] && "$PY" tools/wa_stream.py edit "$MSG_ID" --text "$BOARD" >/dev/null 2>&1; then
-  echo "board edited: $MSG_ID"
-  exit 0
-fi
-
-OUT="$("$PY" tools/wa_stream.py push "$BOARD")"
-NEW="$("$PY" -c 'import json,sys
-try: print(json.loads(sys.argv[1]).get("id",""))
-except Exception: print("")' "$OUT")"
-if [ -n "$NEW" ]; then
-  printf '{"id":"%s"}\n' "$NEW" > "$STATE"
-  echo "board posted: $NEW"
-else
-  echo "board failed: $OUT" >&2
-  exit 1
-fi
+exec "$PY" tools/wa_screen.py "$@"
