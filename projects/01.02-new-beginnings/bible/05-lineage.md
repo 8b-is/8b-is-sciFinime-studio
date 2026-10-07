@@ -45,6 +45,10 @@
 - **Rone — *Bye Bye Macadam***: the door's own sound — the road past the
   threshold. A farewell that keeps the thread; seated for the coda (scene
   8, the new beginning). Fifth cue, marked by Peter, 2026-10-07.
+- **Rone — *Origami* · *So So So***: the first short's own sound — one sheet
+  folding into a crane in the browser. Origami is the subject and the score
+  at once; a 12-second fold (`scifinime.vaked.dev/origami.html`). Marked by
+  Peter, 2026-10-07.
 - **Klangkarussell & GIVVEN — *Ghostkeeper***: the entity's theme — the
   keeper the ghost was waiting for. Sixth cue, marked by Peter 2026-10-07,
   arriving with a trail of emoji like a life in order: sky → blossoms → sun
