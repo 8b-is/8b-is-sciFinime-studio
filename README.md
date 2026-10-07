@@ -37,7 +37,7 @@ does the rest.
 | slot | title | form | status |
 |---|---|---|---|
 | 01.01 | **Sandbox in the Shell** | book → manga → anime | **book one complete (chapters 1–11) · manga passes 01–08 (32 pages, 91 panels)** · pilot · slate v1 live (52 + the regen, picks 13/13) · first read seated · garden (8 stones + second law + rake ledger) · manuscript §1–§13 · SD1.5 lit / Z-Image wired |
-| 01.02 | **New Beginnings** | book → manga → anime | **seated via ULTRA-CREATE (2026.10.07)** · Chiki-chan joins the team — the origami sensei, the female Space Bender of Space+Time+Dimensions, the Singularity Deiti — teacher of the main hero, Elias · bible · treatment · scene outline · screenplay scene 1 · visual bible · **chapter 1 drafted** · slates v1 (13 plates) · **manga pass 01 (9 pages)** |
+| 01.02 | **New Beginnings** | book → manga → anime | **seated via ULTRA-CREATE (2026.10.07)** · Chiki-chan joins the team — the origami sensei, the female Space Bender of Space+Time+Dimensions, the Singularity Deiti — teacher of the main hero, Elias · bible · treatment · scene outline · screenplay scene 1 · visual bible · **chapter 1 drafted** · slates v1 (7 categories, 15 plates) · **manga pass 01 (9 pages)** |
 
 New slots are opened by copying the pilot order: treatment → scene outline →
 screenplay → visual bible (the Steel Sky spine).
