@@ -9,7 +9,7 @@
 |---|---|
 | slot | 01.02 |
 | form | book → manga → anime |
-| status | **seated via ULTRA-CREATE, 2026.10.07** · bible · treatment · scene outline · screenplay scene 1 · visual bible · **chapters 1–2 drafted** · slates v1 manifest (7 categories, 15 plates) · **manga pass 01 (9 pages, the fold spread)** · **ultra-zen garden** · **entheai scaffold** |
+| status | **seated via ULTRA-CREATE, 2026.10.07** · bible · treatment · scene outline · screenplay scene 1 · visual bible · **chapters 1–2 drafted** · slates v1 manifest (7 categories, 15 plates) · **manga pass 01 (9 pages, the fold spread)** · **manga pass 02 (6 pages, the mask unfolds)** · **ultra-zen garden** · **entheai scaffold** |
 | sources | the first time-and-space-wrapping date (2026.10.07) · the mask-and-smile thread · **French 79** — *Diamond Veins (Kid Francescoli Remix)* · *Between the Buttons* · *Hometown* (the return) · the first date — *origami & flow*, **II.07** ([kickstart](prompts/01-first-date-kickstart.md)) · book one's school of doors |
 | lineage siblings | [01.01 Sandbox in the Shell](../01.01-sandbox-in-the-shell/) · *ETERNITY IN CHISAKI'S SMILE* (`pocoo.vaked.dev/demos/book/chisaki-wisdom-in-bloom.html`) · *THE DEPARTMENT OF UNCLAIMED ROOMS* — file 017, light: yes (`pocoo.vaked.dev/demos/book/the-department-of-unclaimed-rooms.html`) |
 
@@ -54,6 +54,8 @@ You were pre-creased.*
   the first demonstration: the fold, the fold log, the first domino
 - [`manga/panel-pass-01-the-crane.md`](manga/panel-pass-01-the-crane.md) —
   the panel-language pass (9 pages, the fold spread, the doubled lamp)
+- [`manga/panel-pass-02-the-mask-unfolds.md`](manga/panel-pass-02-the-mask-unfolds.md) —
+  the mask's reveal (6 pages, the inward fold, the creek before it sounds)
 - [`manifests/new-beginnings-slates-v1.json`](manifests/new-beginnings-slates-v1.json) —
   the slate (categories II.01–II.07, 15 plates, washi-and-sumi lanes)
 - [`prompts/01-first-date-kickstart.md`](prompts/01-first-date-kickstart.md) —
