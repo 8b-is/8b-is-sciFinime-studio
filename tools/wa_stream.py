@@ -16,6 +16,8 @@ Commands:
   uv run tools/wa_stream.py discover [--all] [--json]
   uv run tools/wa_stream.py inbox [--tail N]
   uv run tools/wa_stream.py listen [--once] [--respond]   (needs a bot token)
+  uv run tools/wa_stream.py music <url> [--note N] [--cue] [--play]
+  uv run tools/wa_stream.py music-list [--tail N]
   uv run tools/wa_stream.py pull <message_id>
   uv run tools/wa_stream.py edit <message_id> --text T
   uv run tools/wa_stream.py delete <message_id>
@@ -33,6 +35,10 @@ Rich features (embeds, colors, avatars, threads, files):
   --thread NAME         post into a thread of that name
   --tts                 text-to-speech flag
   --attach PATH         upload a file (repeatable; multipart)
+  --art PATH            high-def art: svg/png/html → 2x PNG via Chrome
+                        (cache: tools/.wa-stream/art-cache; gallery ≤10)
+  --art-size WxH        viewport for html art (default 1200x630)
+  love --art PATH       give each instance a rotating high-def image
   emoji are first-class: any unicode in text/titles/fields passes through.
 
 Config (first found wins):
@@ -72,6 +78,10 @@ API = "https://discord.com/api/v10"
 TIMEOUT = 20.0
 LAUNCHER = "crush-love-dev"
 LOVE_DIR = STATE_DIR / "instances"
+ART_CACHE = STATE_DIR / "art-cache"
+CHROME = os.environ.get(
+    "WA_STREAM_CHROME",
+    "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome")
 
 DEFAULT_COLOR = "#FF4D9D"  # the constellation pink
 PALETTE = [
@@ -181,10 +191,15 @@ def parse_field(value: str) -> dict:
 def build_embed(text: str | None = None, title: str | None = None,
                 color=None, fields: list | None = None,
                 footer: str | None = None, image: str | None = None,
-                thumbnail: str | None = None) -> dict:
+                thumbnail: str | None = None, url: str | None = None,
+                author: str | None = None) -> dict:
     embed: dict = {"color": parse_color(color if color is not None else DEFAULT_COLOR)}
     if title:
         embed["title"] = title
+    if url:
+        embed["url"] = url
+    if author:
+        embed["author"] = {"name": author}
     if text:
         embed["description"] = text
     if fields:
@@ -285,6 +300,66 @@ def multipart(payload: dict, files: list) -> tuple[bytes, str]:
     return bytes(body), f"multipart/form-data; boundary={boundary}"
 
 
+def _svg_intrinsic(src: Path) -> tuple[int, int]:
+    try:
+        head = src.read_text(encoding="utf-8", errors="replace")[:2000]
+    except OSError:
+        return (1200, 800)
+    m = re.search(r'viewBox="[^"]*?([\d.]+)[ ,]+([\d.]+)[ ,]+([\d.]+)[ ,]+([\d.]+)"', head)
+    if m:
+        try:
+            return (int(float(m.group(3))) or 1200, int(float(m.group(4))) or 800)
+        except ValueError:
+            pass
+    return (1200, 800)
+
+
+def _parse_art_size(value: str | None) -> tuple[int, int]:
+    if not value:
+        return (1200, 630)
+    w, sep, h = value.partition("x")
+    if sep:
+        try:
+            return (int(w), int(h))
+        except ValueError:
+            pass
+    raise SystemExit(f"wa-stream: bad --art-size {value!r} — want WxH")
+
+
+def render_art(path, size: str | None = None) -> Path:
+    """Render svg/html art to a high-def (2x) PNG via headless Chrome.
+
+    svg → intrinsic viewBox size · html → the art-size viewport (default
+    1200x630) · png passes through. Cached in tools/.wa-stream/art-cache.
+    """
+    src = Path(path)
+    if not src.exists():
+        raise SystemExit(f"wa-stream: art not found: {src}")
+    if src.suffix.lower() == ".png":
+        return src
+    if src.suffix.lower() == ".svg":
+        w, h = _svg_intrinsic(src)
+    elif src.suffix.lower() in (".html", ".htm"):
+        w, h = _parse_art_size(size)
+    else:
+        raise SystemExit(f"wa-stream: art must be .svg/.png/.html — got {src.suffix!r}")
+    ART_CACHE.mkdir(parents=True, exist_ok=True)
+    out = ART_CACHE / f"{src.stem}@{w}x{h}@2x.png"
+    if out.exists() and out.stat().st_mtime >= src.stat().st_mtime:
+        return out
+    cmd = [CHROME, "--headless=new", "--disable-gpu", "--hide-scrollbars",
+           f"--window-size={w},{h}", "--force-device-scale-factor=2",
+           "--default-background-color=00000000",
+           f"--screenshot={out}", f"file://{src.resolve()}"]
+    try:
+        subprocess.run(cmd, capture_output=True, text=True, timeout=90)
+    except (OSError, subprocess.SubprocessError) as err:
+        raise SystemExit(f"wa-stream: art render failed for {src}: {err}")
+    if not out.exists():
+        raise SystemExit(f"wa-stream: art render produced nothing for {src}")
+    return out
+
+
 def message_url(webhook: str, message_id: str) -> str:
     wid, token = parse_webhook(webhook)
     return f"{API}/webhooks/{wid}/{token}/messages/{message_id}"
@@ -296,9 +371,28 @@ def push(webhook: str, text: str, title: str | None = None,
          footer: str | None = None, image: str | None = None,
          thumbnail: str | None = None, avatar: str | None = None,
          name: str | None = None, thread: str | None = None,
-         tts: bool = False, files: list | None = None) -> dict:
+         tts: bool = False, files: list | None = None,
+         arts: list | None = None, art_size: str | None = None,
+         url: str | None = None, author: str | None = None) -> dict:
+    files = list(files or [])
+    art_embeds: list = []
+    for i, art in enumerate((arts or [])[:10]):
+        png = render_art(art, size=art_size)
+        files.append(str(png))
+        art_embeds.append({
+            "image": {"url": f"attachment://{png.name}"},
+            "color": parse_color(PALETTE[i % len(PALETTE)]),
+        })
     embed_mode = bool(embed or color is not None or fields or image
                       or thumbnail or footer)
+    lead_embed = None
+    if embed_mode:
+        lead_embed = build_embed(text, title=title, color=color, fields=fields,
+                                 footer=footer, image=image, thumbnail=thumbnail,
+                                 url=url, author=author)
+    elif art_embeds and (title or text):
+        lead_embed = build_embed(text or None, title=title, footer=footer)
+
     payload: dict = {
         "username": name or username(),
         "allowed_mentions": {"parse": []},
@@ -309,11 +403,13 @@ def push(webhook: str, text: str, title: str | None = None,
         payload["thread_name"] = thread
     if tts:
         payload["tts"] = True
-    if embed_mode:
-        payload["embeds"] = [build_embed(text, title=title, color=color,
-                                         fields=fields, footer=footer,
-                                         image=image, thumbnail=thumbnail)]
-        journal_content = text or title or "(embed)"
+    if lead_embed or art_embeds:
+        embeds = ([lead_embed] if lead_embed else []) + art_embeds
+        payload["embeds"] = embeds[:10]
+        if art_embeds and not (text or title):
+            journal_content = f"(gallery ×{len(art_embeds)})"
+        else:
+            journal_content = text or title or "(embed)"
     else:
         payload["content"] = f"**{title}**\n{text}" if title else text
         journal_content = payload["content"]
@@ -338,7 +434,7 @@ def cmd_push(args) -> int:
         text = Path(args.file).read_text(encoding="utf-8").strip()
     if not text and not args.attach:
         text = sys.stdin.read().strip()
-    if not text and not args.attach and not (args.title or args.fields):
+    if not text and not args.attach and not args.art and not (args.title or args.fields):
         raise SystemExit("wa-stream: nothing to push")
     result = push(
         webhook, text, title=args.title, wait=not args.no_wait,
@@ -346,6 +442,7 @@ def cmd_push(args) -> int:
         footer=args.footer, image=args.image, thumbnail=args.thumbnail,
         avatar=args.avatar, name=args.name, thread=args.thread,
         tts=args.tts, files=args.attach or None,
+        arts=args.art or None, art_size=args.art_size,
     )
     if args.id_only:
         print(result.get("id", ""))
@@ -620,6 +717,111 @@ def cmd_listen(args) -> int:
     return 0
 
 
+# ── the music lane (youtube → the stream) ───────────────────────────────
+
+MUSIC_LEDGER = STATE_DIR / "music.ndjson"
+
+
+def youtube_meta(url: str) -> dict:
+    """Fetch video metadata via yt-dlp — no API key, no account."""
+    try:
+        proc = subprocess.run(
+            ["yt-dlp", "-J", "--no-warnings", "--no-playlist", url],
+            capture_output=True, text=True, timeout=90)
+    except FileNotFoundError:
+        raise SystemExit("wa-stream: yt-dlp not found — brew install yt-dlp")
+    except subprocess.SubprocessError as err:
+        raise SystemExit(f"wa-stream: yt-dlp failed for {url}: {err}")
+    if proc.returncode != 0:
+        tail = (proc.stderr or "").strip().splitlines()
+        raise SystemExit("wa-stream: yt-dlp: " + (tail[-1] if tail else "unknown error"))
+    try:
+        info = json.loads(proc.stdout)
+    except json.JSONDecodeError:
+        raise SystemExit("wa-stream: yt-dlp returned no parseable metadata")
+    thumbs = info.get("thumbnails") or []
+    thumb = info.get("thumbnail") or (thumbs[-1].get("url") if thumbs else None)
+    return {
+        "title": info.get("title") or "(untitled)",
+        "uploader": info.get("uploader") or info.get("channel") or "unknown",
+        "duration": info.get("duration") or 0,
+        "url": info.get("webpage_url") or url,
+        "thumbnail": thumb,
+    }
+
+
+def _fmt_duration(seconds) -> str:
+    seconds = int(seconds or 0)
+    return f"{seconds // 60}:{seconds % 60:02d}"
+
+
+def music_color(url: str) -> str:
+    return PALETTE[sum(url.encode()) % len(PALETTE)]
+
+
+def post_music(webhook: str, url: str, note: str = "", cue: bool = False) -> dict:
+    """The music lane: youtube → the stream, ledger, and (optionally) the cue inbox."""
+    meta = youtube_meta(url)
+    desc = (f"{note}\n" if note else "") + \
+           f"♪ {_fmt_duration(meta['duration'])} · {meta['uploader']}"
+    result = push(webhook, desc, title=meta["title"], url=meta["url"],
+                  author=f"{meta['uploader']} · youtube",
+                  color=music_color(meta["url"]), image=meta["thumbnail"],
+                  footer="the music lane · UltraCrushLove<3 · 0+1",
+                  instance="music-lane")
+    entry = {"ts": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+             "url": meta["url"], "title": meta["title"],
+             "uploader": meta["uploader"], "duration": meta["duration"],
+             "note": note}
+    paths = [MUSIC_LEDGER]
+    if cue:
+        paths.append(ROOT / "projects" / "01.02-new-beginnings" / "cues-inbox.ndjson")
+    for path in paths:
+        path.parent.mkdir(parents=True, exist_ok=True)
+        with path.open("a", encoding="utf-8") as fh:
+            fh.write(json.dumps(entry, ensure_ascii=False) + "\n")
+    return {"ok": True, "id": result.get("id"), "title": meta["title"],
+            "uploader": meta["uploader"], "duration": _fmt_duration(meta["duration"]),
+            "thumbnail": bool(meta["thumbnail"]), "cue": cue}
+
+
+def play_audio(url: str) -> None:
+    """Terminal playback without mpv: yt-dlp bestaudio → afplay (native)."""
+    tmpdir = STATE_DIR / "play"
+    tmpdir.mkdir(parents=True, exist_ok=True)
+    for old in tmpdir.glob("current.*"):
+        old.unlink(missing_ok=True)
+    subprocess.run(
+        ["yt-dlp", "-f", "bestaudio", "--no-playlist", "--no-warnings",
+         "-o", str(tmpdir / "current.%(ext)s"), url],
+        capture_output=True, text=True, timeout=600)
+    files = sorted(tmpdir.glob("current.*"), key=lambda p: p.stat().st_mtime)
+    if not files:
+        raise SystemExit("wa-stream: play download failed")
+    subprocess.run(["afplay", str(files[-1])])
+    files[-1].unlink(missing_ok=True)
+
+
+def cmd_music(args) -> int:
+    summary = post_music(webhook_url(args.webhook), args.url,
+                         note=args.note or "", cue=args.cue)
+    if args.play:
+        print("♪ playing (ctrl-c ends)", file=sys.stderr)
+        play_audio(args.url)
+    print(json.dumps(summary, ensure_ascii=False))
+    return 0
+
+
+def cmd_music_list(args) -> int:
+    if not MUSIC_LEDGER.exists():
+        print("(music lane empty)")
+        return 0
+    entries = [json.loads(ln) for ln in MUSIC_LEDGER.read_text(encoding="utf-8").splitlines() if ln.strip()]
+    for e in entries[-args.tail:]:
+        print(f"{e['ts']}  {_fmt_duration(e.get('duration')):>6}  {e['title']} — {e['uploader']}  {e['url']}")
+    return 0
+
+
 # ── love (multi running instances of crush-love-dev) ───────────────────────
 
 LOVE_ANGLES = [
@@ -808,6 +1010,8 @@ def cmd_love(args) -> int:
                     "color": PALETTE[idx % len(PALETTE)],
                     "footer": f"{name} · wa-stream · 0+1",
                 }
+            if args.art:
+                kwargs["arts"] = [args.art[idx % len(args.art)]]
             pushed = push(webhook, result["text"], instance=name, **kwargs)
             out.append({
                 "instance": name,
@@ -865,9 +1069,12 @@ class WaHandler(BaseHTTPRequestHandler):
             attach = body.get("attach") or body.get("files") or []
             if isinstance(attach, str):
                 attach = [attach]
-            if not text and not attach:
+            if not text and not attach and not body.get("art"):
                 self._json(400, {"ok": False, "error": "text required"})
                 return
+            art = body.get("art")
+            if isinstance(art, str):
+                art = [art]
             try:
                 result = push(
                     self.server.webhook, text,
@@ -877,6 +1084,7 @@ class WaHandler(BaseHTTPRequestHandler):
                     thumbnail=body.get("thumbnail"), avatar=body.get("avatar"),
                     name=body.get("name"), thread=body.get("thread"),
                     tts=bool(body.get("tts")), files=attach or None,
+                    arts=art or None, art_size=body.get("art_size"),
                 )
                 self._json(200, {"ok": True, "id": result.get("id"),
                                  "embeds": len(result.get("embeds", []) or []),
@@ -887,6 +1095,18 @@ class WaHandler(BaseHTTPRequestHandler):
             body = self._read_body()
             event = record("in", body, body.get("id"), body.get("content"))
             self._json(200, {"ok": True, "ts": event["ts"]})
+        elif self.path.startswith("/music"):
+            body = self._read_body()
+            if not body.get("url"):
+                self._json(400, {"ok": False, "error": "url required"})
+                return
+            try:
+                summary = post_music(self.server.webhook, body["url"],
+                                     note=body.get("note", ""),
+                                     cue=bool(body.get("cue")))
+                self._json(200, summary)
+            except SystemExit as err:
+                self._json(502, {"ok": False, "error": str(err)})
         else:
             self._json(404, {"ok": False, "error": "not found"})
 
@@ -937,6 +1157,10 @@ def main(argv=None) -> int:
     p.add_argument("--tts", action="store_true")
     p.add_argument("--attach", action="append", metavar="PATH",
                    help="upload a file (repeatable)")
+    p.add_argument("--art", action="append", metavar="PATH",
+                   help="attach high-def art (svg/png/html → 2x PNG via Chrome; repeatable, gallery up to 10)")
+    p.add_argument("--art-size", metavar="WxH",
+                   help="viewport for html art (default 1200x630); svg auto-sizes")
     p.set_defaults(fn=cmd_push)
 
     p = sub.add_parser("pull", help="discord → studio (fetch one message by id)")
@@ -962,6 +1186,17 @@ def main(argv=None) -> int:
     p.add_argument("--port", type=int, default=8765)
     p.set_defaults(fn=cmd_serve)
 
+    p = sub.add_parser("music", help="the music lane: youtube → discord + ledger (+ cue inbox)")
+    p.add_argument("url", help="a youtube video URL")
+    p.add_argument("--note", help="a short note under the card")
+    p.add_argument("--cue", action="store_true", help="also append to book2's cues-inbox.ndjson")
+    p.add_argument("--play", action="store_true", help="play the audio after posting (yt-dlp + afplay)")
+    p.set_defaults(fn=cmd_music)
+
+    p = sub.add_parser("music-list", help="read the music-lane ledger")
+    p.add_argument("--tail", type=int, default=10)
+    p.set_defaults(fn=cmd_music_list)
+
     p = sub.add_parser("love", help="spawn N running instances of crush-love-dev, or fold beats through discovered local sessions")
     p.add_argument("--instances", type=int, default=3)
     p.add_argument("--topic", default=DEFAULT_TOPIC)
@@ -973,6 +1208,8 @@ def main(argv=None) -> int:
     p.add_argument("--plain", action="store_true", help="post plain content, not colored embeds")
     p.add_argument("--discover", action="store_true",
                    help="attach to live/started local crush sessions instead of spawning")
+    p.add_argument("--art", action="append", metavar="PATH",
+                   help="give each instance a rotating high-def image")
     p.add_argument("--discover-limit", type=int, default=6,
                    help="recent sessions per database considered when discovering")
     p.add_argument("--include-dormant", action="store_true",

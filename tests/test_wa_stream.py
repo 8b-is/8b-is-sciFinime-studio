@@ -194,6 +194,22 @@ class LoveModeTests(unittest.TestCase):
         self.assertEqual(code, 0)
         self.assertEqual(pushed, [{}])
 
+    def test_cmd_love_with_art_rotates_images(self):
+        pushed = []
+
+        def fake_push(webhook, text, title=None, wait=True, instance=None, **kwargs):
+            pushed.append(kwargs)
+            return {"id": "x"}
+
+        with patch.object(wa, "run_instance", self.fake_run), \
+             patch.object(wa, "push", fake_push), \
+             patch.object(wa, "webhook_url", lambda cli=None: WEBHOOK), \
+             redirect_stdout(io.StringIO()):
+            code = wa.main(["love", "--instances", "2", "--art", "one.svg", "--art", "two.svg"])
+        self.assertEqual(code, 0)
+        self.assertEqual(pushed[0]["arts"], ["one.svg"])
+        self.assertEqual(pushed[1]["arts"], ["two.svg"])
+
 
 class ColorAndEmbedTests(unittest.TestCase):
     def test_parse_color_formats(self):
@@ -439,6 +455,175 @@ class ListenTests(unittest.TestCase):
         embed_only = {"content": "", "embeds": [{"description": "body 💎"}]}
         self.assertEqual(wa._message_text(embed_only), "body 💎")
         self.assertEqual(wa._message_text({"content": "", "embeds": []}), "(embed)")
+
+
+class ArtRenderTests(unittest.TestCase):
+    def setUp(self):
+        self.temp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.temp.cleanup)
+        self.cache = Path(self.temp.name) / "art-cache"
+        self.cache_patch = patch.object(wa, "ART_CACHE", self.cache)
+        self.cache_patch.start()
+        self.addCleanup(self.cache_patch.stop)
+
+    def test_svg_uses_intrinsic_viewbox_and_2x(self):
+        src = Path(self.temp.name) / "crane.svg"
+        src.write_text('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 960"></svg>')
+        captured = {}
+
+        class Done:
+            returncode = 0
+            stdout = ""
+            stderr = ""
+
+        def fake_run(cmd, **kwargs):
+            captured["cmd"] = cmd
+            shot = [a for a in cmd if a.startswith("--screenshot=")][0]
+            Path(shot.split("=", 1)[1]).write_bytes(b"png")
+            return Done()
+
+        with patch.object(wa.subprocess, "run", fake_run):
+            out = wa.render_art(src)
+        self.assertIn("--window-size=640,960", captured["cmd"])
+        self.assertIn("--force-device-scale-factor=2", captured["cmd"])
+        self.assertTrue(out.exists() and out.name.endswith("@2x.png"))
+
+    def test_png_passes_through(self):
+        src = Path(self.temp.name) / "already.png"
+        src.write_bytes(b"png")
+        self.assertEqual(wa.render_art(src), src)
+
+    def test_bad_art_size_rejected(self):
+        with self.assertRaises(SystemExit):
+            wa._parse_art_size("banana")
+
+
+class VisualPostingTests(unittest.TestCase):
+    def setUp(self):
+        self.temp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.temp.cleanup)
+        self.png = Path(self.temp.name) / "art.png"
+        self.png.write_bytes(b"png")
+        self.render_patch = patch.object(wa, "render_art", lambda p, size=None: self.png)
+        self.render_patch.start()
+        self.addCleanup(self.render_patch.stop)
+        self.captured = {}
+
+        def fake_api(url, method="POST", payload=None, **kwargs):
+            self.captured.update(url=url, method=method, payload=payload, **kwargs)
+            return {"id": "9", "embeds": [{}], "attachments": [{}]}
+
+        self.api_patch = patch.object(wa, "api", fake_api)
+        self.api_patch.start()
+        self.addCleanup(self.api_patch.stop)
+        self.jp = patch.object(wa, "journal_path", lambda: Path(tempfile.mkdtemp()) / "j.ndjson")
+        self.jp.start()
+        self.addCleanup(self.jp.stop)
+
+    def _payload(self):
+        """The JSON payload, from the direct call or the multipart body."""
+        if self.captured.get("payload") is not None:
+            return self.captured["payload"]
+        text = self.captured["body"].decode("utf-8", "replace")
+        start = text.index('name="payload_json"')
+        json_start = text.index("\r\n\r\n", start) + 4
+        json_end = text.index("\r\n--", json_start)
+        return json.loads(text[json_start:json_end])
+
+    def test_gallery_makes_lead_card_and_attachment_embeds(self):
+        wa.push(WEBHOOK, "", title="the inks", arts=["a.svg", "b.svg"])
+        payload = self._payload()
+        self.assertEqual(len(payload["embeds"]), 3)
+        self.assertEqual(payload["embeds"][0]["title"], "the inks")
+        self.assertEqual(payload["embeds"][1]["image"]["url"], "attachment://art.png")
+        self.assertIn(b'filename="art.png"', self.captured["body"])
+        self.assertTrue(self.captured["content_type"].startswith("multipart/form-data"))
+
+    def test_gallery_cycles_palette_colors(self):
+        wa.push(WEBHOOK, "", arts=["a.svg", "b.svg", "c.svg"])
+        colors = [e["color"] for e in self._payload()["embeds"]]
+        self.assertEqual(colors[0], wa.parse_color(wa.PALETTE[0]))
+        self.assertEqual(colors[1], wa.parse_color(wa.PALETTE[1]))
+
+    def test_gallery_clamps_to_ten(self):
+        wa.push(WEBHOOK, "", arts=[f"{i}.svg" for i in range(12)])
+        self.assertEqual(len(self._payload()["embeds"]), 10)
+
+
+class MusicLaneTests(unittest.TestCase):
+    def setUp(self):
+        self.temp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.temp.cleanup)
+        self.ledger_patch = patch.object(wa, "MUSIC_LEDGER", Path(self.temp.name) / "music.ndjson")
+        self.ledger_patch.start()
+        self.addCleanup(self.ledger_patch.stop)
+        self.root_patch = patch.object(wa, "ROOT", Path(self.temp.name))
+        self.root_patch.start()
+        self.addCleanup(self.root_patch.stop)
+        self.meta_patch = patch.object(wa, "youtube_meta", lambda url: {
+            "title": "Deep Jungle Walk", "uploader": "Astrix", "duration": 545,
+            "url": "https://www.youtube.com/watch?v=lIuEuJvKos4",
+            "thumbnail": "https://i.ytimg.com/vi/lIuEuJvKos4/maxresdefault.jpg"})
+        self.meta_patch.start()
+        self.addCleanup(self.meta_patch.stop)
+        self.captured = {}
+
+        def fake_api(url, method="POST", payload=None, **kw):
+            self.captured.update(payload=payload)
+            return {"id": "77"}
+
+        self.api_patch = patch.object(wa, "api", fake_api)
+        self.api_patch.start()
+        self.addCleanup(self.api_patch.stop)
+        self.jp = patch.object(wa, "journal_path", lambda: Path(self.temp.name) / "j.ndjson")
+        self.jp.start()
+        self.addCleanup(self.jp.stop)
+
+    def test_music_posts_rich_embed_and_writes_ledgers(self):
+        stdout = io.StringIO()
+        with patch.object(wa, "webhook_url", lambda cli=None: WEBHOOK), redirect_stdout(stdout):
+            code = wa.main(["music", "https://youtu.be/lIuEuJvKos4",
+                            "--note", "the walk in", "--cue"])
+        self.assertEqual(code, 0)
+        embed = self.captured["payload"]["embeds"][0]
+        self.assertEqual(embed["title"], "Deep Jungle Walk")
+        self.assertEqual(embed["author"]["name"], "Astrix · youtube")
+        self.assertEqual(embed["url"], "https://www.youtube.com/watch?v=lIuEuJvKos4")
+        self.assertEqual(embed["image"]["url"],
+                         "https://i.ytimg.com/vi/lIuEuJvKos4/maxresdefault.jpg")
+        self.assertTrue((Path(self.temp.name) / "music.ndjson").exists())
+        inbox = Path(self.temp.name) / "projects/01.02-new-beginnings/cues-inbox.ndjson"
+        self.assertTrue(inbox.exists())
+        summary = json.loads(stdout.getvalue())
+        self.assertEqual(summary["duration"], "9:05")
+
+    def test_youtube_meta_parses_ytdlp_json(self):
+        self.meta_patch.stop()
+
+        class Done:
+            returncode = 0
+            stdout = json.dumps({"title": "T", "uploader": "U", "duration": 61,
+                                 "webpage_url": "https://youtu.be/x",
+                                 "thumbnail": "https://t/img.jpg"})
+            stderr = ""
+
+        with patch.object(wa.subprocess, "run", lambda *a, **k: Done()):
+            meta = wa.youtube_meta("https://youtu.be/x")
+        self.assertEqual(meta["title"], "T")
+        self.assertEqual(meta["duration"], 61)
+        self.assertEqual(meta["thumbnail"], "https://t/img.jpg")
+
+    def test_youtube_meta_failure_raises(self):
+        self.meta_patch.stop()
+
+        class Done:
+            returncode = 1
+            stdout = ""
+            stderr = "ERROR: nope"
+
+        with patch.object(wa.subprocess, "run", lambda *a, **k: Done()):
+            with self.assertRaises(SystemExit):
+                wa.youtube_meta("https://youtu.be/x")
 
 
 if __name__ == "__main__":

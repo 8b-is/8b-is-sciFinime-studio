@@ -50,6 +50,15 @@
   arriving with a trail of emoji like a life in order: sky → blossoms → sun
   and moon → earth and rainbow → waves → cherry → sitting → climbing → the
   train → mountains → camp → desert → the house → and at the end, hearts.
+- **Astrix — *Deep Jungle Walk***: the walk in — the seventh cue, the only
+  one allowed to build. Hypnotic, driving, cosmic; Peter brought it with
+  the artist's own description of his sets — *laced with tons of feel and
+  musicality*, a journey through the plot. It hands over at the crossing:
+  the walk builds; the breath stops it.
+- **Oxia — *Domino (Phaxe & Morten Granau Remix)***: the first domino —
+  the eighth cue. One fold, and the whole term falls into place; rolling,
+  patient, inevitable. The remix carries the original's hook the way the
+  fold carries the sheet: same line, new space.
 
 ## cinematic & literary lineage
 

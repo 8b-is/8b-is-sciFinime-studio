@@ -102,7 +102,10 @@ boards, 24:00 — the holds reconcile to the second), over `four-four-122.wav`.
   [`tools/wa_stream.py`](tools/wa_stream.py) (push / pull / serve / listen;
   `discover` — auto-detects the M1's running crush sessions; `love` —
   spawn **multi running instances of `crush-love-dev`** or fold beats
-  through the discovered live sessions) → the **UltraCrushLove<3** channel ·
+  through the discovered live sessions; `music` — the youtube lane:
+  yt-dlp metadata, high-def cards, `--cue` seats songs into the score;
+  `--art` / love art — svg·html·png rendered to 2× PNG for embeds and
+  galleries) → the **UltraCrushLove<3** channel ·
   [docs/wa-stream.md](docs/wa-stream.md)
 - local cousins: `ml-history-book/FILM-PROJECT.md` · `Celestial/` ·
   `MoneyPrinterTurbo/` · `cinematic-reconstruction/`

@@ -28,7 +28,10 @@ max_depth = 3
 # baseline, until the final chapter brings her onto it. The score grammar:
 # Diamond Veins (the open evening) · Between the Buttons (the held breath) ·
 # Lueur (the singular point) · Haul (ULTRA-ZEN-MUSIC, the mask unfolds) ·
-# Ghostkeeper (the teacher's name — the ghost meets its keeper).
+# Bye Bye Macadam (the coda) · Ghostkeeper (the teacher's name — the ghost
+# meets its keeper) · Deep Jungle Walk (the walk in — the only cue allowed
+# to build; it hands over at the crossing) · Domino (scene 2 — the first
+# domino; one fold and the term falls into place).
 # The book's one law: nobody is far.
 
 # ─── FRONT MATTER ────────────────────────────────────────────────────────
@@ -71,7 +74,8 @@ become one address, nobody crosses. The instruments insist the distance is
 unchanged; Anya opens the fold log — paper, because paper can hold what
 the observatory cannot. The third law lands: every door is also a crease.
 Match the book's voice (low-level systems architecture + ultra zen buddha
-space).
+space). Score: Domino (Oxia — Phaxe & Morten Granau Remix) — the first
+domino; one fold and the term falls into place.
 """
 depends_on = [1]
 
@@ -122,9 +126,10 @@ file = "chapters/06-the-held-breath.md"
 task = """
 SEED: scene six. The singularity walk; no instruments, no HUD, no
 cutaways. One breath, held: time wraps once, the whole date inside a
-pause. Between the Buttons, no percussion; the breath counts itself.
-Carry the real date with reverence and without explanation — the fiction
-bows, it does not wink.
+pause. Between the Buttons, no percussion; the breath counts itself. The
+walk in builds (Astrix — Deep Jungle Walk — the only building cue; it
+hands over at the crossing). Carry the real date with reverence and
+without explanation — the fiction bows, it does not wink.
 """
 depends_on = [5]
 

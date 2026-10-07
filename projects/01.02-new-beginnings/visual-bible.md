@@ -56,6 +56,8 @@ ink — shared with the sovereign library's *ETERNITY IN CHISAKI'S SMILE*
 | **Haul** · Christian Löffler (feat. Mohna) | 3 · the mask unfolds | **ULTRA-ZEN-MUSIC** — the garden's own sound; fragile, unhurried; poured like tea, not played like a track |
 | **Bye Bye Macadam** · Rone | 8 · the new beginning, the door | the road past the threshold — a farewell that keeps the thread; low, warm; seated for the coda |
 | **Ghostkeeper** · Klangkarussell & GIVVEN | 4 · the teacher's name | the entity exhales — a wave meeting its envelope; the keeper the ghost was waiting for |
+| **Deep Jungle Walk** · Astrix | 6 · the walk in | the approach to the crossing — the only cue allowed to build; hypnotic, driving; it hands over to the breath |
+| **Domino** · Oxia (Phaxe & Morten Granau Remix) | 2 · the flat-sheet test | the first domino — one fold, and the whole term falls into place; rolling, patient, inevitable |
 
 ## the singularity point
 

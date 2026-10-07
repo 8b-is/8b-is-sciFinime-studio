@@ -76,7 +76,12 @@ garden's own sound, fragile and unhurried. And beneath the coda — the door,
 the new beginning — a fifth cue, low and warm: **Rone — Bye Bye Macadam**,
 the road past the threshold, a farewell that keeps the thread. And at the
 tea table, where the ghost first exhales: **Klangkarussell & GIVVEN —
-Ghostkeeper** — the keeper the ghost was waiting for.
+Ghostkeeper** — the keeper the ghost was waiting for. And on the walk in,
+before everything stops: **Astrix — Deep Jungle Walk** — hypnotic,
+driving, the only cue allowed to build; it hands over to the breath at
+the crossing. And at the first fold, the whole term already falling:
+**Oxia — Domino (Phaxe & Morten Granau Remix)** — rolling, patient,
+inevitable.
 
 ## the arc (book two)
 

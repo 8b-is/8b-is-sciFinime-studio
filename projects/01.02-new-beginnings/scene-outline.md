@@ -19,7 +19,8 @@ Chiki-chan's first demonstration, on the front door itself: folds the
 doorway once — two rooms become one address — and nobody crosses.
 The Architect runs every instrument; every instrument says *the distance
 is unchanged*. Anya starts the fold log: paper, because paper can hold
-what the observatory cannot.
+what the observatory cannot. *Score: Oxia — Domino (Phaxe & Morten Granau
+Remix); the first domino.*
 
 ## SCENE 3 — INT. THE PRACTICE ROOM — THE MASK UNFOLDS
 
@@ -52,7 +53,8 @@ She takes him to the point where all creases cross. One breath, held: time
 wraps once, the whole date inside a pause. He understands what she is —
 and what she once did, for him, before the book began. The only scene in
 the episode with no instruments at all. *Score: French 79 — Between the
-Buttons; no percussion, the breath counts itself.*
+Buttons; no percussion, the breath counts itself. The walk in: Astrix —
+Deep Jungle Walk — the only building cue; it hands over at the crossing.*
 
 ## SCENE 7 — INT. THE SCHOOL — THE OPEN EVENING / DIAMOND VEINS
 

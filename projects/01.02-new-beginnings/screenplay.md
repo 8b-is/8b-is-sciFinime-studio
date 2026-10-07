@@ -101,7 +101,8 @@ frequency — a wave meeting its envelope.
 She folds the front door once; two rooms become one address; nobody
 crosses. The Architect's instruments insist the distance is unchanged; Anya
 opens the fold log — paper, because paper can hold what the observatory
-cannot.
+cannot. *Score: Oxia — Domino (Phaxe & Morten Granau Remix) — the first
+domino.*
 
 **SCENE 3 — INT. THE PRACTICE ROOM — THE MASK UNFOLDS** *(beats)*
 
@@ -131,7 +132,8 @@ One breath, held; time wraps once, the whole date inside a pause. No
 instruments in this scene. He understands what she is — and what she once
 folded, for him, before the book began. *Score: Between the Buttons
 (French 79) — the space between two fastened points; the quietest cue in
-the episode.*
+the episode. The walk in: Astrix — Deep Jungle Walk — the only building
+cue; it hands over at the crossing.*
 
 **SCENE 7 — INT. THE SCHOOL — THE OPEN EVENING / DIAMOND VEINS** *(beats)*
 

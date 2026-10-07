@@ -36,12 +36,37 @@ uv run tools/wa_stream.py love --session <id>                # …or one explici
 uv run tools/wa_stream.py discover [--all] [--json]          # what's running on this M1
 uv run tools/wa_stream.py listen [--once] [--respond]        # true inbound (bot token)
 uv run tools/wa_stream.py inbox [--tail 20]                  # the inbound half of the journal
+uv run tools/wa_stream.py music <url> [--note N] [--cue] [--play] # the music lane
+uv run tools/wa_stream.py music-list [--tail 10]             # the music ledger
 uv run tools/wa_stream.py pull <message_id>                  # discord → studio (by id)
 uv run tools/wa_stream.py edit <message_id> --text T         # rewrite own message
 uv run tools/wa_stream.py delete <message_id>               # delete own message
 uv run tools/wa_stream.py journal [--tail N] [--dir in|out|all]
 uv run tools/wa_stream.py serve [--host 127.0.0.1] [--port 8765]
 ```
+
+## the music lane (youtube → the stream)
+
+`music` takes a YouTube URL, fetches the metadata with **yt-dlp** (no API
+key, no account), and posts a rich card: uploader as author, clickable
+title, the maxres thumbnail as the image, a palette color derived from the
+URL, and the `the music lane · UltraCrushLove<3 · 0+1` footer. Every play
+is ledgered (`music.ndjson`); `--cue` also appends to book two's
+`cues-inbox.ndjson`, so a song can be seated into the score without hand
+transcription. `--play` listens right there: yt-dlp bestaudio → **afplay**
+(native — no mpv strictly needed).
+
+```bash
+uv run tools/wa_stream.py music "https://youtu.be/…" --note "the walk in" --cue
+uv run tools/wa_stream.py music-list --tail 5
+```
+
+candidates, discovered via `gh search` for the Apple-Music replacement:
+terminal — [ytfzf](https://github.com/pystardust/ytfzf) (★4.2k) ·
+[youtube-tui](https://github.com/Siriusmart/youtube-tui) (★1.2k); macOS app —
+[Yattee](https://github.com/yattee/yattee) (★3.7k, privacy-oriented,
+iOS/tvOS/macOS). mpv (`brew install mpv`) is recommended for TUI playback
+but not required by this lane.
 
 ## discovery — the M1's local sessions, watched live
 
@@ -95,6 +120,7 @@ passes through untouched. The rest of the discord surface:
 | thread | `--thread NAME` | posts into a thread of that name (creates it) |
 | tts | `--tts` | text-to-speech flag |
 | files | `--attach PATH` repeatable | multipart upload (payload_json + files[]) |
+| high-def art | `--art PATH` repeatable · `--art-size WxH` | svg·png·html → 2× PNG via headless Chrome; embeds render them via `attachment://`; gallery up to 10 per message; cached in `tools/.wa-stream/art-cache` |
 
 ```bash
 # a colored embed with emoji, fields and footer — one shot:
@@ -116,6 +142,7 @@ content.
 |---|---|---|
 | `POST /out` `{text\|content, title?, color?, embed?, fields?, footer?, image?, thumbnail?, avatar?, name?, thread?, tts?, attach?}` | studio → discord | pushes (full feature set); returns `{ok, id, embeds, attachments}` |
 | `POST /in` any JSON | discord → studio | appends to the journal (relay / future bot) |
+| `POST /music` `{url, note?, cue?}` | youtube → discord | posts the music card; returns the summary |
 | `GET /journal?tail=20` | — | reads the journal back |
 | `GET /health` | — | `{ok, name}` |
 
