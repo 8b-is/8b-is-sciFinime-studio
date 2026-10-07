@@ -15,7 +15,7 @@ lives in [`../tests/`](../tests/).
 | [`zimage_plate.py`](zimage_plate.py) | the eye | generate a plate with Z-Image Turbo on the local ComfyUI (blueprint → API graph) |
 | [`manuscript_pass.py`](manuscript_pass.py) | the book | convert a prose chapter into the pocoo `book/<slug>/manuscript.html` conventions |
 | [`wa_stream.py`](wa_stream.py) | the voice | the bi-directional Discord bridge (push / pull / serve / love) → UltraCrushLove<3 |
-| [`viz-screenshot.sh`](viz-screenshot.sh) | the sentinel | capture the M1 MacBook's screen (the Safari · viz.vaked.dev view) → Discord (image) + WhatsApp (note) + kokoro voice — every 4h by launchd (`com.vaked.viz-screenshot`); pings Discord when the screen is locked or Screen Recording permission is missing |
+| [`viz-screenshot.sh`](viz-screenshot.sh) | the sentinel | capture the M1 MacBook's screen (the Safari · viz.vaked.dev view) → HF private bucket (`PeetPedro/viz-vaked-recordings`, recording-mode) + Discord (image) + WhatsApp (note) + kokoro voice — every 4h by launchd (`com.vaked.viz-screenshot`); pings Discord when the screen is locked or Screen Recording permission is missing |
 | [`screen-locked.py`](screen-locked.py) | the sentinel's eye | `uv run --script` → prints `1` if the screen is locked, `0` otherwise (CoreGraphics, no deps) |
 
 The ears and the screen are a pair: the ears measure the bed, the screen seats

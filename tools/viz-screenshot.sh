@@ -3,6 +3,8 @@
 #
 # Captures the M1 MacBook's screen (the Safari · viz.vaked.dev view is the
 # important one) and broadcasts it:
+#   - HF bucket: the recording is persisted (PeetPedro/viz-vaked-recordings,
+#     private dataset, screens/…)
 #   - Discord  : the image, via wa-stream (push --attach)
 #   - WhatsApp : a text note, via the wa-stream replay inbox (replay.txt)
 #   - kokoro   : a spoken line, locally (am_echo, the announcement voice)
@@ -62,6 +64,12 @@ fi
 if [[ $POST -eq 0 ]]; then
   echo "captured: $SHOT (not posted)"
   exit 0
+fi
+
+# HF private bucket — the recording is persisted (recording-mode).
+if command -v hf >/dev/null 2>&1; then
+  hf upload PeetPedro/viz-vaked-recordings "$SHOT" \
+    "screens/$(basename "$SHOT")" --repo-type dataset >/dev/null 2>&1 || true
 fi
 
 # Discord — the image.
