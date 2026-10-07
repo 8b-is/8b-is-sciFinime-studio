@@ -83,5 +83,9 @@
   inspiration, not a cue: one guitar, no repeats, the internal flight as the
   form. A lesson in structure for a book about the fold — every pass a new
   room, the theme returning changed. Marked by Peter, 2026-10-07.
+- **Gorillaz — *Clint Eastwood* (feat. Del the Funky Homosapien)** —
+  inspiration, the loop's own soundtrack: a ghost that keeps talking over a
+  dub that never hurries; *I am the expressway*, turn the lights on. Marked
+  by Peter, 2026-10-07.
 
 *fine touch from within · 0 + 1*
