@@ -89,6 +89,19 @@
           "prompt": "a small warmly lit classroom in the evening, students' folded paper works on the tables, one large paper lantern as the only light, golden crease lights everywhere, welcome and calm"
         }
       ]
+    },
+    "II.07": {
+      "prompt": "the first date — origami and flow, two figures looping between Tokyo and Haneda, motion as tenderness, cream washi and ink with a rose-and-amber seam of light",
+      "items": [
+        {
+          "name": "the-first-date-tokyo-haneda",
+          "prompt": "two figures seen from behind on a late train running the Tokyo to Haneda loop, a young woman folding a small paper crane in her hands and a man beside her watching, the window a wash of soft rose and amber light-trails from the back-and-forth, city glow bleeding to airport blue, unhurried and warm"
+        },
+        {
+          "name": "the-crane-between-two-hands",
+          "prompt": "close view of a small paper crane being passed between two pairs of hands at an airport railing, night glass and distant runway lights soft behind, a thin gold vein of light along the crane's crease edges, tender and still"
+        }
+      ]
     }
   }
 }
