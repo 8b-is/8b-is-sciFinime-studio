@@ -31,7 +31,8 @@ max_depth = 3
 # Bye Bye Macadam (the coda) · Ghostkeeper (the teacher's name — the ghost
 # meets its keeper) · Deep Jungle Walk (the walk in — the only cue allowed
 # to build; it hands over at the crossing) · Domino (scene 2 — the first
-# domino; one fold and the term falls into place).
+# domino; one fold and the term falls into place) · Psychology (scene 1 —
+# the noticing; the cold open's quiet).
 # The book's one law: nobody is far.
 
 # ─── FRONT MATTER ────────────────────────────────────────────────────────
@@ -61,6 +62,7 @@ handwriting"), the locked classroom's light, Chiki-chan's first lesson,
 "starting with the one who was pre-creased", the Child's "I know her."
 KEEP ALL ORIGINAL LINES — this chapter is seated in the studio
 (prose/chapter-01-the-crane-on-the-desk.md). Restoration/polish only.
+Score note: the cold open carries Otopia — Psychology (the noticing).
 """
 depends_on = [0]
 

@@ -11,7 +11,8 @@ The school at dawn: intake desk, creaking heater, the porch lamp still on
 (they never turn it off). A paper crane on the desk; complete door logs;
 no arrival. Inside the left wing: a crease diagram of the building.
 A polite knock — from *inside* the building. She is already in the
-classroom, seated, patient, carrying paper like weather.
+classroom, seated, patient, carrying paper like weather. *Score: Otopia —
+Psychology; the noticing — the room read before it admits anything.*
 
 ## SCENE 2 — INT. THE SCHOOL — THE FLAT-SHEET TEST
 

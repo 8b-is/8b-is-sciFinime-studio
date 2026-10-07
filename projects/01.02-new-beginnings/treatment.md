@@ -81,7 +81,9 @@ before everything stops: **Astrix — Deep Jungle Walk** — hypnotic,
 driving, the only cue allowed to build; it hands over to the breath at
 the crossing. And at the first fold, the whole term already falling:
 **Oxia — Domino (Phaxe & Morten Granau Remix)** — rolling, patient,
-inevitable.
+inevitable. And at the very top, before anything moves: **Otopia —
+Psychology** — the noticing; the mind reading the room one beat before
+the room admits anything.
 
 ## the arc (book two)
 

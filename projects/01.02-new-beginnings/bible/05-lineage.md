@@ -59,6 +59,10 @@
   the eighth cue. One fold, and the whole term falls into place; rolling,
   patient, inevitable. The remix carries the original's hook the way the
   fold carries the sheet: same line, new space.
+- **Otopia — *Psychology***: the ninth cue — the noticing. The cold open's
+  quiet instrument: the mind reading the room one beat before the room
+  admits anything. Seated from the ledger's own note (a sibling lap left
+  it penciled, decoded from base64; it is seated here).
 
 ## cinematic & literary lineage
 

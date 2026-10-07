@@ -92,7 +92,8 @@ frequency — a wave meeting its envelope.
 > I know her.
 
 **TITLE CARD** — a crease-diagram glyph, one fold crossing the frame:
-*EPISODE 01 — THE CRANE ON THE DESK*.
+*EPISODE 01 — THE CRANE ON THE DESK*. *Score: Otopia — Psychology — the
+noticing.*
 
 ---
 

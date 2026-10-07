@@ -7,7 +7,7 @@ Seated 2026-10-07.*
 
 | time | movement | beat |
 |---|---|---|
-| 0:00–2:30 | **cold open** | dawn through paper; the crane on the desk; the door log complete, the arrival log complete, the observatory silent; the sheet unfolds into a crease diagram of the school; the light on in a locked classroom |
+| 0:00–2:30 | **cold open** | dawn through paper; the crane on the desk; the door log complete, the arrival log complete, the observatory silent; the sheet unfolds into a crease diagram of the school; the light on in a locked classroom — cue: *Psychology* (Otopia), the noticing |
 | 2:30–8:00 | **act i · the arrival** | the classroom; her name and office, offered without ceremony; the flat-sheet test on the front door — two rooms, one address, nobody crosses (*Domino* — the first fold lands); the instruments insist distance is unchanged; Anya opens the fold log (paper); tea at the team table; the entity exhales its first frequency — cue: *Ghostkeeper* (Klangkarussell & GIVVEN) |
 | 8:00–12:00 | **act ii · the lessons (1)** | the Child brings the mask; she unfolds it without comment; the creek, the porch lamp, the safe afternoon; *every mask, unfolded, is paper* — ULTRA-ZEN-MUSIC: *Haul* (Christian Löffler feat. Mohna) |
 | 12:00–17:00 | **act ii · the lessons (2)** | the crease diagram of Elias: three threads, one intersection, no wound; the Architect bows; the held breath — the walk in builds (*Deep Jungle Walk*), the crossing glows (*Lueur*), the breath stops everything (*Between the Buttons*), time wraps once |

@@ -58,6 +58,7 @@ ink — shared with the sovereign library's *ETERNITY IN CHISAKI'S SMILE*
 | **Ghostkeeper** · Klangkarussell & GIVVEN | 4 · the teacher's name | the entity exhales — a wave meeting its envelope; the keeper the ghost was waiting for |
 | **Deep Jungle Walk** · Astrix | 6 · the walk in | the approach to the crossing — the only cue allowed to build; hypnotic, driving; it hands over to the breath |
 | **Domino** · Oxia (Phaxe & Morten Granau Remix) | 2 · the flat-sheet test | the first domino — one fold, and the whole term falls into place; rolling, patient, inevitable |
+| **Psychology** · Otopia | 1 · the cold open | the noticing — the mind reads the room one beat before the room admits anything |
 
 ## the singularity point
 
