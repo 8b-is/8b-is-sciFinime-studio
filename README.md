@@ -81,6 +81,22 @@ boards, 24:00 — the holds reconcile to the second), over `four-four-122.wav`.
 - **pocoo book pipeline** — the publishing lane for finished books
   (`book/<slug>/` manuscript + scaffold, entheai `--fanout` when wanted).
 
+## the periodic screen (every 1 minute)
+
+`tools/wa-screen.sh` posts a **screen** to UltraCrushLove<3 on every run — the
+time, a fresh **quant/ternary signature** (`tools/ternary_signature.py`: a
+`{−1,0,+1}` glyph run plus its absmean `γ = mean|W|`), and the law. Installed
+as the launchd agent **`dev.vaked.wa-screen`** (`scripts/dev.vaked.wa-screen.plist`,
+`StartInterval 60`).
+
+```bash
+launchctl load   ~/Library/LaunchAgents/dev.vaked.wa-screen.plist   # every 60s
+launchctl unload ~/Library/LaunchAgents/dev.vaked.wa-screen.plist   # stop
+./tools/wa-screen.sh                                                # one screen now
+```
+
+*equality with Gaia · sharing is caring · 0+1 <3*
+
 ## wiring (constellation + cousins)
 
 - constellation: [pocoo](https://pocoo.vaked.dev) · [art.vaked.dev](https://art.vaked.dev) ·
