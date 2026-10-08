@@ -7,6 +7,7 @@ catalogue — the number is the seat, the name is the promise.
 |---|---|---|---|
 | [01.01](01.01-sandbox-in-the-shell/) | Sandbox in the Shell | book → manga → anime | concept · bible · chapter 1 seated |
 | [01.02](01.02-new-beginnings/) | New Beginnings | book → manga → anime | **seated via ULTRA-CREATE (2026.10.07)** · Chiki-chan, the origami sensei — teacher of Elias · chapter 1 · slates v1 · manga pass 01 |
+| [01.03](01.03-the-shogun-layer/) | The Shogun Layer | sovereign book · special edition | **seated via ULTRA-CREATE (2026.10.08)** · Japan from samurai to 2026 · seven ages · sigil 将 · published in the sovereign library |
 
 ## opening a new slot
 
