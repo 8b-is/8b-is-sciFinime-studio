@@ -30,6 +30,7 @@ sovereignty is not owning everything — it is owning your own path.
 ## the room
 
 - [`treatment.md`](treatment.md) — the story as one breath (the seven ages)
-- the published book: `pocoo.vaked.dev/demos/book/the-shogun-layer.html`
+- [`voice-narration.wav`](voice-narration.wav) — the book read aloud (kokoro-tiny · bm_george, the narrator)
+- the published book: `pocoo.vaked.dev/demos/book/the-shogun-layer.html` — html · pdf (5×8in) · epub
 
 *fine touch from within · 0 + 1 · vaked.dev*
