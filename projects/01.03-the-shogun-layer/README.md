@@ -7,7 +7,7 @@
 |---|---|
 | slot | 01.03 |
 | form | sovereign book · special edition |
-| status | **seated via ULTRA-CREATE, 2026.10.08** · seven ages written · sigil 将 |
+| status | **seated via ULTRA-CREATE, 2026.10.08** · seven ages written · sigil 将 · **expanded with OSS sources** (Wikipedia + public-domain books + Nate's clinical parallel) |
 | published | `pocoo.vaked.dev/demos/book/the-shogun-layer.html` (sovereign library) |
 | seed | the "Shogun Layer" of the Tokyo map — Japan from samurai to 2026 |
 | lineage siblings | [01.01 Sandbox in the Shell](../01.01-sandbox-in-the-shell/) · [01.02 New Beginnings](../01.02-new-beginnings/) · *ETERNITY IN CHISAKI'S SMILE* |
