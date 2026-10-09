@@ -19,6 +19,11 @@ and **the screen** ([`tools/screen.py`](../tools/screen.py)) seats the timed
 boards through **mpv** — one plate held for one timecode. See
 [`screening.md`](screening.md).
 
+The motion stages (animatic → short animation) stand on the **world-state
+frame** — a frame is a camera observation of a persistent world, not a
+synthesized picture. The framework, its operators, and the studio mapping:
+[`cinematic-reconstruction.md`](cinematic-reconstruction.md).
+
 ## the Steel Sky spine (per project)
 
 Adopted from [standardgalactic/steel-sky](https://github.com/standardgalactic/steel-sky),

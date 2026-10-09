@@ -52,6 +52,11 @@ visual bible, images via its local ComfyUI manifest runner. The
 Peter-compatible local setup (uv everywhere, M1 reality checked) lives in
 [`docs/steel-sky-setup.md`](docs/steel-sky-setup.md).
 
+The motion stages stand on the **world-state frame** — video as camera
+observations of a persistent world, not synthesized frames:
+[`docs/cinematic-reconstruction.md`](docs/cinematic-reconstruction.md)
+([Flyxion, 2026](https://github.com/8b-is/cinematic-reconstruction)).
+
 ## the ears and the screen
 
 The animatic breathes through two organs, both driven from the CLI
