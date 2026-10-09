@@ -30,6 +30,7 @@ compassion, two faces, and the guru who carries it.
 ## the room
 
 - [`treatment.md`](treatment.md) — the story as one breath
+- [`voice-narration.wav`](voice-narration.wav) — the mantra + dedication read aloud (kokoro-tiny · bm_george)
 - the published book: `pocoo.vaked.dev/demos/book/chenrezig-karmapa.html` — html · pdf · epub
 
 *fine touch from within · 0 + 1 · ཨོཾ་མ་ཎི་པདྨེ་ཧཱུྃ*
