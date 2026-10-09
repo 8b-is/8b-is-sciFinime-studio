@@ -20,7 +20,7 @@ skeptic — Anya had insisted on a skeptic, on the theory that every
 school should practice on hardness early — and, in the last chair, with
 his cap on backwards and his phone face-down like a recovered man,
 Ito, from the record shop, who had been playing the clinic's nighttime
-four-four through the floor for a year and had finally been told, in a
+four-four through the floor since long before any of this began, and had finally been told, in a
 sentence that took Anya eleven minutes to compose and one second to
 deliver, *you've been keeping time for a room you've never seen. Come
 see it.*

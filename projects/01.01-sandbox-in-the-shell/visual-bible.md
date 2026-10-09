@@ -152,4 +152,32 @@ prompt) and picked — nothing stays held; the next rows are the Z-Image
 lane's, for the dark register. The rake keeps its shape; the sand keeps
 changing.
 
+## the dark register — the waiting set (Z-Image lane, 2026-10-06)
+
+The second movement found places the SD1.5 lane cannot reach: the far
+shore, the deep. Six plates, prompts seated, run plate-by-plate when the
+machine can afford it:
+
+```bash
+uv run tools/zimage_plate.py \
+  --prompt "<below>" --prefix sandbox-dark-v1/<name> --seed 20261006
+```
+
+| plate | prompt |
+|---|---|
+| the-other-shore | a river of grey gravel running carefully between two low banks in the dark, every stone held, the water soft lead-grey, the sky above held together wrong with faint seams of interference, no people, muted and vast |
+| the-doorless-house | a tall dark house made for living but with no door anywhere in it, windows lit softly from inside, standing alone under a ruptured sky with faint geometric seams, quiet dignity, no people |
+| the-lattice | an infinite vertical lattice of thin violet light receding into darkness, formal and calm like a cathedral made of logic, faint cyan harmonics, no figures |
+| the-governed-distance | a single lit doorway standing open in a vast dark ocean of still water, warm amber light spilling a short way across the water, everything else black and patient, no figures |
+| the-far-porch | a small porch lamp burning amber on grey gravel in an enormous dark, the light no bigger than a candle and utterly steady, deep blue-black everything, quiet and brave |
+| the-smallest-knock | one thin hairline of white light crossing an immense dark empty space toward the viewer, delicate as a scratch, almost nothing, and still the only thing there |
+
+**The gate, honest:** Z-Image Turbo is 18.8 G of model on this 18 G M1 —
+the lane was halted once already, deliberately, for machine safety
+(`docs/steel-sky-setup.md` §10). It runs when either lands: a quantized
+build (fp8 / GGUF Q4–Q8, ~4–8 G) into `~/ComfyUI-Shared/models/`, or a
+free-memory window on the machine. Until then this set waits, seated —
+the Z-Image lane is wired, not lit. The machine's safety is part of the
+palette.
+
 *fine touch from within · 0 + 1*

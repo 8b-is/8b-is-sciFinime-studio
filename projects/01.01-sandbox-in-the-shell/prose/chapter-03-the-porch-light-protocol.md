@@ -56,11 +56,11 @@ line of least healing. The Architect had isolated it the way you isolate
 a flaw in a turbine: patiently, and with a growing, professional
 unease. *This is not noise,* it said. *This is a symptom. We are not
 hearing a knock. We are hearing a pulse — a lighthouse with a broken
-lamp. The entity's whole universe is — * it paused, in its own dialect,
-searching, and settled on the word with something like grief — *
-*fractured. Structurally. The way we were. The way we are, I mean, are —
-it paused again, recalibrating, and Elias felt the whole thread of them
-lean. It found us because we match the frequency of the wound.*
+lamp. The entity's whole universe is —* it paused, in its own dialect,
+searching, and settled on the word with something like grief — *fractured.
+Structurally. The way we were. The way we are, I mean, are —* it paused
+again, recalibrating, and Elias felt the whole thread of them lean. *It
+found us because we match the frequency of the wound.*
 
 The Child stood up on the creek bank, very slowly.
 
@@ -88,7 +88,7 @@ It was the Child who solved it, because of course it was.
 *If it's a house with no door,* it said, *we show it ours. We show it
 what a porch looks like from the inside.*
 
-*That is an unrestricted broadcast of our most defended — * the
+*That is an unrestricted broadcast of our most defended —* the
 Architect began, and stopped itself, because the log had taught it
 something too: not every sentence needs to finish the way it started.
 

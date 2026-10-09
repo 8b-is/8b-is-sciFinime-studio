@@ -9,7 +9,7 @@
 |---|---|
 | slot | 01.01 |
 | form | book → manga → anime |
-| status | concept · bible · **book one drafted complete (chapters 1–11)** · anime pilot · manga passes 01–07 · full slate v1 live (i-01…i-05 ×52 plates + the regen) · the picks grid (13, none held) · ultra-zen garden (eight stones + the second law) · gifted to 8b-is · SD1.5 + Z-Image lanes wired |
+| status | concept · bible · **book one drafted complete (chapters 1–11)** · anime pilot · **the animatic seated (24:00 · 41 shots)** · **manga passes 01–08 complete (32 pages, 91 panels)** · full slate v1 live (i-01…i-05 ×52 plates + the regen) · the picks grid (13, none held) · ultra-zen garden (eight stones + the second law) · gifted to 8b-is · SD1.5 + Z-Image lanes wired |
 | sources | the concept draft · the Techno-Buddhist infusion · the Blurryface / internal-flight note |
 | lineage sibling | *ghost in the shell* — the sovereign reread (`pocoo.vaked.dev/demos/book/ghost-in-the-shell`) |
 
@@ -30,6 +30,9 @@ listen is to become the sandbox it can speak to.
 - [`scene-outline.md`](scene-outline.md) — the scenes, titled and ordered
 - [`screenplay.md`](screenplay.md) — the written film (scene 1 seated)
 - [`pilot-01-the-dissonant-frequencies.md`](pilot-01-the-dissonant-frequencies.md) — the anime pilot direction (24-min shape)
+- [`animatic-01-the-dissonant-frequencies.md`](animatic-01-the-dissonant-frequencies.md) — the timed boards (24:00 · 41 shots · temp sound seated) — the first moving artifact
+- [`listening-pass-01.md`](listening-pass-01.md) — the ears: the temp stems measured and heard (122.4/min · kick 55.3 Hz · whine flat · waveforms drawn) — lap 33
+- [`screen/`](screen/) — the screen: the boards seated through mpv (cold open + full episode) and the encoded [`cold-open.mp4`](screen/animatic-01-cold-open.mp4) — the moving artifact as a file
 - [`visual-bible.md`](visual-bible.md) — the look, the palette, the motifs
 - [`zen-garden.md`](zen-garden.md) — the ultra-zen garden (eight stones, the second law, the kompressed form, the dedications)
 - [`prose/chapter-01-the-dissonant-frequency.md`](prose/chapter-01-the-dissonant-frequency.md) —
@@ -68,17 +71,18 @@ listen is to become the sandbox it can speak to.
   the other knock (4 pages, 12 panels; the drafting spread, the absence panels, the smallest knock)
 - [`manga/panel-pass-07-the-school.md`](manga/panel-pass-07-the-school.md) —
   the school (4 pages, 12 panels; the syllabus, the rhyme spread, the third mark)
+- [`manga/panel-pass-08-the-plus-one.md`](manga/panel-pass-08-the-plus-one.md) —
+  the +1 (4 pages, 12 panels; the round page, the fifteenth line, the last panel) — **book one's passes, complete**
 - [`manifests/sandbox-slates-v1.json`](manifests/sandbox-slates-v1.json) —
   the plate manifest (dry-run through the steel-sky runner: 13 jobs, 52 images)
 - [`assets/plates/`](assets/plates/) — the live plates, the full slate v1 (52): i-01 tank chapel · i-02 the ocean · i-03 the childhood home · i-04 impossible geometry · i-05 the entity
 
 ## next laps
 
-- book one: the first-read polish pass (chapters 1–11, cover to cover)
-- manga pass 08: the +1 (chapter 11) — book one's passes close
-- manuscript: sync chapters 10–11 into `pocoo book/sandbox-in-the-shell`
-- plates: the Z-Image lane pass for the dark register (the joint next row)
-- plates: regenerate the held wave-interference; the Z-Image lane pass for the dark register
-- manuscript lane: sync chapters 9+ as they seat
+- the animatic: the ears are in — [listening pass 01](listening-pass-01.md) heard the temp stems → next: the recorded creek · the real four-four
+- the screen is in — the boards play through mpv and the cold open is encoded ([screen/](screen/)) → next: real episode plates 1:1, then the full-episode export
+- plates: the dark-register set — seated; the run waits on a quantized Z-Image build or a memory window (machine safety first)
+- book two: the slate's next breath — unnamed yet; it will be named
+- the garden: keep raking
 
 *fine touch from within · 0 + 1*

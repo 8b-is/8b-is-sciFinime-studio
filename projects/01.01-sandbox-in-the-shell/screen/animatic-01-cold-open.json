@@ -1,0 +1,57 @@
+{
+  "title": "animatic 01 · the dissonant frequencies — cold open (0:00–3:00)",
+  "note": "Provisional board→plate assignment. Boards come from manga pass 01 · pages 1–2 (panels 1.1–2.3) per animatic-01-the-dissonant-frequencies.md. Plates are the sandbox-slates-v1 picks; as episode plates land they replace the picks 1:1 — the timecodes stay the boss.",
+  "audio": [
+    "projects/01.01-sandbox-in-the-shell/assets/sound/animatic-01-temp/four-four-122.wav"
+  ],
+  "boards": [
+    {
+      "board": "1.1",
+      "hold": 26,
+      "plate": "projects/01.01-sandbox-in-the-shell/assets/plates/sandbox-slates-v1/picks/shinjuku-rain.jpg",
+      "action": "Rain-slicked crossing, neon smeared, cooling towers steaming. Slow push in. (four-four enters alone, no reverb tail)"
+    },
+    {
+      "board": "1.1",
+      "hold": 26,
+      "plate": "projects/01.01-sandbox-in-the-shell/assets/plates/sandbox-slates-v1/picks/the-window.jpg",
+      "action": "Drift up the tower face; droplets sync to the hi-hat. (four-four + rain foley, still dry)"
+    },
+    {
+      "board": "1.2",
+      "hold": 24,
+      "plate": "projects/01.01-sandbox-in-the-shell/assets/plates/sandbox-slates-v1/picks/the-gate.jpg",
+      "action": "The basement door, sliver of club light; ITO flips the sign. (four-four at full body; door thud cuts it soft)"
+    },
+    {
+      "board": "1.3",
+      "hold": 24,
+      "plate": "projects/01.01-sandbox-in-the-shell/assets/plates/sandbox-slates-v1/picks/porch-lamp.jpg",
+      "action": "Up the clinic stairs: pumps, dark glass, one amber lamp over the hatch. (city fades to pumps; the four-four goes below the mix)"
+    },
+    {
+      "board": "1.4",
+      "hold": 24,
+      "plate": "projects/01.01-sandbox-in-the-shell/assets/plates/sandbox-slates-v1/picks/the-turn.jpg",
+      "action": "Elias at the hatch; coat off, no ceremony. A hand on the rim, an exhale. (pumps + a single breath)"
+    },
+    {
+      "board": "1.5",
+      "hold": 24,
+      "plate": "projects/01.01-sandbox-in-the-shell/assets/plates/sandbox-slates-v1/picks/the-tank-room.jpg",
+      "action": "Into the water; the lid takes the ceiling. Bubbles scatter the ruler-lines. (water gulp, then under-mix quiet: the four-four now inside the body)"
+    },
+    {
+      "board": "2.1",
+      "hold": 24,
+      "plate": "projects/01.01-sandbox-in-the-shell/assets/plates/sandbox-slates-v1/picks/the-descent.jpg",
+      "action": "The descent begins; the ocean's first glow arrives from below. (slow tide of wave synthesis, no melody)"
+    },
+    {
+      "board": "title",
+      "hold": 8,
+      "plate": "projects/01.01-sandbox-in-the-shell/assets/plates/sandbox-slates-v1/picks/wave-interference.jpg",
+      "action": "Title card, waveform glyph: EPISODE 01 — THE DISSONANT FREQUENCIES. (one clean creek note, then cut)"
+    }
+  ]
+}
