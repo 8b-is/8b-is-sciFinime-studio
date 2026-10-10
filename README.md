@@ -126,7 +126,10 @@ launchctl unload ~/Library/LaunchAgents/dev.vaked.wa-screen.plist   # stop
 - 8b-is: the fleet, `raw_research` corpus, `8b-is-engine` — the studio is an
   8b-is surface
 - mr. standardgalactic: [steel-sky](https://github.com/standardgalactic/steel-sky)
-  ("never dig straight down") — the studio adopts its catalogue discipline
+  ("never dig straight down") — the studio adopts its catalogue discipline;
+  the home repo and its eight lanes are now indexed as the vault's
+  `standardgalactic-wire-absorbed.md` and the sovereign library's
+  `SOURCES.md` (wired 2026-10-11)
 - lineage sibling: the sovereign reread *ghost in the shell* at
   `pocoo.vaked.dev/demos/book/ghost-in-the-shell`
 - book two's porch light: *ETERNITY IN CHISAKI'S SMILE · 智咲の微笑み* at
