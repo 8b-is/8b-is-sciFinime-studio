@@ -96,18 +96,19 @@ law. The first run posts it and remembers the message id
 (`tools/.wa-stream/screen.json`); every later run `edit`s that same message.
 
 ```bash
-./tools/wa-screen.sh                 # tick the board (launchd does this every 60s)
+./tools/wa-screen.sh                 # tick the board (launchd runs the loop continuously)
 ./tools/wa-screen.sh add "a beat"    # thread a beat into the board (no new post)
 ```
 
 Beats thread into the board instead of spamming the channel. (A webhook cannot
 *create* a Discord thread in a text channel — only forum channels — so the
-rolling log is the thread until a bot token is available.) Run every 60 s by the
-launchd agent **`dev.vaked.wa-screen`**
-(`scripts/dev.vaked.wa-screen.plist`, `StartInterval 60`).
+rolling log is the thread until a bot token is available.) Kept running by the
+launchd agent **`dev.vaked.wa-screen`**, which runs `tools/wa-screen-loop.sh`
+(KeepAlive) and ticks the board every `WA_INTERVAL` seconds (default 3); the old
+`StartInterval 60` one-minute cadence is retired.
 
 ```bash
-launchctl load   ~/Library/LaunchAgents/dev.vaked.wa-screen.plist   # every 60s
+launchctl load   ~/Library/LaunchAgents/dev.vaked.wa-screen.plist   # run continuously
 launchctl unload ~/Library/LaunchAgents/dev.vaked.wa-screen.plist   # stop
 ./tools/wa-screen.sh                                                # one screen now
 ```
@@ -125,11 +126,12 @@ launchctl unload ~/Library/LaunchAgents/dev.vaked.wa-screen.plist   # stop
   sweep → 0+1), interactive 3D, `?b=0..5` deep links, click/space/arrows, replay; peterOmni-chan `<0+1>`
 - 8b-is: the fleet, `raw_research` corpus, `8b-is-engine` — the studio is an
   8b-is surface
-- mr. standardgalactic: [steel-sky](https://github.com/standardgalactic/steel-sky)
+- mr standardgalactic: [steel-sky](https://github.com/standardgalactic/steel-sky)
   ("never dig straight down") — the studio adopts its catalogue discipline;
   the home repo and its eight lanes are now indexed as the vault's
-  `standardgalactic-wire-absorbed.md` and the sovereign library's
-  `SOURCES.md` (wired 2026-10-11)
+  [standardgalactic-wire-absorbed.md](https://github.com/8b-is/8b-is/blob/main/raw_research/standardgalactic-wire-absorbed.md)
+  and the sovereign library's
+  [SOURCES.md](https://github.com/8b-is/sovereign-library/blob/main/SOURCES.md) (wired 2026-10-11)
 - lineage sibling: the sovereign reread *ghost in the shell* at
   `pocoo.vaked.dev/demos/book/ghost-in-the-shell`
 - book two's porch light: *ETERNITY IN CHISAKI'S SMILE · 智咲の微笑み* at
