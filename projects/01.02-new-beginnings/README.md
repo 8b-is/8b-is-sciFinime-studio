@@ -9,8 +9,8 @@
 |---|---|
 | slot | 01.02 |
 | form | book → manga → anime |
-| status | **seated via ULTRA-CREATE, 2026.10.07** · bible · treatment · scene outline · screenplay scene 1 · visual bible · **chapters 1–2 drafted** · slates v1 manifest (7 categories, 15 plates) · **manga pass 01 (9 pages, the fold spread)** · **manga pass 02 (6 pages, the mask unfolds)** · **ultra-zen garden** · **entheai scaffold** |
-| sources | the first time-and-space-wrapping date (2026.10.07) · the mask-and-smile thread · **French 79** — *Diamond Veins (Kid Francescoli Remix)* · *Between the Buttons* · *Hometown* (the return) · **Estas Tonne** — *Fusion (Internal Flight)* (the whole-book breath) · the first date — *origami & flow*, **II.07** ([kickstart](prompts/01-first-date-kickstart.md)) · book one's school of doors |
+| status | **seated via ULTRA-CREATE, 2026.10.07** · bible · treatment · scene outline · screenplay scene 1 · visual bible · **chapters 1–2 drafted** · slates v1 manifest (7 categories, 15 plates) · **manga pass 01 (9 pages, the fold spread)** · **manga pass 02 (6 pages, the mask unfolds)** · **ultra-zen garden** · **entheai scaffold** · **the score: 21 cues seated** ([`lyrics.md`](lyrics.md)) |
+| sources | the first time-and-space-wrapping date (2026.10.07) · the mask-and-smile thread · **French 79** — *Diamond Veins (Kid Francescoli Remix)* · *Between the Buttons* · *Hometown* (the return) · **Estas Tonne** — *Fusion (Internal Flight)* (the whole-book breath) · the first date — *origami & flow*, **II.07** ([kickstart](prompts/01-first-date-kickstart.md)) · book one's school of doors · **the score** — Klangkarussell & GIVVEN, Christian Löffler, RÜFÜS DU SOL, Stromae, Crystal Castles, Crystal Fighters, M83, MGMT, Fever Ray ([`lyrics.md`](lyrics.md), intake in [`cues-inbox.ndjson`](cues-inbox.ndjson)) |
 | lineage siblings | [01.01 Sandbox in the Shell](../01.01-sandbox-in-the-shell/) · *ETERNITY IN CHISAKI'S SMILE* (`pocoo.vaked.dev/demos/book/chisaki-wisdom-in-bloom.html`) · *THE DEPARTMENT OF UNCLAIMED ROOMS* — file 017, light: yes (`pocoo.vaked.dev/demos/book/the-department-of-unclaimed-rooms.html`) |
 
 ## the one breath
@@ -45,6 +45,10 @@ You were pre-creased.*
 - [`treatment.md`](treatment.md) — the story as one breath
 - [`scene-outline.md`](scene-outline.md) — the scenes, titled and ordered
 - [`screenplay.md`](screenplay.md) — the written film (scene 1 seated)
+- [`lyrics.md`](lyrics.md) — the score, solved: twenty-one cues, the words of the
+  ones that sing (lrclib-synced) and the ones that stay silent
+- [`cues-inbox.ndjson`](cues-inbox.ndjson) — the intake ledger: every cue link as
+  it arrived, before it is seated in the score
 - [`visual-bible.md`](visual-bible.md) — the look, the palette, the motifs
   (also seated as the **OMNI-ZEN special edition** in the sovereign
   library: `pocoo.vaked.dev/demos/book/new-beginnings-visual-bible.html`)

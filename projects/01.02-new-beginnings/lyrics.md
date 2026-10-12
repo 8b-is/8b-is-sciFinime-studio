@@ -2,7 +2,7 @@
 
 *The operator's share: the vocal cues carry words; the instrumentals carry the
 silence between. Here every lyric, fetched and seated, so the score is complete —
-thirteen cues, and the words that belong to the ones that speak. IDC how; here
+twenty-one cues, and the words that belong to the ones that speak. IDC how; here
 they are, lrclib-synced, rowed.*
 
 ## the ones that sing
@@ -30,7 +30,7 @@ they are, lrclib-synced, rowed.*
 > It's far away / You walk this distance like it's a little dance /
 > You walk your walk like a water-walk
 
-### Innerbloom — RÜFÜS DU SOL (the base layer's anthem)
+### Innerbloom — RÜFÜS DU SOL (the base layer's anthem · live at the Hordern Pavilion, Sydney)
 > Feels like I'm waiting, like I'm watching / Watching you for love /
 > So free my mind, all the talking / Wasting all your time, I'm giving all that
 > I've got / If you want me, if you need me, I'm yours
@@ -39,6 +39,34 @@ they are, lrclib-synced, rowed.*
 > Y a d'abord eu Natasha, mais avant y avait Nathalie / Puis Laura, Aurélie,
 > Emma, Emmanuelle et Sophie / Eva et Valérie / Mais mon amour, mon amour /
 > Tu sais qu'il n'y a que toi / Et que je t'aimerai pour toujours
+
+### Vanished — Crystal Castles
+> In the dark, we come out and play / We are it's child, here to stay /
+> Running through, hungry for strays / No invitat-, take me away
+
+### Love Natural — Crystal Fighters
+> Oh love natural / I can't believe / How you do to me / You make me feel /
+> Oh how you say / Feel so special
+
+### Midnight City — M83
+> Waiting in a car / Waiting for a ride in the dark / The night city grows /
+> Look at the horizon glow
+
+### Kids — MGMT
+> Control yourself / Take only what you need from it /
+> A family of trees wanted to be haunted
+
+### Keep the Streets Empty for Me — Fever Ray
+> Memory comes when memory's old / I am never the first to know /
+> Morning, keep the streets empty for me
+
+### LA Calling — Crystal Fighters (the first fold · LA / daylight / calling)
+> I want in, ride all night, LA calling / Bathed in sunlight /
+> Cold as cash is, hot as lust is / I know where my heart is
+
+### Instant Crush — Daft Punk feat. Julian Casablancas
+> And we will never be alone again / 'Cause it doesn't happen every day /
+> Kinda counted on you being a friend / Can I give it up or give it away?
 
 ## the ones that stay silent (instrumental)
 
