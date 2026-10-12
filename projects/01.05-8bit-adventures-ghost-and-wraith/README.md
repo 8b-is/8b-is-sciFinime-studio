@@ -58,8 +58,17 @@ wherever it is read:
 - **The studio site is not updated by this repo.** `scifinime-vaked-dev` is a
   Cloudflare **direct-upload** Pages project (no git integration), and its
   upload source is **not on this machine**. Nothing here publishes it.
-  Wiring this project into the live landing page needs the site source, and
-  deploying blind would overwrite the live site — so it was not attempted.
+- **The wiring is scripted and one command away:** `./wire-site.sh`.
+  It fetches the live page, verifies every asset by **magic bytes** (the site
+  answers its own 404 with `200`, so a successful fetch proves nothing),
+  grafts the 01.05 card and the four gallery figures, and deploys. It defaults
+  to a **preview branch** — production is untouched unless you pass `--prod`,
+  because a Pages deploy replaces the *whole* deployment and would remove any
+  file not in the upload.
+- **It is blocked on one thing: `CLOUDFLARE_API_TOKEN`.** `wrangler pages
+  deploy` refuses to run non-interactively without it (Workers deploys accept
+  the stored OAuth; Pages uploads do not), and no literal token exists on this
+  machine. Steps 1–4 were tested and work; step 5 is the only untested part.
 - The cover plate exists in two places — here for the studio's record, and in
   the book's assets so the book renders standalone. Deliberate, and the cost is
   one file kept in sync.
