@@ -9,3 +9,5 @@ data/
 node_modules/
 
 tools/.wa-stream/
+
+*.bak
