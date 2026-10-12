@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900">
+  <defs>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" fill="none" stroke="#12181e" stroke-width="0.75"/>
+    </pattern>
+    <radialGradient id="glowCyan">
+      <stop offset="0" stop-color="#4fe3d0" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#4fe3d0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowAmber">
+      <stop offset="0" stop-color="#e8b05c" stop-opacity="0.08"/>
+      <stop offset="1" stop-color="#e8b05c" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="lampGlow">
+      <stop offset="0" stop-color="#e8b05c" stop-opacity="0.40"/>
+      <stop offset="0.35" stop-color="#e8b05c" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#e8b05c" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="frameStroke" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4fe3d0"/>
+      <stop offset="1" stop-color="#e8b05c"/>
+    </linearGradient>
+    <clipPath id="solidSide">
+      <rect x="1222" y="440" width="120" height="300"/>
+    </clipPath>
+  </defs>
+
+  <!-- field -->
+  <rect width="1600" height="900" fill="#0a0c0f"/>
+  <rect width="1600" height="900" fill="url(#grid)"/>
+  <circle cx="320" cy="200" r="640" fill="url(#glowCyan)"/>
+  <circle cx="1300" cy="720" r="600" fill="url(#glowAmber)"/>
+
+  <!-- title block -->
+  <text x="800" y="148" text-anchor="middle" font-family="'SF Mono', ui-monospace, monospace" font-size="44" letter-spacing="4" fill="#cfd6dd">GHOST &amp; WRAITH</text>
+  <text x="800" y="186" text-anchor="middle" font-family="'SF Mono', ui-monospace, monospace" font-size="14" letter-spacing="4" fill="#4fe3d0">8BIT ADVENTURES</text>
+
+  <!-- ground -->
+  <line x1="120" y1="720" x2="1480" y2="720" stroke="#2a3540" stroke-width="1"/>
+
+  <!-- archive, edge-on, receding to a vanishing point -->
+  <g fill="none" stroke="#4fe3d0">
+    <path opacity="0.3" stroke-width="0.75" d="M720 720L800 240M760 720L800 240M800 720L800 240M840 720L800 240M880 720L800 240"/>
+    <path opacity="0.75" stroke-width="1" d="M720 720H880M733.3 640H866.7M744 576H856M752.7 524H847.3M759.7 482H840.3M765.3 448H834.7"/>
+    <path opacity="0.5" stroke-width="0.75" d="M770 420H830M774 396H826M777.3 376H822.7M780.3 358H819.7M782.8 343H817.2M785 330H815"/>
+    <path opacity="0.28" stroke-width="0.75" d="M786.8 319H813.2M788.5 309H811.5M790 300H810M791.3 292H808.7M792.5 285H807.5M793.5 279H806.5M794.3 274H805.7M795.2 269H804.8M795.8 265H804.2M796.5 261H803.5M797 258H803M797.5 255H802.5M798 252H802"/>
+  </g>
+  <circle cx="800" cy="240" r="2" fill="#4fe3d0"/>
+
+  <!-- ghost: calm human silhouette, cyan line-work -->
+  <g fill="none" stroke="#4fe3d0" stroke-width="1.25" stroke-linejoin="round">
+    <circle cx="381" cy="486" r="20"/>
+    <path d="M372 506L372 514C356 518 346 526 344 544L340 640L348 640L352 560L356 560L354 718L376 718L380 650L384 718L406 718L404 560L408 560L412 640L420 640L416 544C414 526 404 518 388 514L388 506"/>
+    <path opacity="0.4" stroke-width="0.75" d="M380 530V640"/>
+  </g>
+
+  <!-- the lamp at the ghost's feet -->
+  <circle cx="446" cy="708" r="72" fill="url(#lampGlow)"/>
+  <ellipse cx="446" cy="720" rx="60" ry="5" fill="#e8b05c" opacity="0.14"/>
+  <g fill="none" stroke="#e8b05c" stroke-width="1.25" stroke-linejoin="round">
+    <circle cx="446" cy="690" r="2.5"/>
+    <path d="M438 700L446 694L454 700"/>
+    <rect x="439" y="700" width="14" height="16" rx="2"/>
+    <path d="M436 718H456"/>
+  </g>
+  <circle cx="446" cy="709" r="3" fill="#e8b05c"/>
+
+  <!-- wraith: solid on its right side -->
+  <g clip-path="url(#solidSide)" fill="#b98cc0" opacity="0.92">
+    <g transform="translate(840 0)">
+      <circle cx="379" cy="486" r="20"/>
+      <path d="M372 506L372 514C356 518 346 526 344 544L340 640L348 640L352 560L356 560L354 718L376 718L380 650L384 718L406 718L404 560L408 560L412 640L420 640L416 544C414 526 404 518 388 514L388 506Z"/>
+    </g>
+  </g>
+
+  <!-- wraith: dissolving leftward into dither -->
+  <g fill="#b98cc0">
+    <g opacity="0.8">
+      <rect x="1213" y="467" width="6" height="6"/><rect x="1207" y="475" width="6" height="6"/>
+      <rect x="1201" y="485" width="6" height="6"/><rect x="1211" y="491" width="6" height="6"/>
+      <rect x="1205" y="497" width="6" height="6"/><rect x="1215" y="481" width="6" height="6"/>
+      <rect x="1209" y="517" width="6" height="6"/><rect x="1201" y="523" width="6" height="6"/>
+      <rect x="1193" y="531" width="6" height="6"/><rect x="1213" y="537" width="6" height="6"/>
+      <rect x="1203" y="545" width="6" height="6"/><rect x="1187" y="549" width="6" height="6"/>
+      <rect x="1211" y="555" width="6" height="6"/><rect x="1197" y="565" width="6" height="6"/>
+      <rect x="1207" y="575" width="6" height="6"/><rect x="1215" y="587" width="6" height="6"/>
+      <rect x="1201" y="597" width="6" height="6"/><rect x="1209" y="609" width="6" height="6"/>
+      <rect x="1195" y="619" width="6" height="6"/><rect x="1213" y="631" width="6" height="6"/>
+      <rect x="1203" y="643" width="6" height="6"/><rect x="1197" y="657" width="6" height="6"/>
+      <rect x="1211" y="669" width="6" height="6"/><rect x="1205" y="683" width="6" height="6"/>
+      <rect x="1195" y="695" width="6" height="6"/><rect x="1213" y="703" width="6" height="6"/>
+      <rect x="1201" y="709" width="6" height="6"/>
+      <rect x="1181" y="563" width="6" height="6"/><rect x="1185" y="581" width="6" height="6"/>
+      <rect x="1179" y="599" width="6" height="6"/><rect x="1183" y="617" width="6" height="6"/>
+      <rect x="1181" y="633" width="6" height="6"/>
+    </g>
+    <g opacity="0.5">
+      <rect x="1188" y="474" width="5" height="5"/><rect x="1178" y="510" width="5" height="5"/>
+      <rect x="1174" y="538" width="5" height="5"/><rect x="1166" y="578" width="5" height="5"/>
+      <rect x="1172" y="616" width="5" height="5"/><rect x="1180" y="658" width="5" height="5"/>
+      <rect x="1168" y="692" width="5" height="5"/><rect x="1184" y="494" width="5" height="5"/>
+      <rect x="1158" y="558" width="5" height="5"/><rect x="1176" y="698" width="5" height="5"/>
+      <rect x="1162" y="638" width="5" height="5"/>
+    </g>
+    <g opacity="0.25">
+      <rect x="1144" y="498" width="4" height="4"/><rect x="1130" y="546" width="4" height="4"/>
+      <rect x="1118" y="602" width="4" height="4"/><rect x="1138" y="650" width="4" height="4"/>
+      <rect x="1102" y="578" width="4" height="4"/><rect x="1090" y="528" width="4" height="4"/>
+      <rect x="1122" y="688" width="4" height="4"/><rect x="1148" y="608" width="4" height="4"/>
+      <rect x="1078" y="638" width="4" height="4"/><rect x="1108" y="468" width="4" height="4"/>
+    </g>
+  </g>
+
+  <!-- credit -->
+  <text x="800" y="836" text-anchor="middle" font-family="'SF Mono', ui-monospace, monospace" font-size="12" letter-spacing="4" fill="#cfd6dd" opacity="0.55">PETER.LODRI + THE 8B.IS RESEARCH TEAM</text>
+
+  <!-- frame -->
+  <rect x="28" y="28" width="1544" height="844" rx="18" fill="none" stroke="url(#frameStroke)" stroke-width="1.5"/>
+</svg>

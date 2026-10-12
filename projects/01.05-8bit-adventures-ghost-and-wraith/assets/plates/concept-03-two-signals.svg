@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900">
+  <defs>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" fill="none" stroke="#12181e" stroke-width="0.75"/>
+    </pattern>
+    <radialGradient id="glowCyan">
+      <stop offset="0" stop-color="#4fe3d0" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#4fe3d0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowAmber">
+      <stop offset="0" stop-color="#e8b05c" stop-opacity="0.08"/>
+      <stop offset="1" stop-color="#e8b05c" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="seedGlow">
+      <stop offset="0" stop-color="#4fe3d0" stop-opacity="0.35"/>
+      <stop offset="0.3" stop-color="#4fe3d0" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#4fe3d0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="lampGlow">
+      <stop offset="0" stop-color="#e8b05c" stop-opacity="0.38"/>
+      <stop offset="0.3" stop-color="#e8b05c" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#e8b05c" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="decay" gradientUnits="userSpaceOnUse" x1="760" y1="0" x2="1070" y2="0">
+      <stop offset="0" stop-color="#4fe3d0"/>
+      <stop offset="1" stop-color="#b98cc0"/>
+    </linearGradient>
+    <linearGradient id="frameStroke" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4fe3d0"/>
+      <stop offset="1" stop-color="#e8b05c"/>
+    </linearGradient>
+    <clipPath id="frameClip">
+      <rect x="28" y="28" width="1544" height="844" rx="18"/>
+    </clipPath>
+  </defs>
+
+  <!-- field -->
+  <rect width="1600" height="900" fill="#0a0c0f"/>
+  <rect width="1600" height="900" fill="url(#grid)"/>
+  <circle cx="320" cy="200" r="640" fill="url(#glowCyan)"/>
+  <circle cx="1300" cy="720" r="600" fill="url(#glowAmber)"/>
+
+  <!-- label -->
+  <text x="96" y="124" font-family="'SF Mono', ui-monospace, monospace" font-size="36" letter-spacing="4" fill="#cfd6dd">TWO SIGNALS</text>
+  <line x1="96" y1="142" x2="144" y2="142" stroke="#4fe3d0" stroke-width="1"/>
+  <text x="96" y="168" font-family="'SF Mono', ui-monospace, monospace" font-size="13" letter-spacing="4" fill="#cfd6dd" opacity="0.65">ONE SOURCE &#183; TWO DIRECTIONS</text>
+
+  <!-- structure rules -->
+  <g fill="none" stroke="#2a3540">
+    <path stroke-width="1" d="M96 720H1504"/>
+    <path stroke-width="0.75" d="M96 736H1504"/>
+    <path stroke-width="1" d="M96 712V728M288 712V728M480 712V728M672 712V728M864 712V728M1056 712V728M1248 712V728M1440 712V728"/>
+    <path stroke-width="0.75" d="M160 720v6M224 720v6M352 720v6M416 720v6M544 720v6M608 720v6M736 720v6M800 720v6M928 720v6M992 720v6M1120 720v6M1184 720v6M1312 720v6M1376 720v6M1504 720v6"/>
+    <path stroke-width="0.75" stroke-dasharray="2 6" d="M380 482V712M940 600V712M1356 352V712"/>
+  </g>
+
+  <!-- the seed -->
+  <circle cx="380" cy="460" r="96" fill="url(#seedGlow)"/>
+  <g fill="none" stroke="#4fe3d0" stroke-width="0.75" stroke-linecap="round" opacity="0.7">
+    <path d="M390 460L410 460M388.66 465L397.32 470M385 468.66L395 485.98M380 470L380 480M375 468.66L365 485.98M371.34 465L362.68 470M370 460L350 460M371.34 455L362.68 450M375 451.34L365 434.02M380 450L380 440M385 451.34L395 434.02M388.66 455L397.32 450"/>
+  </g>
+  <circle cx="380" cy="460" r="12" fill="none" stroke="#4fe3d0" stroke-width="0.75" opacity="0.5"/>
+  <circle cx="380" cy="460" r="5" fill="#4fe3d0"/>
+
+  <!-- signal one: clean, straight, home -->
+  <path d="M388 456C520 430 600 330 760 330L1349 330" fill="none" stroke="#4fe3d0" stroke-width="1.5"/>
+
+  <!-- the lamp at its end -->
+  <circle cx="1356" cy="330" r="90" fill="url(#lampGlow)"/>
+  <g fill="none" stroke="#e8b05c" stroke-width="1.25" stroke-linejoin="round">
+    <circle cx="1356" cy="309" r="3"/>
+    <path d="M1347 321L1356 313L1365 321"/>
+    <rect x="1349" y="321" width="14" height="18" rx="2"/>
+    <path d="M1346 341H1366"/>
+  </g>
+  <circle cx="1356" cy="331" r="3" fill="#e8b05c"/>
+
+  <!-- signal two: decomposing -->
+  <path d="M388 464C520 490 600 590 760 590" fill="none" stroke="#4fe3d0" stroke-width="1.5"/>
+  <path d="M760 590H940M946 590H978M986 590H1006M1014 590H1028M1036 590H1044M1052 590H1057" fill="none" stroke="url(#decay)" stroke-width="1.5"/>
+  <g clip-path="url(#frameClip)" fill="#b98cc0">
+    <rect x="1071" y="584" width="6" height="6" opacity="0.85"/>
+    <rect x="1085" y="586" width="6" height="6" opacity="0.8"/>
+    <rect x="1098" y="583" width="5" height="5" opacity="0.8"/>
+    <rect x="1111" y="587" width="6" height="6" opacity="0.75"/>
+    <rect x="1128" y="582" width="5" height="5" opacity="0.7"/>
+    <rect x="1140" y="589" width="5" height="5" opacity="0.7"/>
+    <rect x="1155" y="585" width="6" height="6" opacity="0.65"/>
+    <rect x="1174" y="580" width="5" height="5" opacity="0.6"/>
+    <rect x="1188" y="591" width="5" height="5" opacity="0.6"/>
+    <rect x="1204" y="584" width="5" height="5" opacity="0.55"/>
+    <rect x="1222" y="577" width="5" height="5" opacity="0.5"/>
+    <rect x="1234" y="595" width="4" height="4" opacity="0.5"/>
+    <rect x="1252" y="583" width="5" height="5" opacity="0.45"/>
+    <rect x="1270" y="574" width="4" height="4" opacity="0.45"/>
+    <rect x="1284" y="598" width="4" height="4" opacity="0.4"/>
+    <rect x="1302" y="587" width="5" height="5" opacity="0.4"/>
+    <rect x="1320" y="570" width="4" height="4" opacity="0.35"/>
+    <rect x="1336" y="602" width="4" height="4" opacity="0.35"/>
+    <rect x="1354" y="582" width="4" height="4" opacity="0.3"/>
+    <rect x="1374" y="566" width="4" height="4" opacity="0.3"/>
+    <rect x="1390" y="606" width="4" height="4" opacity="0.28"/>
+    <rect x="1410" y="588" width="4" height="4" opacity="0.25"/>
+    <rect x="1431" y="565" width="3" height="3" opacity="0.22"/>
+    <rect x="1448" y="610" width="4" height="4" opacity="0.22"/>
+    <rect x="1471" y="579" width="3" height="3" opacity="0.2"/>
+    <rect x="1493" y="599" width="3" height="3" opacity="0.18"/>
+    <rect x="1515" y="559" width="3" height="3" opacity="0.16"/>
+    <rect x="1537" y="619" width="3" height="3" opacity="0.15"/>
+    <rect x="1555" y="587" width="3" height="3" opacity="0.14"/>
+    <rect x="1566" y="572" width="4" height="4" opacity="0.12"/>
+    <rect x="1579" y="605" width="3" height="3" opacity="0.1"/>
+    <rect x="1092" y="578" width="4" height="4" opacity="0.4"/>
+    <rect x="1120" y="595" width="4" height="4" opacity="0.4"/>
+    <rect x="1164" y="576" width="4" height="4" opacity="0.35"/>
+    <rect x="1212" y="596" width="4" height="4" opacity="0.3"/>
+    <rect x="1261" y="591" width="3" height="3" opacity="0.25"/>
+    <rect x="1329" y="581" width="3" height="3" opacity="0.2"/>
+    <rect x="1399" y="577" width="3" height="3" opacity="0.15"/>
+  </g>
+
+  <!-- frame -->
+  <rect x="28" y="28" width="1544" height="844" rx="18" fill="none" stroke="url(#frameStroke)" stroke-width="1.5"/>
+</svg>

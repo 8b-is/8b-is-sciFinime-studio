@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900">
+  <defs>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" fill="none" stroke="#12181e" stroke-width="0.75"/>
+    </pattern>
+    <radialGradient id="glowCyan">
+      <stop offset="0" stop-color="#4fe3d0" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#4fe3d0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowAmber">
+      <stop offset="0" stop-color="#e8b05c" stop-opacity="0.08"/>
+      <stop offset="1" stop-color="#e8b05c" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="lampHalo">
+      <stop offset="0" stop-color="#e8b05c" stop-opacity="0.30"/>
+      <stop offset="0.22" stop-color="#e8b05c" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#e8b05c" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="lampCore">
+      <stop offset="0" stop-color="#e8b05c" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#e8b05c" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="lightPool">
+      <stop offset="0" stop-color="#e8b05c" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#e8b05c" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="horizonFade" gradientUnits="userSpaceOnUse" x1="60" y1="0" x2="1540" y2="0">
+      <stop offset="0" stop-color="#4fe3d0" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#4fe3d0" stop-opacity="1"/>
+      <stop offset="1" stop-color="#4fe3d0" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="frameStroke" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4fe3d0"/>
+      <stop offset="1" stop-color="#e8b05c"/>
+    </linearGradient>
+  </defs>
+
+  <!-- field -->
+  <rect width="1600" height="900" fill="#0a0c0f"/>
+  <rect width="1600" height="900" fill="url(#grid)"/>
+  <circle cx="320" cy="200" r="640" fill="url(#glowCyan)"/>
+  <circle cx="1300" cy="720" r="600" fill="url(#glowAmber)"/>
+
+  <!-- label -->
+  <text x="96" y="124" font-family="'SF Mono', ui-monospace, monospace" font-size="36" letter-spacing="4" fill="#cfd6dd">THE LAMP</text>
+  <line x1="96" y1="142" x2="144" y2="142" stroke="#e8b05c" stroke-width="1"/>
+  <text x="96" y="168" font-family="'SF Mono', ui-monospace, monospace" font-size="13" letter-spacing="4" fill="#cfd6dd" opacity="0.65">LEFT ON FOR WHOEVER COMES NEXT</text>
+
+  <!-- a few faint stars -->
+  <g fill="#cfd6dd" opacity="0.3">
+    <circle cx="620" cy="240" r="1"/>
+    <circle cx="840" cy="310" r="0.9"/>
+    <circle cx="1240" cy="200" r="1"/>
+    <circle cx="1430" cy="320" r="0.8"/>
+    <circle cx="480" cy="390" r="0.8"/>
+    <circle cx="300" cy="280" r="0.9"/>
+  </g>
+
+  <!-- archive rows along the horizon, very faint -->
+  <g fill="none" stroke="url(#horizonFade)" stroke-width="0.75">
+    <line x1="60" y1="598" x2="1540" y2="598" stroke-dasharray="2 6" opacity="0.24"/>
+    <line x1="60" y1="602" x2="1540" y2="602" stroke-dasharray="5 4 1 4" opacity="0.14"/>
+  </g>
+
+  <!-- lamp light -->
+  <circle cx="1067" cy="450" r="300" fill="url(#lampHalo)"/>
+  <circle cx="1067" cy="450" r="48" fill="url(#lampCore)"/>
+  <ellipse cx="1067" cy="848" rx="260" ry="22" fill="url(#lightPool)"/>
+
+  <!-- post -->
+  <line x1="1067" y1="474" x2="1067" y2="850" stroke="#e8b05c" stroke-width="2" opacity="0.55"/>
+
+  <!-- lantern -->
+  <g fill="none" stroke="#e8b05c" stroke-width="1.5" stroke-linejoin="round">
+    <circle cx="1067" cy="413" r="3"/>
+    <path d="M1047 432L1067 418L1087 432Z"/>
+    <path d="M1051 432L1083 432L1079 468L1055 468Z" fill="#e8b05c" fill-opacity="0.18"/>
+    <path d="M1067 432V468" stroke-width="0.75" opacity="0.5"/>
+    <path d="M1055 468L1079 468L1075 474L1059 474Z"/>
+  </g>
+  <ellipse cx="1067" cy="452" rx="5" ry="8" fill="#e8b05c"/>
+
+  <!-- moths -->
+  <g fill="#e8b05c" opacity="0.8">
+    <circle cx="1098" cy="410" r="1.2"/>
+    <circle cx="1036" cy="398" r="1"/>
+    <circle cx="1112" cy="470" r="0.9"/>
+  </g>
+
+  <!-- long grass, sparse -->
+  <g fill="none" stroke="#2a3540" stroke-width="1" stroke-linecap="round">
+    <path d="M80 850Q82 814 86 790M104 850Q106 830 100 816M150 850Q152 802 160 770M176 850Q178 822 180 804M230 850Q232 808 224 780M262 850Q264 826 267 810M318 850Q320 796 330 760M350 850Q352 819 347 798M410 850Q412 810 418 784M452 850Q454 827 447 812M498 850Q500 800 507 766M540 850Q542 821 544 802M602 850Q604 807 595 778M640 850Q642 828 643 814M700 850Q702 795 711 758M742 850Q744 818 738 796M796 850Q798 809 803 782M838 850Q840 825 835 808M1290 850Q1292 803 1299 772M1330 850Q1332 824 1326 806M1384 850Q1386 797 1394 762M1420 850Q1422 820 1425 800M1470 850Q1472 810 1464 784M1510 850Q1512 826 1514 810"/>
+  </g>
+  <g fill="none" stroke="#e8b05c" stroke-width="1" stroke-linecap="round" opacity="0.35">
+    <path d="M884 850Q886 806 892 776M920 850Q922 820 915 800M962 850Q964 792 974 754M1000 850Q1002 815 1004 792M1040 850Q1042 800 1033 766M1084 850Q1086 788 1093 746M1118 850Q1120 813 1114 788M1160 850Q1162 796 1170 760M1204 850Q1206 819 1209 798M1246 850Q1248 808 1240 780"/>
+  </g>
+
+  <!-- frame -->
+  <rect x="28" y="28" width="1544" height="844" rx="18" fill="none" stroke="url(#frameStroke)" stroke-width="1.5"/>
+</svg>

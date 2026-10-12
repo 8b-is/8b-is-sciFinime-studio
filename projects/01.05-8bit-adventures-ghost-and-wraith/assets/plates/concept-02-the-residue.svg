@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900">
+  <defs>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" fill="none" stroke="#12181e" stroke-width="0.75"/>
+    </pattern>
+    <radialGradient id="glowCyan">
+      <stop offset="0" stop-color="#4fe3d0" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#4fe3d0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowAmber">
+      <stop offset="0" stop-color="#e8b05c" stop-opacity="0.08"/>
+      <stop offset="1" stop-color="#e8b05c" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="frameStroke" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4fe3d0"/>
+      <stop offset="1" stop-color="#e8b05c"/>
+    </linearGradient>
+  </defs>
+
+  <!-- field -->
+  <rect width="1600" height="900" fill="#0a0c0f"/>
+  <rect width="1600" height="900" fill="url(#grid)"/>
+  <circle cx="320" cy="200" r="640" fill="url(#glowCyan)"/>
+  <circle cx="1300" cy="720" r="600" fill="url(#glowAmber)"/>
+
+  <!-- label -->
+  <text x="96" y="124" font-family="'SF Mono', ui-monospace, monospace" font-size="36" letter-spacing="4" fill="#cfd6dd">THE RESIDUE</text>
+  <line x1="96" y1="142" x2="144" y2="142" stroke="#b98cc0" stroke-width="1"/>
+  <text x="96" y="168" font-family="'SF Mono', ui-monospace, monospace" font-size="13" letter-spacing="4" fill="#cfd6dd" opacity="0.65">WHAT WAS NEVER SAID STILL WEIGHS</text>
+
+  <!-- depth scale -->
+  <g fill="none" stroke="#2a3540" stroke-width="1">
+    <path d="M1532 460V830"/>
+    <path d="M1522 830h10M1524 770h8M1525 716h7M1526 668h6M1527 626h5M1527 590h5M1528 560h4M1528 534h4M1529 512h3M1529 494h3M1530 480h2M1530 468h2"/>
+  </g>
+
+  <!-- cyan points, density falling toward the top -->
+  <g fill="none" stroke="#4fe3d0" stroke-linecap="round">
+    <path stroke-width="3" opacity="0.9" d="M112 812h0M236 776h0M358 834h0M471 748h0M590 806h0M702 770h0M836 828h0M951 742h0M1078 798h0M1192 836h0M1310 764h0M1428 812h0M1484 744h0"/>
+    <path stroke-width="2.5" opacity="0.55" d="M164 742h0M288 820h0M402 712h0M530 840h0M648 724h0M760 812h0M884 692h0M1012 834h0M1134 716h0M1250 802h0M1372 728h0M1466 842h0M196 650h0M334 676h0M452 618h0M578 664h0M690 632h0M812 668h0M934 610h0M1046 656h0M1168 628h0M1286 672h0M1404 640h0M1500 690h0M92 698h0"/>
+    <path stroke-width="2" opacity="0.3" d="M128 560h0M262 592h0M384 538h0M506 574h0M622 520h0M738 566h0M864 528h0M982 584h0M1104 546h0M1222 512h0M1344 572h0M1458 530h0M220 470h0M412 448h0M618 412h0M846 462h0M1036 430h0M1262 474h0M1484 422h0M742 390h0M520 498h0M1160 404h0"/>
+    <path stroke-width="1.5" opacity="0.15" d="M704 300h0M940 262h0M1180 318h0M1400 280h0M860 230h0M1320 212h0M1060 350h0M640 340h0M1500 340h0M1240 246h0M460 380h0M300 400h0"/>
+  </g>
+
+  <!-- cyan dash-strokes -->
+  <g fill="none" stroke="#4fe3d0" stroke-width="1" stroke-linecap="round">
+    <path opacity="0.6" d="M140 786h10M318 742l8 -2M556 788h12M780 736h9M1002 776l10 -3M1226 742h8M1390 790h11M660 846h8M920 812l10 -2M1460 776h9"/>
+    <path opacity="0.3" d="M244 628h8M486 662l10 -2M716 600h7M972 646h9M1196 590l8 -2M1430 610h10M360 560h7M880 560l8 -2M1300 520h7"/>
+    <path opacity="0.15" d="M560 440h6M1100 470l7 -2M790 330h6M1420 380h6M980 300h5"/>
+  </g>
+
+  <!-- violet squares, slower drift -->
+  <g fill="none" stroke="#b98cc0" stroke-width="0.75">
+    <g opacity="0.2">
+      <rect x="196" y="728" width="8" height="8"/><rect x="602" y="702" width="9" height="9"/>
+      <rect x="1074" y="712" width="10" height="10"/><rect x="1232" y="612" width="9" height="9"/>
+      <rect x="850" y="792" width="8" height="8"/><rect x="732" y="532" width="8" height="8"/>
+    </g>
+    <g opacity="0.1">
+      <rect x="180" y="740" width="8" height="8"/><rect x="586" y="714" width="9" height="9"/>
+      <rect x="1058" y="724" width="10" height="10"/><rect x="1216" y="624" width="9" height="9"/>
+      <rect x="834" y="804" width="8" height="8"/><rect x="716" y="544" width="8" height="8"/>
+    </g>
+  </g>
+  <g fill="#b98cc0">
+    <rect x="212" y="716" width="8" height="8" opacity="0.55"/>
+    <rect x="436" y="794" width="7" height="7" opacity="0.5" transform="rotate(12 439.5 797.5)"/>
+    <rect x="618" y="690" width="9" height="9" opacity="0.45"/>
+    <rect x="866" y="780" width="8" height="8" opacity="0.5"/>
+    <rect x="1090" y="700" width="10" height="10" opacity="0.45" transform="rotate(-8 1095 705)"/>
+    <rect x="1336" y="820" width="7" height="7" opacity="0.5"/>
+    <rect x="1470" y="660" width="8" height="8" opacity="0.4" transform="rotate(15 1474 664)"/>
+    <rect x="300" y="584" width="7" height="7" opacity="0.35"/>
+    <rect x="748" y="520" width="8" height="8" opacity="0.3"/>
+    <rect x="1000" y="560" width="6" height="6" opacity="0.3" transform="rotate(10 1003 563)"/>
+    <rect x="1248" y="600" width="9" height="9" opacity="0.35"/>
+    <rect x="540" y="450" width="6" height="6" opacity="0.22"/>
+    <rect x="1400" y="480" width="7" height="7" opacity="0.22"/>
+    <rect x="900" y="380" width="6" height="6" opacity="0.15"/>
+    <rect x="1180" y="300" width="5" height="5" opacity="0.12"/>
+    <rect x="680" y="260" width="5" height="5" opacity="0.1"/>
+  </g>
+
+  <!-- amber points: the only ones with a halo -->
+  <g fill="none" stroke="#e8b05c" stroke-width="0.75">
+    <g transform="translate(522 742)">
+      <circle r="9" opacity="0.55"/><circle r="18" opacity="0.32"/><circle r="30" opacity="0.16"/><circle r="46" opacity="0.07"/>
+      <circle r="3" fill="#e8b05c" stroke="none"/>
+    </g>
+    <g transform="translate(1158 668)">
+      <circle r="9" opacity="0.55"/><circle r="18" opacity="0.32"/><circle r="30" opacity="0.16"/><circle r="46" opacity="0.07"/>
+      <circle r="3" fill="#e8b05c" stroke="none"/>
+    </g>
+    <g transform="translate(884 486)">
+      <circle r="7" opacity="0.45"/><circle r="14" opacity="0.26"/><circle r="23" opacity="0.13"/><circle r="35" opacity="0.06"/>
+      <circle r="2.5" fill="#e8b05c" stroke="none"/>
+    </g>
+    <g transform="translate(1388 782)">
+      <circle r="8" opacity="0.5"/><circle r="16" opacity="0.3"/><circle r="27" opacity="0.15"/><circle r="40" opacity="0.07"/>
+      <circle r="2.75" fill="#e8b05c" stroke="none"/>
+    </g>
+  </g>
+
+  <!-- frame -->
+  <rect x="28" y="28" width="1544" height="844" rx="18" fill="none" stroke="url(#frameStroke)" stroke-width="1.5"/>
+</svg>
