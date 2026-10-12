@@ -7,15 +7,17 @@
   <key>ProgramArguments</key>
   <array>
     <string>/bin/bash</string>
-    <string>/Users/lodripeter/workspace/peterlodri-sec/8b-is-sciFinime-studio/tools/wa-screen.sh</string>
+    <string>/Users/lodripeter/workspace/peterlodri-sec/8b-is-sciFinime-studio/tools/wa-screen-loop.sh</string>
   </array>
   <key>EnvironmentVariables</key>
   <dict>
     <key>PATH</key>
     <string>/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin</string>
+    <key>WA_INTERVAL</key>
+    <string>3</string>
   </dict>
-  <key>StartInterval</key>
-  <integer>60</integer>
+  <key>KeepAlive</key>
+  <true/>
   <key>RunAtLoad</key>
   <true/>
   <key>StandardOutPath</key>
